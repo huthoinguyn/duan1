@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.product-slide {
+  width: 100%;
+  height: 320px;
+  background-image: url("../../content/images/products/bg.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+
+.product-paragraph {
+  color: #fff;
+  font-size: 75px;
+  font-weight: 500;
+  font-family: "Bebas Neue";
+  margin: 0 auto;
+  padding-left: 580px;
+  padding-top: 80px;
+}
+
+.product-child {
+  color: #fff;
+  padding-left: 720px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* =========================================================== */
+.product {
+  display: flex;
+  padding: 30px;
+}
+
+.product-image {
+  width: 50%;
+  padding: 30px;
+}
+
+.boder {
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+  overflow: hidden;
+}
+
+.boder img {
+  transition: linear 0.2s;
+}
+.boder img:hover {
+  transform: scale(1.1);
+}
+
+.product-infor {
+  width: 50%;
+  padding: 30px;
+}
+
+.product-name {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: Roboto;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.product-price {
+  color: #000;
+  font-size: 28px;
+  font-weight: 500;
+  font-family: "Bebas Neue";
+  padding: 20px 0px;
+}
+
+.product-describe {
+  color: #000;
+  width: 70%;
+  line-height: 2;
+  padding: 10px 0px;
+}
+
+.rate {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  padding: 20px 12px;
+}
+
+.rate__star {
+  width: 20%;
+  padding: 4px 4px;
+  text-align: center;
+  font-size: 14px;
+  color: #c7c7c7;
+}
+
+.rate__star:hover {
+  color: #b39700;
+}
+
+:target.rate__star ~ a,
+:target.rate__star {
+  color: #e6c200;
+}
+
+.button-quantity {
+  display: flex;
+  padding: 20px 0px;
+}
+
+.quantity {
+  border: 2px solid #dddddd;
+  padding: 15px 20px;
+  margin-right: 15px;
+}
+
+.quantity span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.quantity input {
+  width: 30px;
+  margin-left: 30px;
+  border: none;
+  font-size: 19px;
+}
+
+.button-addcart {
+  padding: 0px 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 2px;
+  background: #c7a17a;
+  padding: 9.5px 34px;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #c7a17a;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: linear 0.2s;
+}
+.button-addcart:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.product-social {
+  padding: 20px 0px;
+  border-bottom: 1px solid #dddddd;
+  width: 380px;
+}
+.product-fav {
+  color: #000;
+  text-decoration: none;
+}
+.product-social i {
+  color: crimson;
+}
+
+.prod-cung-loai,
+.comment {
+  width: 100%;
+  padding: 24px;
+}
+.comment form {
+  max-width: 60%;
+  flex: 0 0 60%;
+  display: flex;
+  margin-top: 24px;
+}
+
+.comment form input {
+  padding: 9px 12px;
+  border-radius: 4px;
+  max-width: 60%;
+  flex: 0 0 60%;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.comment form button {
+  outline: none;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  padding: 9px 12px;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.comment-list {
+  max-width: 60%;
+  flex: 0 0 60%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comment-list li {
+  max-width: 100%;
+  flex: 0 0 100%;
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+.comment-list li .comment-content {
+  padding: 12px;
+  max-width: 60%;
+  flex: 0 0 60%;
+}
+.comment-list li .comment-info {
+  padding: 12px;
+  max-width: 40%;
+  flex: 0 0 40%;
+}
+
+.comment-list li .comment-info b {
+  margin-right: 12px;
+}

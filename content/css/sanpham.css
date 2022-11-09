@@ -1,0 +1,22 @@
+.prod-list {
+  max-width: 100%;
+  flex: 0 0 100%;
+  display: flex;
+}
+.prod-item {
+  max-width: calc(100% / 3);
+  flex: 0 0 calc(100% / 3);
+  padding: 12px;
+}
+
+.prod-image {
+  width: 100%;
+  height: 302.66px;
+  overflow: hidden;
+}
+
+.prod-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

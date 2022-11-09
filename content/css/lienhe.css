@@ -1,0 +1,54 @@
+.contact-container {
+  width: 100%;
+  padding: 64px 0;
+}
+
+.contact-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.contact-wrap .map-wrap {
+  max-width: 40%;
+  flex: 0 0 40%;
+  height: 100%;
+}
+.contact-wrap .map-wrap .map {
+  width: 100%;
+  min-height: 560px;
+}
+
+.contact-wrap .form {
+  max-width: 40%;
+  flex: 0 0 40%;
+}
+.contact-wrap .form h3 {
+  padding: 16px 0 32px;
+  font-size: 28px;
+  text-align: center;
+}
+.contact-wrap form {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact-wrap form textarea,
+.contact-wrap form input {
+  max-width: 100%;
+  flex: 0 0 100%;
+  padding: 12px 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-top: 16px;
+}
+
+.contact-wrap form input.button {
+  max-width: 200px;
+  flex: 0 0 200px;
+  color: #fff;
+  background-color: #000;
+}

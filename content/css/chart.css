@@ -1,0 +1,36 @@
+.chart-wrap {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.chart-name {
+  text-align: center;
+}
+
+.h-40vh {
+  height: 40vh;
+  border-bottom: 1px solid #555;
+}
+
+.cate-chart,
+.prod-chart,
+.comm-chart,
+.cus-chart {
+  width: 60px;
+}
+.cate-chart {
+  background-color: #ff6161;
+}
+.prod-chart {
+  background-color: rgb(93, 255, 166);
+}
+
+.comm-chart {
+  background-color: rgb(76, 156, 255);
+}
+.cus-chart {
+  background-color: rgb(225, 254, 130);
+}
