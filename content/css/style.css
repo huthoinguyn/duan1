@@ -11,8 +11,13 @@
 :root {
   --text-color: #141414;
   --bg-color-white: #fff;
+  --primary-color: #ff6800;
   --bg-color: #000;
   --text-white: #fff;
+}
+
+html{
+  font-size: 62.5%;
 }
 
 a {
@@ -22,7 +27,7 @@ a {
 
 body {
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400;
 }
 

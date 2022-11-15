@@ -28,6 +28,59 @@ hang_hoa_tang_so_luot_xem($ma_hh);
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .size-list {
+            display: flex;
+            list-style: none;
+            gap: 6px;
+        }
+
+        .size-item {
+            padding: 12px 24px;
+            font-size: 1.6rem;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .size-item.active {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .product-dropdown {
+            height: 48px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            border-bottom: 1px solid #ccc;
+            transition: all 300ms ease;
+            cursor: pointer;
+            overflow: hidden;
+            padding: 12px;
+        }
+
+        .product-dropdown.active {
+            height: fit-content;
+            transition: all 300ms ease;
+        }
+
+        .product-dropdown .heading {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            flex: 0 0 100%;
+            margin-bottom: 12px;
+        }
+
+        .product-dropdown h3 {
+            display: inline-block;
+        }
+
+        .product-dropdown .drop-icon {
+            display: inline-block;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,21 +98,56 @@ hang_hoa_tang_so_luot_xem($ma_hh);
             <div class="product-infor">
                 <p class="product-name"><?= $ten_hh ?></p>
                 <span>Viewer : <?= $so_luot_xem ?></span> <br />
-                REVIEW FOR PRODUCT
-                <div class="rate"><a class="rate__star" id="rate-star-1" href="#rate-star-1"><i class="fa fa-star"></i></a><a class="rate__star" id="rate-star-2" href="#rate-star-2"><i class="fa fa-star"></i></a><a class="rate__star" id="rate-star-3" href="#rate-star-3"><i class="fa fa-star"></i></a><a class="rate__star" id="rate-star-4" href="#rate-star-4"><i class="fa fa-star"></i></a><a class="rate__star" id="rate-star-5" href="#rate-star-5"><i class="fa fa-star"></i></a>
-                </div>16 customer rated
-
-                <p class="product-describe"><?= $mo_ta ?></p>
+                <ul class="size-list">
+                    <li class="size-item">XS</li>
+                    <li class="size-item">S</li>
+                    <li class="size-item">M</li>
+                    <li class="size-item">L</li>
+                    <li class="size-item">XL</li>
+                    <li class="size-item">2XL</li>
+                    <li class="size-item">3XL</li>
+                </ul>
+                <!-- <p class="product-describe"></p> -->
                 <p class="product-price"><?= number_format($don_gia, 0) ?> VND</p>
-                <div class="button-quantity">
-                    <div class="quantity">
-                        <span>QUANTITY</span>
-                        <input type="number" placeholder="1">
+                <form action="" id="addcart">
+                    <input type="hidden" name="ma_hh" value="<?= $ma_hh ?>">
+                    <input type="hidden" name="ten_hh" value="<?= $ten_hh ?>">
+                    <input type="hidden" name="don_gia" value="<?= $don_gia ?>">
+                    <input type="hidden" name="hinh" value="<?= $hinh ?>">
+                    <div class="button-quantity">
+                        <div class="quantity">
+                            <span>QUANTITY</span>
+                            <input type="number" placeholder="1" style="outline: none;">
+                        </div>
+
+                        <button type="submit" name="addcart" class="button-addcart">ADD TO CART</button>
                     </div>
-                    <button class="button-addcart">ADD TO CART</button>
-                </div>
+                </form>
                 <div class="product-social">
                     <a class="product-fav" href="#"><i class="fa-solid fa-heart"></i> Add to favorite list</a>
+                </div>
+                <div class="product-dropdown">
+                    <div class="heading">
+                        <h3>Description</h3>
+                        <div class="drop-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <?= $mo_ta ?>
+                    </div>
+                </div>
+                <div class="product-dropdown">
+                    <div class="heading">
+                        <h3>Review</h3>
+                        <div class="drop-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                    <!-- <div class="prod-rate-star"> -->
+                    <div class="rate"><a class="rate__star" id="rate-star-1" href="#rate-star-1"><i class="fa fa-star"></i></a><a class="rate__star" id="rate-star-2" href="#rate-star-2"><i class="fa fa-star"></i></a><a class="rate__star" id="rate-star-3" href="#rate-star-3"><i class="fa fa-star"></i></a><a class="rate__star" id="rate-star-4" href="#rate-star-4"><i class="fa fa-star"></i></a><a class="rate__star" id="rate-star-5" href="#rate-star-5"><i class="fa fa-star"></i></a>
+                    </div>16 customer rated
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -82,6 +170,41 @@ hang_hoa_tang_so_luot_xem($ma_hh);
             </ul>
         </div>
     </div>
+    <script>
+        const sizeItems = document.querySelectorAll('.size-item')
+        const prodDrops = document.querySelectorAll('.product-dropdown')
+        sizeItems.forEach(size => {
+            size.onclick = () => {
+                [...sizeItems].map(si => si.classList.remove('active'));
+                size.classList.add('active');
+            }
+        })
+        prodDrops.forEach(drop => drop.onclick = () => {
+            drop.classList.toggle('active');
+            drop.querySelector('.drop-icon i').classList.toggle('fa-minus')
+        })
+
+        const addCartForm = document.querySelector('#addcart'),
+            addCartBtn = document.querySelector('#addcart button')
+        addCartForm.onsubmit = (e) => {
+            e.preventDefault();
+        }
+
+        addCartBtn.onclick = () => {
+            const xhr = new XMLHttpRequest(); // create new XML Object
+            xhr.open("POST", "../hang-hoa/gio-hang.php?addcart", true);
+            xhr.onload = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status == 200) {
+                        let data = xhr.response;
+                        alert(data)
+                    }
+                }
+            };
+            let formData = new FormData(addCartForm); //create new formData
+            xhr.send(formData); //send formData to PHP
+        }
+    </script>
 </body>
 
 </html>

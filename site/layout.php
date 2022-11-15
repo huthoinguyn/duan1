@@ -1,7 +1,7 @@
 <main>
     <header>
         <div class="logo">
-            T-Coffee
+            TDK2nd
         </div>
         <?php require '../layout/nav.php' ?>
         <?php require '../layout/dang-nhap.php' ?>

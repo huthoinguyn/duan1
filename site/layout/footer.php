@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="row foot-logo">
-            <h3>T-Coffee</h3>
+            <h3>TDK2nd</h3>
             <p>Bakery & Coffee</p>
         </div>
         <div class="row">
