@@ -16,7 +16,7 @@
   --text-white: #fff;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
@@ -88,10 +88,13 @@ nav ul {
   justify-content: space-around;
 }
 
+nav ul .cart-icon,
 nav ul .user-icon {
+  font-size: 1.6rem;
   cursor: pointer;
   transition: all 200ms ease;
 }
+nav ul .cart-icon:hover,
 nav ul .user-icon:hover {
   transform: scale(1.15);
 }
@@ -250,12 +253,13 @@ section .container {
 }
 
 footer {
+  margin-top: 12px;
   padding-top: 48px;
   width: 100vw;
   max-width: 100vw;
   position: relative;
   left: calc(-50vw + 50%);
-  background-color: var(--bg-color-white);
+  background-color: #eee;
   display: flex;
   justify-content: center;
   align-items: center;

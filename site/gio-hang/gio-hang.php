@@ -4,6 +4,7 @@ require '../../global.php';
 require '../../pdo.php';
 if (exist_param('addcart')) {
     $ma_hh = isset($_POST['ma_hh']) ? $_POST['ma_hh'] : '';
+    $size = isset($_POST['size']) ? $_POST['size'] : '';
     $sanpham = hang_hoa_select_by_id($ma_hh);
     extract($sanpham);
     $kh = $_SESSION['user'];
@@ -34,6 +35,7 @@ if (exist_param('addcart')) {
             'ma_hh' => $ma_hh,
             'ten_hh' => $ten_hh,
             'don_gia' => $don_gia,
+            'size' => $size,
             'quantity' => 1,
             'hinh' => $hinh,
             'kh' => $kh
@@ -52,6 +54,7 @@ if (exist_param('addcart')) {
 } else if (exist_param('updateqty')) {
     $ma_hh = $_POST['ma_hh'];
     $prodQty = $_POST['quantity'];
+    $size = $_POST['size'];
     $kh = $_SESSION['user'];
 
     if (isset($_COOKIE['cart'])) {
@@ -74,6 +77,7 @@ if (exist_param('addcart')) {
             'ma_hh' => $ma_hh,
             'ten_hh' => $ten_hh,
             'don_gia' => $don_gia,
+            'size' => $size,
             'quantity' => 1,
             'hinh' => $hinh,
             'kh' => $kh

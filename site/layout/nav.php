@@ -9,5 +9,8 @@
         <div class="user-icon">
             <i class="fa-regular fa-user"></i>
         </div>
+        <a href="?gio-hang" class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
     </ul>
 </nav>

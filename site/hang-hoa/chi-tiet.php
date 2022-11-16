@@ -101,7 +101,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                 <ul class="size-list">
                     <li class="size-item">XS</li>
                     <li class="size-item">S</li>
-                    <li class="size-item">M</li>
+                    <li class="size-item active">M</li>
                     <li class="size-item">L</li>
                     <li class="size-item">XL</li>
                     <li class="size-item">2XL</li>
@@ -113,6 +113,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                     <input type="hidden" name="ma_hh" value="<?= $ma_hh ?>">
                     <input type="hidden" name="ten_hh" value="<?= $ten_hh ?>">
                     <input type="hidden" name="don_gia" value="<?= $don_gia ?>">
+                    <input type="hidden" name="size" class="prod-size" value="M">
                     <input type="hidden" name="hinh" value="<?= $hinh ?>">
                     <div class="button-quantity">
                         <div class="quantity">
@@ -177,6 +178,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
             size.onclick = () => {
                 [...sizeItems].map(si => si.classList.remove('active'));
                 size.classList.add('active');
+                document.querySelector('.prod-size').value = size.textContent;
             }
         })
         prodDrops.forEach(drop => drop.onclick = () => {
@@ -192,7 +194,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
 
         addCartBtn.onclick = () => {
             const xhr = new XMLHttpRequest(); // create new XML Object
-            xhr.open("POST", "../hang-hoa/gio-hang.php?addcart", true);
+            xhr.open("POST", "../gio-hang/gio-hang.php?addcart", true);
             xhr.onload = () => {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.status == 200) {
