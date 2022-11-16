@@ -3,7 +3,7 @@
 // Mở kết nối 
 function pdo_get_connection()
 {
-    $dburl = "mysql:host=localhost;dbname=t-coffee;charset=utf8";
+    $dburl = "mysql:host=localhost;dbname=duan1;charset=utf8";
     $username = 'root';
     $password = '';
     $conn = new PDO($dburl, $username, $password);
@@ -77,16 +77,11 @@ function pdo_query_value($sql)
     }
 }
 
-
-// => Thêm mới loại $sql = "INSERT INTO loai
-// (ten_loai) VALUES(?)";
-// pdo_execute($sql, $ten_loai);
-// => Cập nhật loại $sql = "UPDATE loai SET ten_loai=? WHERE ma_loai=?";
-// pdo_execute($sql, $ten_loai, $ma_loai);
-// => Xóa loại $sql = "DELETE FROM loai WHERE ma_loai=?";
-// pdo_execute($sql, $ma_loai);
-// => Truy vấn tất cả các loại $sql = "SELECT * FROM loai";
-// $rows = pdo_query($sql);
-// => Truy vấn 1 loại $sql = "SELECT * FROM loai WHERE ma_loai=?";
-// $row = pdo_query_one($sql, $ma_loai);
-// => Đếm số loại 
+function runSQL($sql)
+{
+    $db = pdo_get_connection();
+    $result = $db->prepare($sql);
+    $result->execute();
+    return $result->fetchAll(PDO::FETCH_ASSOC);
+}
+?>

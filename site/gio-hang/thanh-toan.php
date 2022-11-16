@@ -22,24 +22,23 @@ if (exist_param('buy')) {
             $cart_data = json_decode($cookie_data, true);
 
             $insert_hoa_don = hoa_don_insert($ma_kh, $dia_chi, $ho_ten, $so_dien_thoai, $total, $ghi_chu, $trang_thai, $ngay_tao, $ngay_hoan_thanh);
-            // echo 'success';
-            // if ($insert_hoa_don) {
-            $hd_id = pdo_get_connection()->lastInsertId($ma_hd);
-            foreach ($cart_data as $key => $value) {
-                $ma_hh = $value['ma_hh'];
-                $so_luong = $value['quantity'];
-                $don_gia = $value['don_gia'];
-                $insert_hoa_don_chi_tiet = hoa_don_chi_tiet_insert($don_gia, $so_luong, $hd_id, $ma_hh);
-                if ($insert_hoa_don_chi_tiet) {
-                    setcookie("cart", "", time() -  3600 * 24 * 30 * 12, '/');
-                    if (isset($_COOKIE['cart'])) {
+            if ($insert_hoa_don) {
+                $ma_hd = runSQL("SELECT MAX(ma_hd) FROM hoa_don")[0]["MAX(ma_hd)"];
+                foreach ($cart_data as $key => $value) {
+                    $ma_hh = $value['ma_hh'];
+                    $so_luong = $value['quantity'];
+                    $don_gia = $value['don_gia'];
+                    $insert_hoa_don_chi_tiet = hoa_don_chi_tiet_insert($don_gia, $so_luong, $ma_hd, $ma_hh);
+                    if ($insert_hoa_don_chi_tiet) {
                         setcookie("cart", "", time() -  3600 * 24 * 30 * 12, '/');
+                        if (isset($_COOKIE['cart'])) {
+                            setcookie("cart", "", time() -  3600 * 24 * 30 * 12, '/');
+                        }
                     }
                 }
-            }
 
-            echo 'Success';
+                echo 'Success';
+            }
         }
     }
 }
-// }

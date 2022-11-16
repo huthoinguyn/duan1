@@ -50,6 +50,7 @@
             cursor: pointer;
         }
 
+        .history,
         .go-admin,
         .update-account,
         .change-password {
@@ -114,6 +115,9 @@
                 <div class="user-content">
                     <h3 class="name"><?php echo $_SESSION['user']['ho_ten'] ?></h3>
                     <p><?php echo ($_SESSION['user']['vai_tro'] == 1) ? "Admin" : "Customer"  ?></p>
+                </div>
+                <div class="row">
+                    <a class="history" href="?lich-su">History</a>
                 </div>
                 <div class="row">
                     <a class="change-password" href="">Change Password</a>
