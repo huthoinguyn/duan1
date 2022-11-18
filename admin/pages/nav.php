@@ -41,6 +41,12 @@
                 </a>
             </li>
             <li>
+                <a href="../don-hang/">
+                    <i class="uil uil-comments"></i>
+                    <span class="link-name">Receipt</span>
+                </a>
+            </li>
+            <li>
                 <a href="../../site/trang-chinh/">
                     <i class="uil uil-globe"></i>
                     <span class="link-name">Go to website</span>

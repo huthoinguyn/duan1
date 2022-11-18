@@ -28,6 +28,12 @@ function thong_ke_loai()
     $count = pdo_query_value($sql);
     return $count;
 }
+function thong_ke_don_hang()
+{
+    $sql = "SELECT count(*) FROM hoa_don";
+    $count = pdo_query_value($sql);
+    return $count;
+}
 
 function total_all()
 {

@@ -20,6 +20,7 @@
   --box2-color: #ffe6ac;
   --box3-color: #e7d1fc;
   --box4-color: #a5ffbc;
+  --box5-color: #ffd166;
   --title-icon-color: #fff;
 
   /* ====== Transition ====== */
@@ -325,15 +326,16 @@ nav.close ~ .dashboard .top {
 .dash-content .boxes {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 15px;
 }
 .dash-content .boxes .box {
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 12px;
-  width: calc(100% / 4 - 15px);
+  width: calc(100% / 3 - 30px);
   padding: 15px 20px;
   background-color: var(--box1-color);
   transition: var(--tran-05);
@@ -361,6 +363,9 @@ nav.close ~ .dashboard .top {
 }
 .boxes .box.box4 {
   background-color: var(--box4-color);
+}
+.boxes .box.box5 {
+  background-color: var(--box5-color);
 }
 .dash-content .activity .activity-data {
   display: flex;

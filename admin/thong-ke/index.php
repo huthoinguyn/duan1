@@ -33,6 +33,11 @@ require_once "../../dao/thong-ke.php";
                 <span class="text">Customer</span>
                 <span class="number"><?php echo thong_ke_khach_hang() ?></span>
             </div>
+            <div class="box box5">
+                <i class="uil uil-user"></i>
+                <span class="text">Receipt</span>
+                <span class="number"><?php echo thong_ke_don_hang() ?></span>
+            </div>
         </div>
     </div>
     <?php

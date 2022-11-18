@@ -22,3 +22,15 @@ function hoa_don_chi_tiet_select_by_id($ma_hdct)
     $sql = "SELECT * FROM hoa_don_chi_tiet WHERE ma_hdct =?";
     return pdo_query_one($sql, $ma_hdct);
 }
+
+function hoa_don_select_all()
+{
+    $sql = "SELECT * FROM hoa_don";
+    return pdo_query($sql);
+}
+
+function hoadonchitiet_select($ma_hd)
+{
+    $sql = "SELECT * FROM hoa_don_chi_tiet WHERE ma_hd =?";
+    return pdo_query_one($sql, $ma_hd);
+}

@@ -15,6 +15,7 @@
   border-bottom: 1px solid #555;
 }
 
+.rep-chart,
 .cate-chart,
 .prod-chart,
 .comm-chart,
@@ -33,4 +34,7 @@
 }
 .cus-chart {
   background-color: rgb(225, 254, 130);
+}
+.rep-chart {
+  background-color: rgb(255, 144, 85);
 }
