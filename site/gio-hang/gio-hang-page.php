@@ -58,14 +58,16 @@
                                     <h3><?php echo $sp['ten_hh']; ?></h3>
                                     <div class="size">SIZE: <span><?php echo (($sp['size']) ? $sp['size'] : ''); ?></span></div>
                                     <p>
-                                        <input class="quantityInp" type="number" name="quantity" class="qty product-qty" value='<?php echo $sp['quantity'] ?>' /> x $<?php echo $sp['don_gia']; ?>
+                                        <input class="quantityInp" type="number" name="quantity" class="qty product-qty" value='<?php echo $sp['quantity'] ?>' /> x $<span class="prod-price">
+                                            <?php echo $sp['don_gia']; ?>
+                                        </span>
                                     </p>
                                 </div>
                                 <div class="prod-total">
-                                    <p>$<?php echo $subtotal; ?></p>
+                                    <p class="prod-subtotal">$<?php echo $subtotal; ?></p>
                                 </div>
                                 <div class="prod-action">
-                                    <button class="delete-prod" type="submit" name="delcart">x</button>
+                                    <button class="delete-prod" name="delcart">x</button>
                                 </div>
                             </div>
                         </form>
@@ -79,7 +81,7 @@
                     <h3>ORDER SUMARY</h3>
                     <div class="subtotal">
                         <span>Subtotal</span>
-                        <span>$<?php echo $total ?></span>
+                        <span class="cart-subtotal">$<?php echo $total ?></span>
                     </div>
                     <div class="delivery">
                         <span>Estimated Delivery & Handling
@@ -89,8 +91,9 @@
                     <div class="total">
                         <p>TOTAL
                             (inclusive of tax 370,370₫)</p>
-                        <p>
-                            $<?php echo $total ?></p>
+                        <p class="cart-total">
+                            $<?php echo $total ?>
+                        </p>
                     </div>
                 </div>
                 <div class="checkout-btn">
@@ -110,19 +113,31 @@
             }
 
             // UPDATE QUANTITY IN CART
-            prod.querySelector('.quantityInp').onchange = () => {
-                const xhr = new XMLHttpRequest(); // create new XML Object
-                xhr.open("POST", "../gio-hang/gio-hang.php?updateqty", true);
-                xhr.onload = () => {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status == 200) {
-                            let data = xhr.response;
-                            alert(data)
+            prod.querySelector('.quantityInp').onchange = (e) => {
+                if (e.target.value <= 0) {
+                    prod.querySelector('.quantityInp').value === 1;
+                } else {
+                    const xhr = new XMLHttpRequest(); // create new XML Object
+                    xhr.open("POST", "../gio-hang/gio-hang.php?updateqty", true);
+                    xhr.onload = () => {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status == 200) {
+                                let data = xhr.response;
+                                let cartTotal = 0;
+                                let result = Object.entries(JSON.parse(data))
+                                result.map(rs => {
+                                    cartTotal += rs[1].don_gia * rs[1].quantity;
+                                })
+                                let prodPrice = Number(prod.querySelector('.prod-price').textContent)
+                                prod.querySelector('.prod-subtotal').textContent = "$" + (prodPrice * e.target.value)
+                                document.querySelector('.total .cart-total').textContent = "$" + cartTotal
+                                document.querySelector('.subtotal .cart-subtotal').textContent = "$" + cartTotal
+                            }
                         }
-                    }
-                };
-                let formData = new FormData(prod); //create new formData
-                xhr.send(formData); //send formData to PHP
+                    };
+                    let formData = new FormData(prod); //create new formData
+                    xhr.send(formData); //send formData to PHP
+                }
             }
 
             // DELETE PRODUCT IN CART
@@ -133,7 +148,14 @@
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status == 200) {
                             let data = xhr.response;
-                            alert(data)
+                            let cartTotal = 0;
+                            let result = Object.entries(JSON.parse(data))
+                            result.map(rs => {
+                                cartTotal += rs[1].don_gia * rs[1].quantity;
+                            })
+                            document.querySelector('.total .cart-total').textContent = "$" + cartTotal
+                            document.querySelector('.subtotal .cart-subtotal').textContent = "$" + cartTotal
+                            prod.remove();
                         }
                     }
                 };

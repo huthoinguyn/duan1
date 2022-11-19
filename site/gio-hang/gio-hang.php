@@ -87,9 +87,7 @@ if (exist_param('addcart')) {
 
     $product_data = json_encode($cart_data);
     setcookie('cart', $product_data, time() + 3600 * 24 * 30 * 12, '/');
-
-    // echo "$don_gia";
-    echo 'success';
+    echo $product_data;
 } else if (exist_param('delcart')) {
     if (isset($_COOKIE['cart'])) {
         $cookie_data = isset($_COOKIE["cart"]) ? $_COOKIE["cart"] : "[]";;
@@ -103,7 +101,7 @@ if (exist_param('addcart')) {
             }
         }
     }
-    echo 'Delete successfully';
+    echo $product_data;
 } else if (exist_param('deleteall')) {
     if (isset($_COOKIE['cart'])) {
         setcookie("cart", "", time() -  3600 * 24 * 30 * 12, '/');

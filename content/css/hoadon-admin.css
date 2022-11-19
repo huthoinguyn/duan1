@@ -79,15 +79,15 @@
         }
 
         li.total {
-            flex: 0 0 6%;
-            max-width: 6%;
+            flex: 0 0 10%;
+            max-width: 10%;
             font-weight: bold;
             font-size: 18px;
         }
 
         li.status {
-            flex: 0 0 15%;
-            max-width: 15%;
+            flex: 0 0 11%;
+            max-width: 11%;
         }
 
         li.products .receipt-item h4 {

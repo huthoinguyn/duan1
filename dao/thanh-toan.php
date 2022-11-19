@@ -40,3 +40,29 @@ function hoadonchitiet_select($ma_hd)
     $sql = "SELECT * FROM hoa_don_chi_tiet WHERE ma_hd =?";
     return pdo_query_one($sql, $ma_hd);
 }
+
+function hoa_don_chi_tiet_delete($ma_hd)
+{
+    $sql = "DELETE FROM hoa_don_chi_tiet WHERE ma_hd=?";
+    if (is_array($ma_hd)) {
+        foreach ($ma_hd as $ma) {
+            pdo_execute($sql, $ma);
+        }
+    } else {
+        pdo_execute($sql, $ma_hd);
+    }
+}
+
+function hoa_don_delete($ma_hd)
+{
+    $sql = "DELETE FROM hoa_don WHERE ma_hd=?";
+    if (is_array($ma_hd)) {
+        foreach ($ma_hd as $ma) {
+            pdo_execute($sql, $ma);
+            hoa_don_chi_tiet_delete($ma_hd);
+        }
+    } else {
+        pdo_execute($sql, $ma_hd);
+        hoa_don_chi_tiet_delete($ma_hd);
+    }
+}

@@ -9,9 +9,6 @@
     <title>Document</title>
     <style>
         form.update-status-form {
-            /* display: flex; */
-            /* flex-wrap: wrap; */
-            /* justify-content: center; */
             flex: 0 0 100%;
             max-width: 100%;
             padding: unset;
@@ -98,7 +95,7 @@
                             <option value="4" <?php echo ($trang_thai == 4) ? "selected" : "" ?>>Cancel</option>
                         </select>
                     </li>
-                    <li class="action"><a href="index.php?btn_delete&ma_loai=<?= $ma_bl ?>">Xoa</a></li>
+                    <li class="action"><a href="">Xoa</a></li>
                 </ul>
             </form>
         <?php } ?>
@@ -118,6 +115,22 @@
                         if (xhr.status == 200) {
                             let data = xhr.response;
                             alert(data)
+                        }
+                    }
+                };
+                let formData = new FormData(up); //create new formData
+                xhr.send(formData); //send formData to PHP
+            }
+            up.querySelector('.action a').onclick = (e) => {
+                e.preventDefault();
+                const xhr = new XMLHttpRequest(); // create new XML Object
+                xhr.open("POST", "./delete.php?btn_delete", true);
+                xhr.onload = () => {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status == 200) {
+                            let data = xhr.response;
+                            // alert(data)
+                            up.remove();
                         }
                     }
                 };
