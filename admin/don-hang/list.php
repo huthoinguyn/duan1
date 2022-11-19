@@ -5,124 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/hoadon-admin.css">
     <title>Document</title>
     <style>
-        .row {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        ul.prod_item {
-            padding: 12px 24px;
-            width: 100%;
-            display: flex;
-            list-style: none;
-            justify-content: flex-start;
-        }
-
-        ul.prod_item:nth-child(2n +1) {
-            background-color: #eee;
-        }
-
-        ul.prod_item li {
-            text-align: center;
-            width: calc(100% /3);
-            overflow: hidden;
-        }
-
-        .prod-list {
-            height: 90vh;
-            overflow-y: auto;
-        }
-
-        .title {
-            height: 7vh;
-        }
-
-        li.id {
-            flex: 0 0 5%;
-            max-width: 5%;
-        }
-
-        li.user-info {
-            flex: 0 0 35%;
-            max-width: 35%;
-        }
-
-        li.user-info ul {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        li.user-info ul li {
+        form.update-status-form {
+            /* display: flex; */
+            /* flex-wrap: wrap; */
+            /* justify-content: center; */
             flex: 0 0 100%;
             max-width: 100%;
-            width: unset;
-        }
-
-        li.products {
-            flex: 0 0 35%;
-            max-width: 35%;
-            padding-right: 24px;
-        }
-
-        li.products ul li {
-            width: 100%;
-        }
-
-        li.total,
-        li.action {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        li.action {
-            flex: 0 0 4%;
-            max-width: 4%;
-        }
-
-        li.total {
-            flex: 0 0 6%;
-            max-width: 6%;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        li.status {
-            flex: 0 0 15%;
-            max-width: 15%;
-        }
-
-        li.products .receipt-item h4 {
-            flex: 0 0 100%;
-            max-width: 100%;
-            text-align: left;
-        }
-
-        li.products .receipt-item .qty {
-            flex: 0 0 60%;
-            max-width: 60%;
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-        }
-
-        li.products .receipt-item .qty span {
-            color: red;
-            font-weight: bold;
-        }
-
-        li.products .receipt-item .subtotal {
-            font-style: italic;
-        }
-        li.products .receipt-item .total {
-            text-align: right;
-            border-bottom: 1px solid #ccc;
+            padding: unset;
+            margin: unset;
         }
     </style>
 </head>
@@ -145,60 +38,94 @@
         foreach ($items as $item) {
             extract($item)
         ?>
-            <ul class="prod_item">
-                <li class="id"><?= $ma_hd ?></li>
-                <li class="user-info">
-                    <ul>
-                        <li><?= $ho_ten ?></li>
-                        <li><?= $so_dien_thoai ?></li>
-                        <li><?= $dia_chi ?></li>
-                    </ul>
+            <form action="" class="update-status-form">
+                <input type="hidden" name="ma_kh" value="<?= $ma_kh ?>">
+                <input type="hidden" name="ma_hd" value="<?= $ma_hd ?>">
+                <input type="hidden" name="ho_ten" value="<?= $ho_ten ?>">
+                <input type="hidden" name="dia_chi" value="<?= $dia_chi ?>">
+                <input type="hidden" name="so_dien_thoai" value="<?= $so_dien_thoai ?>">
+                <input type="hidden" name="total" value="<?= $total ?>">
+                <input type="hidden" name="ghi_chu" value="<?= $ghi_chu ?>">
+                <input type="hidden" name="ngay_tao" value="<?= $ngay_tao ?>">
+                <ul class="prod_item">
+                    <li class="id"><?= $ma_hd ?></li>
+                    <li class="user-info">
+                        <ul>
+                            <li><?= $ho_ten ?></li>
+                            <li><?= $so_dien_thoai ?></li>
+                            <li><?= $dia_chi ?></li>
+                        </ul>
 
-                </li>
-                <li class="products">
-                    <ul>
-                        <?php
-                        $listSP = runSQL("SELECT hoa_don_chi_tiet.don_gia, hoa_don_chi_tiet.so_luong, hoa_don_chi_tiet.ma_hh, hang_hoa.ten_hh FROM hoa_don_chi_tiet JOIN hang_hoa on hoa_don_chi_tiet.ma_hh = hang_hoa.ma_hh WHERE ma_hd=" . $ma_hd);
-                        foreach ($listSP as $x) : ?>
-                            <li>
-                                <div class="receipt-item">
-                                    <div class="info">
-                                        <h4><a style="text-decoration: none;" href="../../site/trang-chinh/index.php?chi-tiet&ma_hh=<?= $x["ma_hh"] ?>" target="_blank" rel="noopener noreferrer"><?= $x['ten_hh'] ?></a>
-                                        </h4>
-                                        <div class="qty">
-                                            <span>
-                                                x<?= $x['so_luong'] ?>
-                                            </span>
-                                            <p class="subtotal">
-                                                $<?= $x['don_gia'] ?>
+                    </li>
+                    <li class="products">
+                        <ul>
+                            <?php
+                            $listSP = runSQL("SELECT hoa_don_chi_tiet.don_gia, hoa_don_chi_tiet.so_luong, hoa_don_chi_tiet.ma_hh,hoa_don_chi_tiet.size, hang_hoa.ten_hh FROM hoa_don_chi_tiet JOIN hang_hoa on hoa_don_chi_tiet.ma_hh = hang_hoa.ma_hh WHERE ma_hd=" . $ma_hd);
+                            foreach ($listSP as $x) : ?>
+                                <li>
+                                    <div class="receipt-item">
+                                        <div class="info">
+                                            <h4><a style="text-decoration: none;" href="../../site/trang-chinh/index.php?chi-tiet&ma_hh=<?= $x["ma_hh"] ?>" target="_blank" rel="noopener noreferrer"><?= $x['ten_hh'] ?></a>
+                                                <span style="font-weight: lighter; color: #555;">/</span> <span class="size"> <?php echo ($x['size']) ? $x['size'] : '' ?></span>
+                                            </h4>
+                                            <div class="qty">
+                                                <span>
+                                                    x<?= $x['so_luong'] ?>
+                                                </span>
+                                                <p class="subtotal">
+                                                    $<?= $x['don_gia'] ?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="total">
+                                            <p>
+                                                $<?= $x['don_gia'] * $x['so_luong'] ?>
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="total">
-                                        <p>
-                                            $<?= $x['don_gia'] * $x['so_luong'] ?>
-                                        </p>
-                                    </div>
-                                </div>
 
-                            </li>
-                        <?php endforeach ?>
-                    </ul>
-                </li>
-                <li class="total">$<?= $total ?></li>
-                <li class="status">
-                    <select name="status" id="">
-                        <option value="0">Chưa Xác Nhận</option>
-                        <option value="1">Đang xử lý</option>
-                        <option value="2">Delivery</option>
-                        <option value="3">Finished</option>
-                        <option value="4">Cancel</option>
-                    </select>
-                </li>
-                <li class="action"><a href="index.php?btn_delete&ma_loai=<?= $ma_bl ?>">Xoa</a></li>
-            </ul>
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </li>
+                    <li class="total">$<?= $total ?></li>
+                    <li class="status">
+                        <select name="trang_thai" id="">
+                            <option value="0" <?php echo ($trang_thai == 0) ? "selected" : "" ?>>Chưa Xác Nhận</option>
+                            <option value="1" <?php echo ($trang_thai == 1) ? "selected" : "" ?>>Đang xử lý</option>
+                            <option value="2" <?php echo ($trang_thai == 2) ? "selected" : "" ?>>Delivery</option>
+                            <option value="3" <?php echo ($trang_thai == 3) ? "selected" : "" ?>>Finished</option>
+                            <option value="4" <?php echo ($trang_thai == 4) ? "selected" : "" ?>>Cancel</option>
+                        </select>
+                    </li>
+                    <li class="action"><a href="index.php?btn_delete&ma_loai=<?= $ma_bl ?>">Xoa</a></li>
+                </ul>
+            </form>
         <?php } ?>
     </div>
+    <script>
+        const updateStatusForm = document.querySelectorAll('.update-status-form')
+
+        updateStatusForm.forEach(up => {
+            up.onsubmit = (e) => {
+                e.preventDefault();
+            }
+            up.querySelector('select').onchange = () => {
+                const xhr = new XMLHttpRequest(); // create new XML Object
+                xhr.open("POST", "./update.php?update_status", true);
+                xhr.onload = () => {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status == 200) {
+                            let data = xhr.response;
+                            alert(data)
+                        }
+                    }
+                };
+                let formData = new FormData(up); //create new formData
+                xhr.send(formData); //send formData to PHP
+            }
+        })
+    </script>
 </body>
 
 </html>

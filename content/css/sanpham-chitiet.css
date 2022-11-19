@@ -222,3 +222,55 @@
 .comment-list li .comment-info b {
   margin-right: 12px;
 }
+
+.size-list {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+}
+
+.size-item {
+  padding: 12px 24px;
+  font-size: 1.6rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.size-item.active {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.product-dropdown {
+  height: 48px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+  transition: all 300ms ease;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.product-dropdown.active {
+  height: fit-content;
+  transition: all 300ms ease;
+}
+
+.product-dropdown .heading {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex: 0 0 100%;
+  margin-bottom: 12px;
+}
+
+.product-dropdown h3 {
+  display: inline-block;
+}
+
+.product-dropdown .drop-icon {
+  display: inline-block;
+}

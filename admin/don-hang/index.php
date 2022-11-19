@@ -9,3 +9,4 @@ extract($_REQUEST);
 
 $VIEW_NAME = "don-hang/list.php";
 require '../layout.php';
+

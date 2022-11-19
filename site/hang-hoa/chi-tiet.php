@@ -29,57 +29,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <style>
-        .size-list {
-            display: flex;
-            list-style: none;
-            gap: 6px;
-        }
-
-        .size-item {
-            padding: 12px 24px;
-            font-size: 1.6rem;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-
-        .size-item.active {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .product-dropdown {
-            height: 48px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            flex-direction: column;
-            border-bottom: 1px solid #ccc;
-            transition: all 300ms ease;
-            cursor: pointer;
-            overflow: hidden;
-            padding: 12px;
-        }
-
-        .product-dropdown.active {
-            height: fit-content;
-            transition: all 300ms ease;
-        }
-
-        .product-dropdown .heading {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            flex: 0 0 100%;
-            margin-bottom: 12px;
-        }
-
-        .product-dropdown h3 {
-            display: inline-block;
-        }
-
-        .product-dropdown .drop-icon {
-            display: inline-block;
-        }
+        
     </style>
 </head>
 

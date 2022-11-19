@@ -108,11 +108,11 @@
 
                     <div class="form-group">
                         <label for="username">Name</label>
-                        <input type="text" name="ho_ten" id="" class="form-control" value="<?php echo $ten_kh ?>">
+                        <input type="text" name="ho_ten" id="" class="form-control" value="<?php echo $ten_kh ?>" readonly>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="Email" name="email" id="" class="form-control" value="<?php echo $email ?>" required>
+                        <input type="Email" name="email" id="" class="form-control" value="<?php echo $email ?>" required readonly>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
@@ -124,7 +124,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Note</label>
-                        <textarea name="ghi_chu" id="" rows="9" class="form-control address-form" required></textarea>
+                        <textarea name="ghi_chu" id="" rows="9" class="form-control address-form"></textarea>
                     </div>
                     <input type="hidden" name="total" id="" value="<?= $total ?>">
 

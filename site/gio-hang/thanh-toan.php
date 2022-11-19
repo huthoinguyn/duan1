@@ -25,10 +25,11 @@ if (exist_param('buy')) {
             if ($insert_hoa_don) {
                 $ma_hd = runSQL("SELECT MAX(ma_hd) FROM hoa_don")[0]["MAX(ma_hd)"];
                 foreach ($cart_data as $key => $value) {
+                    $size = $value['size'];
                     $ma_hh = $value['ma_hh'];
                     $so_luong = $value['quantity'];
                     $don_gia = $value['don_gia'];
-                    $insert_hoa_don_chi_tiet = hoa_don_chi_tiet_insert($don_gia, $so_luong, $ma_hd, $ma_hh);
+                    $insert_hoa_don_chi_tiet = hoa_don_chi_tiet_insert($don_gia,$size, $so_luong, $ma_hd, $ma_hh);
                     if ($insert_hoa_don_chi_tiet) {
                         setcookie("cart", "", time() -  3600 * 24 * 30 * 12, '/');
                         if (isset($_COOKIE['cart'])) {
