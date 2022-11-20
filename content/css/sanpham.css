@@ -2,11 +2,12 @@
   max-width: 100%;
   flex: 0 0 100%;
   display: flex;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 .prod-item {
-  max-width: calc(100% / 3);
-  flex: 0 0 calc(100% / 3);
-  padding: 12px;
+  width: calc(100% / 4 - 12px);
+  flex: 0 0 calc(100% / 4 - 12px);
 }
 
 .prod-image {

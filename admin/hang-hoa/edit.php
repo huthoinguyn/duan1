@@ -63,7 +63,7 @@
                     require_once "../../dao/loai.php";
                     $items = loai_select_all();
                     foreach ($items as $item) { ?>
-                        <option value="<?= $item['ma_loai'] ?>"><?= $item['ten_loai'] ?></option>
+                        <option <?php echo ($item['ma_loai'] == $ma_loai) ? "selected" : "" ?> value="<?= $item['ma_loai'] ?>"><?= $item['ten_loai'] ?></option>
                     <?php } ?>
                 </select>
             </div>

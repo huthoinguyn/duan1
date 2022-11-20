@@ -112,8 +112,6 @@ nav ul li a {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
   position: relative;
 }
 

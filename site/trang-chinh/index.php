@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../content/css/sanpham.css">
     <link rel="stylesheet" href="../../content/css/testim.css">
     <link rel="stylesheet" href="../../content/css/style.css">
+    <link rel="stylesheet" href="../../content/css/carousel.css">
 
 </head>
 
@@ -27,10 +28,6 @@
         $VIEW_NAME = "trang-chinh/coffee.php";
     } else if (exist_param("lien-he")) {
         $VIEW_NAME = "trang-chinh/lien-he.php";
-    } else if (exist_param("gop-y")) {
-        $VIEW_NAME = "trang-chinh/gop-y.php";
-    } else if (exist_param("hoi-dap")) {
-        $VIEW_NAME = "trang-chinh/hoi-dap.php";
     } else if (exist_param("chi-tiet")) {
         $VIEW_NAME = "../hang-hoa/chi-tiet.php";
     } else if (exist_param("gio-hang")) {

@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class="content-wrap">
-            <div class="row">
+            <div class="row prod-list">
                 <?php require '../hang-hoa/liet-ke.php' ?>
             </div>
         </div>
