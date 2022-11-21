@@ -3,7 +3,7 @@
 // Mở kết nối 
 function pdo_get_connection()
 {
-    $dburl = "mysql:host=localhost;dbname=t-coffee;charset=utf8";
+    $dburl = "mysql:host=localhost;dbname=duan1;charset=utf8";
     $username = 'root';
     $password = '';
     $conn = new PDO($dburl, $username, $password);
