@@ -63,6 +63,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                     <input type="hidden" name="ma_hh" value="<?= $ma_hh ?>">
                     <input type="hidden" name="ten_hh" value="<?= $ten_hh ?>">
                     <input type="hidden" name="don_gia" value="<?= $don_gia ?>">
+                    <input type="hidden" name="giam_gia" value="<?= $giam_gia ?>">
                     <input type="hidden" name="size" class="prod-size" value="M">
                     <input type="hidden" name="hinh" value="<?= $hinh ?>">
                     <div class="button-quantity">

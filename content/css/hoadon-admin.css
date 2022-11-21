@@ -11,9 +11,11 @@
             display: flex;
             list-style: none;
             justify-content: flex-start;
+            background-color: #fff;
+            border: 1px solid #ccc;
         }
 
-        ul.prod_item:nth-child(2n +1) {
+        ul.prod_item:nth-child(2n + 1) {
             background-color: #eee;
         }
 

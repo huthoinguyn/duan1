@@ -14,10 +14,39 @@
   width: 100%;
   height: 302.66px;
   overflow: hidden;
+  position: relative;
 }
 
 .prod-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.prod-price,
+.listed-price {
+  font-size: 1.8rem;
+}
+.prod-price i,
+.listed-price i {
+  font-weight: bold;
+  color: #ff3737;
+}
+.prod-price del,
+.listed-price del {
+  font-size: 1.4rem;
+  margin-right: 6px;
+  font-weight: 400;
+  color: #000;
+}
+.prod-sale {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  background-color: #cb0000a4;
+}
+.prod-sale span {
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 16px 24px;
 }
