@@ -13,68 +13,38 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="a1">
-            <div class="a1-image">
-                <img src="https://xpressrow.com/html/cafena/cafena/assets/images/about/about-img-2-1.png" width="100%">
+    <div class="container" style="border-top: 1px solid #CCCCCC">
+        <h3 style="width:100%; text-align:center;font-size:3rem;margin-top: 2rem">Về Chúng Tôi</h3>
+        <p style="text-align:center; font-size: 4rem; color:#CCC; margin-top: 4rem;">TDK2nd - 2hand fashion brand</p>
+        <p style="text-align:center; margin-top: 4rem; padding-bottom: 4rem;font-size: 1.7rem">Chúng tôi là thương hiệu thời trang 2hand với định hướng cung cấp <br> các sản phẩm có chất lượng cao, sàng điệu và giá thành hợp lí.</p>
+        <img style="margin: 0 auto; width: 100%;" src="https://levents.asia/wp-content/uploads/elementor/thumbs/homepage-ngang-2-1-scaled-prlzqw34bwy9qc00bddbx1ty6d1sessbratekrh6hc.jpg">
+        <div class=content style="width: 100%; height: 500px;display:flex; margin-top: 2rem;">
+            <div class="box1" style="width: 65%; justify-content: center;display: flex;align-items: center">
+                <a style="font-size:3rem; font-weight: 500;">Chúng tôi là ai?</a>
             </div>
-            <div class="a1-paragraph">
-                <p class="a1-p1">About T-Coffee</p>
-                <p class="a1-p2">ONE OF THE BEST COFFEE HOUSE IN YOUR HOME TOWN</p>
-                <p class="a1-p3">Most youngsters don’t exactly have a study, at least in Vietnam. Going through tonnes of homework in your bedroom or living room is less than ideal as there are so many distractions. In cafes, they can concentrate on their studies and get things done.</p>
-            </div>
-        </div>
-        <div class="b1">
-            <div class="b1-top">
-                <p class="b1-p1">WHY CHOOSE US</p>
-                <p class="b1-p2">WE ARE PROVIDE BEST SERVICE IN YOUR CITY</p>
-            </div>
-            <div class="b1-bottom">
-                <div class="b1-box">
-                    <div class="box-image">
-                        <img src="https://xpressrow.com/html/cafena/cafena/assets/images/icons/wcu-1.png" alt="" width="100%">
-                    </div>
-                    <div class="box-p">
-                        <p class="box-title">
-                            Professional Chef
-                        </p>
-                        <p>Accumsa nfringilla. Morbi vestibulum id tellus mmodo mattis. Aliquam erat volutpat.</p>
-                    </div>
-                </div>
-                <div class="b1-box">
-                    <div class="box-image">
-                        <img src="https://xpressrow.com/html/cafena/cafena/assets/images/icons/wcu-2.png" alt="" width="100%">
-                    </div>
-                    <div class="box-p">
-                        <p class="box-title">
-                            Professional Chef
-                        </p>
-                        <p>Accumsa nfringilla. Morbi vestibulum id tellus mmodo mattis. Aliquam erat volutpat.</p>
-                    </div>
-                </div>
-                <div class="b1-box">
-                    <div class="box-image">
-                        <img src="https://xpressrow.com/html/cafena/cafena/assets/images/icons/wcu-1.png" alt="" width="100%">
-                    </div>
-                    <div class="box-p">
-                        <p class="box-title">
-                            Professional Chef
-                        </p>
-                        <p>Accumsa nfringilla. Morbi vestibulum id tellus mmodo mattis. Aliquam erat volutpat.</p>
-                    </div>
-                </div>
+            <div class="box2" style="width:35%; justify-content: center;display: flex;align-items: center">
+                <p style="font-size:2rem; line-height: 3rem;">TDK2nd là lựa chọn hàng đầu dành cho các tín đồ thời trang 2hand sành điệu. Sứ mệnh của TDK2nd là trao quyền cho thế hệ trẻ toàn thế giới tự do thể hiện phong cách thông qua thời trang, thương hiệu vượt qua ranh giới của thời trang streetwear bằng cách không ngừng sáng tạo các trang phục với các bộ sưu tập độc đáo.</p>
             </div>
         </div>
-        <div class="c1">
-            <div class="c1-left">
-                <img src="https://xpressrow.com/html/cafena/cafena/assets/images/bg/best-coffe-1.jpeg" alt="" width="100%">
+        <img style="margin: 0 auto; width: 100%;" src="https://levents.asia/wp-content/uploads/elementor/thumbs/homepage-ngang-2-1-scaled-prlzqw34bwy9qc00bddbx1ty6d1sessbratekrh6hc.jpg">
+        <div class=content style="width: 100%; height: 500px;display:flex; margin-top: 2rem;">
+            <div class="box1" style="width: 65%; justify-content: center;display: flex;align-items: center">
+                <a style="font-size:3rem; font-weight: 500;">Chất lượng trải nghiệm vượt trội</a>
             </div>
-            <div class="c1-right">
-                <div class="c1-border">
-                    <p class="c1-p1">TRY THE BEST COFFEE IN THE HOUSING CITY</p>
-                    <p class="c1-p2">Donec et nibh maximus, congue est eu, mattis nunc. Praesent ut quam quis quam venenatis fringilla. Morbi vestibulum id tellus mmodo mattis. Aliquam erat volutpat. Aenean <br> <br>
-                        Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibhtincidunt.</p>
-                </div>
+            <div class="box2" style="width:35%; justify-content: center;display: flex;align-items: center">
+                <p style="font-size:2rem; line-height: 3rem;">Chúng tôi không ngừng nỗ lực, tập trung vào chất lượng sản phẩm và trải nghiệm mua sắm vượt trội nhất chưa từng có trước đây, các cửa hàng vật lý của chúng tôi, tối ưu hóa trải nghiệm, giúp người dùng mua sắm một sản phẩm cao cấp thật sự.
+Mua sắm online dễ dàng, đa nền tảng trải nghiệm tuyệt vời. Giá thành hợp lý.
+Điều này đã giải quyết bài toán để bạn vừa cân đối khả năng tài chính, vừa đáp ứng hoàn hảo cho nhu cầu thời trang của bạn và xu hướng nhanh của thời đại.</p>
+            </div>
+        </div>
+        <img style="margin: 0 auto; width: 100%;" src="https://levents.asia/wp-content/uploads/elementor/thumbs/homepage-ngang-2-1-scaled-prlzqw34bwy9qc00bddbx1ty6d1sessbratekrh6hc.jpg">
+        <div class=content style="width: 100%; height: 500px;display:flex; margin-top: 2rem;">
+            <div class="box1" style="width: 65%; justify-content: center;display: flex;align-items: center">
+                <a style="font-size:3rem; font-weight: 500;">Biểu tượng thời trang thời đại mới</a>
+            </div>
+            <div class="box2" style="width:35%; justify-content: center;display: flex;align-items: center">
+                <p style="font-size:2rem;line-height: 3rem; ">
+Quần áo có thể sẽ lỗi thời nhưng phong cách thời trang thì không. Tầm nhìn độc đáo của Levents® chính là để mỗi cá nhân tự do thể hiện phong cách khi khoác lên mình những sản phẩm được tạo nên từ sự đam mê, mang giá trị của thế hệ mới, đầy trẻ trung, năng động và luôn không ngừng khẳng định bản thân, hướng đến tương lai.</p>
             </div>
         </div>
     </div>
