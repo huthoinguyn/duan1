@@ -19,7 +19,7 @@ if (exist_param("btn_insert")) {
     try {
         $ten_hh = $_POST['ten_hh'];
         $don_gia = $_POST['don_gia'];
-        $giam_gia = $_POST['giam_gia'];
+        $giam_gia = isset($_POST['giam_gia']) ? $_POST['giam_gia'] : null;
         $up_hinh = save_file("hinh", "$IMAGE_DIR/products/");
         $hinh = strlen(".$up_hinh.") > 0 ? $up_hinh : 'product.png';
         $mo_ta = $_POST['mo_ta'];
@@ -39,7 +39,7 @@ if (exist_param("btn_insert")) {
         $ma_hh = $_POST['ma_hh'];
         $ten_hh = $_POST['ten_hh'];
         $don_gia = $_POST['don_gia'];
-        $giam_gia = $_POST['giam_gia'];
+        $giam_gia = isset($_POST['giam_gia']) ? $_POST['giam_gia'] : null;
         $up_hinh = save_file("up_hinh", "$IMAGE_DIR/products/");
         $hinh = strlen(".$up_hinh.") > 0 ? $up_hinh : $hinh;
         $mo_ta = $_POST['mo_ta'];

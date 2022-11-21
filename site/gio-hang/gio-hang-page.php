@@ -43,7 +43,8 @@
                     // var_dump($cart_data);
                     $total = 0;
                     foreach ($cart_data as $sp) :
-                        $subtotal = $sp['don_gia'] * $sp['quantity'];
+                        $giam_gia = $sp['giam_gia'] ? $sp['giam_gia'] : 0;
+                        $subtotal = ($sp['don_gia'] - (($sp['don_gia'] * $giam_gia) / 100)) * $sp['quantity'];
                         $total += $subtotal;
                     ?>
                         <form class="cart-prod-item" action="" method="POST">
@@ -55,7 +56,19 @@
                                 </div>
                                 <div class="prod-info">
                                     <p class="itemNumber">#QUE-007544-002</p>
-                                    <h3><?php echo $sp['ten_hh']; ?></h3>
+                                    <h3>
+                                        <?php echo $sp['ten_hh']; ?>
+                                        <?php
+                                        if ($giam_gia > 0) {
+                                        ?>
+                                            <div class="prod-sale">
+                                                <span>
+                                                    -<?= $giam_gia ?>%
+                                                </span>
+                                            </div>
+                                        <?php
+                                        } ?>
+                                    </h3>
                                     <div class="size">SIZE: <span><?php echo (($sp['size']) ? $sp['size'] : ''); ?></span></div>
                                     <p>
                                         <input class="quantityInp" type="number" name="quantity" class="qty product-qty" value='<?php echo $sp['quantity'] ?>' /> x $<span class="prod-price">
@@ -126,10 +139,12 @@
                                 let cartTotal = 0;
                                 let result = Object.entries(JSON.parse(data))
                                 result.map(rs => {
-                                    cartTotal += rs[1].don_gia * rs[1].quantity;
+                                    cartTotal += (rs[1].don_gia - ((rs[1].don_gia * rs[1].giam_gia) / 100)) * rs[1].quantity;
                                 })
                                 let prodPrice = Number(prod.querySelector('.prod-price').textContent)
-                                prod.querySelector('.prod-subtotal').textContent = "$" + (prodPrice * e.target.value)
+
+                                let prodSale = prod.querySelector('.prod-sale span')?.innerText?.slice(1).slice(0, -1) ?? 0;
+                                prod.querySelector('.prod-subtotal').textContent = "$" + ((prodPrice - (prodPrice * prodSale) / 100) * e.target.value)
                                 document.querySelector('.total .cart-total').textContent = "$" + cartTotal
                                 document.querySelector('.subtotal .cart-subtotal').textContent = "$" + cartTotal
                             }
@@ -151,7 +166,7 @@
                             let cartTotal = 0;
                             let result = Object.entries(JSON.parse(data))
                             result.map(rs => {
-                                cartTotal += rs[1].don_gia * rs[1].quantity;
+                                cartTotal += (rs[1].don_gia - ((rs[1].don_gia * rs[1].giam_gia) / 100)) * rs[1].quantity;
                             })
                             document.querySelector('.total .cart-total').textContent = "$" + cartTotal
                             document.querySelector('.subtotal .cart-subtotal').textContent = "$" + cartTotal

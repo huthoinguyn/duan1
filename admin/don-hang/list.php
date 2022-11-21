@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/hoadon-admin.css">
     <title>Document</title>
     <style>
+        .heading {
+            height: 36px;
+        }
+
         form.update-status-form {
             flex: 0 0 100%;
             max-width: 100%;
             padding: unset;
             margin: unset;
+        }
+
+        .prod_item:nth-child(2n) {
+            background-color: #fff;
         }
     </style>
 </head>
@@ -23,12 +31,12 @@
     </div>
     <div class="row prod-list">
         <ul class="prod_item">
-            <li class="id">ID</li>
-            <li class="user-info">USER</li>
-            <li class="products">Products</li>
-            <li class="total">Total</li>
-            <li class="status"></li>
-            <li class="action"></li>
+            <li class="heading">ID</li>
+            <li class="heading">USER</li>
+            <li class="heading">Products</li>
+            <li class="heading">Total</li>
+            <li class="heading"></li>
+            <li class="heading"></li>
         </ul>
         <?php
         $items = hoa_don_select_all();
@@ -57,7 +65,7 @@
                     <li class="products">
                         <ul>
                             <?php
-                            $listSP = runSQL("SELECT hoa_don_chi_tiet.don_gia, hoa_don_chi_tiet.so_luong, hoa_don_chi_tiet.ma_hh,hoa_don_chi_tiet.size, hang_hoa.ten_hh FROM hoa_don_chi_tiet JOIN hang_hoa on hoa_don_chi_tiet.ma_hh = hang_hoa.ma_hh WHERE ma_hd=" . $ma_hd);
+                            $listSP = runSQL("SELECT hoa_don_chi_tiet.don_gia, hoa_don_chi_tiet.so_luong, hoa_don_chi_tiet.ma_hh,hoa_don_chi_tiet.size, hang_hoa.ten_hh, hang_hoa.giam_gia FROM hoa_don_chi_tiet JOIN hang_hoa on hoa_don_chi_tiet.ma_hh = hang_hoa.ma_hh WHERE ma_hd=" . $ma_hd);
                             foreach ($listSP as $x) : ?>
                                 <li>
                                     <div class="receipt-item">
@@ -76,7 +84,7 @@
                                         </div>
                                         <div class="total">
                                             <p>
-                                                $<?= $x['don_gia'] * $x['so_luong'] ?>
+                                                $<?= ($x['don_gia'] - (($x['don_gia'] * $x['giam_gia']) / 100)) * $x['so_luong'] ?>
                                             </p>
                                         </div>
                                     </div>

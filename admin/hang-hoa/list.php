@@ -94,7 +94,7 @@
         foreach ($items as $item) { ?>
             <ul class="prod_item">
                 <li><?= $item['ten_hh'] ?></li>
-                <li class="prod-price"><?= $item['don_gia'] ?> VNĐ</li>
+                <li class="prod-price">$<?= $item['don_gia'] ?></li>
                 <li class="prod-sale"><?= $item['giam_gia'] ?></li>
                 <li class="prod-image">
                     <img src="<?= "$IMAGE_DIR/products/" . $item['hinh'] ?>" alt="">
