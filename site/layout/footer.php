@@ -52,7 +52,7 @@
             </div>
            
         </div>
-        <p>© 2021 - 2022 OStore S.p.A. - All rights reserved. SIAE LICENCE # 2294/I/1936 and 5647/I/1936</p>
+        <p>© 2016 - 2020 OStore S.p.A. - All rights reserved. SIAE LICENCE # 2294/I/1936 and 5647/I/1936</p>
     
       
 </footer>
