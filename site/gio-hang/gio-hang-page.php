@@ -46,7 +46,7 @@
                         $subtotal = $sp['don_gia'] * $sp['quantity'];
                         $total += $subtotal;
                     ?>
-                        <form class="prod-item" action="" method="POST">
+                        <form class="cart-prod-item" action="" method="POST">
                             <input type="hidden" name="ma_hh" value="<?php echo $sp['ma_hh']; ?>">
                             <input type="hidden" name="size" value="<?php echo $sp['size'] ?>">
                             <div class="row cart-item">
@@ -106,7 +106,7 @@
         </div>
     </div>
     <script>
-        const prodForms = document.querySelectorAll('.prod-item')
+        const prodForms = document.querySelectorAll('.cart-prod-item')
         prodForms?.forEach(prod => {
             prod.onsubmit = (e) => {
                 e.preventDefault();

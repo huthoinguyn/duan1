@@ -5,6 +5,7 @@
 .cart-item {
   margin-left: unset;
   margin-right: unset;
+  flex-wrap: nowrap;
 }
 
 .prod-list {
@@ -12,7 +13,7 @@
   max-width: 50%;
 }
 
-.prod-item {
+.cart-prod-item {
   margin-top: 12px;
   flex: 0 0 100%;
   max-width: 100%;
@@ -75,7 +76,7 @@
 }
 
 .prod-action {
-  flex: 1;
+  flex: 0 0 calc(100% - (55% + 240px));
   display: flex;
   justify-content: center;
   align-items: center;
