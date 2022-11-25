@@ -1,7 +1,7 @@
 <nav>
     <ul>
         <li><a href="?trang-chu">Home</a></li>
-        <li><a href="?coffee">Products</a></li>
+        <li><a href="?san-pham">Products</a></li>
         <li><a href="?gioi-thieu">About</a></li>
         <li><a href="?lien-he">Contact</a></li>
         <div class="user-icon">

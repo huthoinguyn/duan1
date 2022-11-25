@@ -22,10 +22,10 @@
     require '../../pdo.php';
     if (exist_param("gioi-thieu")) {
         $VIEW_NAME = "trang-chinh/gioi-thieu.php";
-    } else if (exist_param("coffee")) {
+    } else if (exist_param("san-pham")) {
         require_once '../../dao/hang-hoa.php';
         $items_all = hang_hoa_select_all();
-        $VIEW_NAME = "trang-chinh/coffee.php";
+        $VIEW_NAME = "trang-chinh/san-pham.php";
     } else if (exist_param("lien-he")) {
         $VIEW_NAME = "trang-chinh/lien-he.php";
     } else if (exist_param("chi-tiet")) {
