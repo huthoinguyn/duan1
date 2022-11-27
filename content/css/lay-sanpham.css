@@ -1,0 +1,57 @@
+.title{ 
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+    text-transform: uppercase;
+    padding: 8px 0;
+    margin-bottom: 0;
+    position: relative;
+    cursor: pointer;
+    padding-left: 55px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    
+}
+.row ul li{
+    width: 170px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000;
+    padding: 9px 0 9px 33px;
+    display: block;
+    box-shadow: 0 1px  #D6D6D6;
+    margin-left: 20px;
+    
+}
+.row ul li a{
+   padding-right: 37px;
+    text-align: center;
+}
+
+h2{
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 30px;
+    padding-top: 10px;
+    font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-style: normal;
+}
+span {
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-style: normal;
+}
+.listed-price i{
+    font-style: normal;
+    font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: #000;
+   
+}
+.listed-price del{
+    color:  #939393;
+}

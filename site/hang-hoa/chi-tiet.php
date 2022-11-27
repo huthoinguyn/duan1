@@ -34,11 +34,17 @@ hang_hoa_tang_so_luot_xem($ma_hh);
 </head>
 
 <body>
+<hr>
     <div class="container">
-        <div class="product-slide">
-            <p class="product-paragraph">PRODUCT DETAILS</p>
-            <p class="product-child">T-COFFEE</p>
-        </div>
+    <ul class="items-page">
+            <li>
+                <a href="../trang-chinh/index.php">Home page /</a>
+            </li>
+            <li>
+                <a href="#"><?= $ten_hh ?></a>
+            </li>
+       </ul>
+      
         <div class="product">
             <div class="product-image">
                 <div class="">
@@ -48,6 +54,8 @@ hang_hoa_tang_so_luot_xem($ma_hh);
             <div class="product-infor">
                 <p class="product-name"><?= $ten_hh ?></p>
                 <span>Viewer : <?= $so_luot_xem ?></span> <br />
+                <p class="product-price"><?= number_format($don_gia, 0) ?> VND</p>
+                <span >Size :</span>
                 <ul class="size-list">
                     <li class="size-item">XS</li>
                     <li class="size-item">S</li>
@@ -58,7 +66,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                     <li class="size-item">3XL</li>
                 </ul>
                 <!-- <p class="product-describe"></p> -->
-                <p class="product-price"><?= number_format($don_gia, 0) ?> VND</p>
+               
                 <form action="" id="addcart">
                     <input type="hidden" name="ma_hh" value="<?= $ma_hh ?>">
                     <input type="hidden" name="ten_hh" value="<?= $ten_hh ?>">
@@ -101,12 +109,17 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                     </div>16 customer rated
                     <!-- </div> -->
                 </div>
+                
             </div>
+            
         </div>
     </div>
+    <!-- <div class="prod-img">
+                    <img src="../../content/images/products/" alt="">
+                </div> -->
     <div class="prod-cung-loai">
         <div class="row">
-            <h2 class="title">related products</h2>
+            <h2 class="title">Related products</h2>
         </div>
         <div class="row">
             <?php require 'hang-cung-loai.php'; ?>
@@ -114,7 +127,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
     </div>
     <div class="comment">
         <div class="row">
-            <h2 class="title">Comments</h2>
+            <h3 class="title">Comments</h2>
         </div>
         <div class="row">
             <ul class="comment-list">

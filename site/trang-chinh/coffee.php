@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../content/css/lay-sanpham.css">
     <style>
         .coffee-container {
             width: 100%;
@@ -19,9 +20,10 @@
 
         .coffee-container .search input {
             padding: 9px 6px;
-            border-radius: 6px;
+            border-radius: 2px;
             outline: none;
             border: 1px solid #ccc;
+            width: 200px;
         }
 
         .coffee-container .cate-wrap {
@@ -45,6 +47,7 @@
             max-width: 80%;
             flex: 0 0 70%;
         }
+        
     </style>
 </head>
 
@@ -53,7 +56,8 @@
         <div class="cate-wrap">
             <div class="row search">
                 <form action="">
-                    <input type="text" name="keywords" placeholder="Search a coffee...">
+                   <input type="text" name="keywords" placeholder="Search a coffee...">
+                   
                 </form>
             </div>
             <div class="row">
