@@ -47,7 +47,17 @@
             max-width: 80%;
             flex: 0 0 70%;
         }
+<<<<<<< HEAD:site/trang-chinh/coffee.php
         
+=======
+
+        .cate-list li a:hover {
+            color: var(--primary-color);
+        }
+        .cate-list li a.active {
+            color: var(--primary-color);
+        }
+>>>>>>> b3b2b1a3d280d4919a92350b06dfd5ed3f62c6c8:site/trang-chinh/san-pham.php
     </style>
 </head>
 
@@ -66,17 +76,20 @@
                 </h3>
             </div>
             <div class="row">
-                <ul>
-                    <li><a href="index.php?coffee">All</a></li>
+                <ul class="cate-list">
+                    <li><a class="cate-all active" href="index.php?coffee">All</a></li>
                     <?php
                     require '../../dao/loai.php';
                     $loais = loai_select_all();
                     foreach ($loais as $loai) {
                         extract($loai)
                     ?>
-                        <li><a href="index.php?coffee&ma_loai=<?= $ma_loai ?>"><?= $ten_loai ?></a></li>
+                        <li><a data-cate-id="<?= $ma_loai ?>" href="index.php?coffee&ma_loai=<?= $ma_loai ?>"><?= $ten_loai ?></a></li>
                     <?php } ?>
                 </ul>
+                <form action="">
+                    <input type="hidden" name="">
+                </form>
             </div>
         </div>
         <div class="content-wrap">
@@ -88,7 +101,9 @@
     <script>
         const searchForm = document.querySelector('.search form'),
             searchInp = document.querySelector('.search form input'),
-            contentWrap = document.querySelector('.content-wrap .row')
+            contentWrap = document.querySelector('.content-wrap .row'),
+            cateList = document.querySelector('.cate-list'),
+            cateItems = cateList.querySelectorAll('li a')
 
         searchForm.onsubmit = (e) => {
             e.preventDefault()
@@ -107,6 +122,41 @@
             let formData = new FormData(searchForm); //create new formData
             xhr.send(formData); //send formData to PHP
         }
+
+        cateItems.forEach(cate => {
+            cate.onclick = (e) => {
+                e.preventDefault();
+                [...cateItems].map(ct => ct.classList.remove('active'))
+                cate.classList.add('active')
+
+                //
+                if (cate == document.querySelector('.cate-all')) {
+                    const xhr = new XMLHttpRequest(); // create new XML Object
+                    xhr.open("GET", `../hang-hoa/tim-kiem.php`, true);
+                    xhr.onload = () => {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status == 200) {
+                                let data = xhr.response;
+                                contentWrap.innerHTML = data;
+                            }
+                        }
+                    };
+                    xhr.send(); //send formData to PHP
+                } else {
+                    const xhr = new XMLHttpRequest(); // create new XML Object
+                    xhr.open("GET", `../hang-hoa/tim-kiem.php?ma_loai=${cate.dataset.cateId}`, true);
+                    xhr.onload = () => {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status == 200) {
+                                let data = xhr.response;
+                                contentWrap.innerHTML = data;
+                            }
+                        }
+                    };
+                    xhr.send(); //send formData to PHP
+                }
+            }
+        })
     </script>
 </body>
 

@@ -7,7 +7,7 @@ if (exist_param('addcart')) {
     $size = isset($_POST['size']) ? $_POST['size'] : '';
     $sanpham = hang_hoa_select_by_id($ma_hh);
     extract($sanpham);
-    $kh = $_SESSION['user'];
+    $kh = isset($_SESSION['user']) ? $_SESSION['user'] : [];
     if (isset($_COOKIE['cart'])) {
         // nếu đã tồn tại cookie cart thì lấy giá trị của cookie cart 
         // nếu đã tồn tại cookie cart thì lấy giá trị của cookie cart 
@@ -56,7 +56,7 @@ if (exist_param('addcart')) {
     $ma_hh = $_POST['ma_hh'];
     $prodQty = $_POST['quantity'];
     $size = $_POST['size'];
-    $kh = $_SESSION['user'];
+    $kh = isset($_SESSION['user']) ? $_SESSION['user'] : [];
 
     if (isset($_COOKIE['cart'])) {
         $cookie_data = $_COOKIE['cart'];

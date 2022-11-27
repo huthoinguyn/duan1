@@ -16,7 +16,7 @@
   --text-white: #fff;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
@@ -166,8 +166,6 @@ nav ul li a {
   font-size: 16px;
 }
 
-
-
 .favourite {
   min-height: 100vh;
 }
@@ -242,28 +240,26 @@ section .title {
   width: 100%;
   margin: auto;
 }
-footer{
-  background-color: #1B1B1B;
+footer {
+  background-color: #1b1b1b;
 }
-footer .layout-fot{
-display: flex;
-width: 100%;
-margin-top: 20px;
-background-color: #1B1B1B;
+footer .layout-fot {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #1b1b1b;
 }
-.fot-section-1{
+.fot-section-1 {
   width: 20%;
   margin-left: 95px;
-  
 }
 .fot-section-2 {
   width: 20%;
-  
 }
 .fot-section-3 {
   width: 20%;
 }
-.fot-title{
+.fot-title {
   font-weight: 400;
   font-style: normal;
   font-size: 1.2rem;
@@ -282,12 +278,11 @@ footer ul li a {
   color: #e5dfd9;
   font-size: 1.3rem;
   line-height: 30px;
-
 }
-footer ul li a:hover{
+footer ul li a:hover {
   color: white;
 }
-.fot-paragh{
+.fot-paragh {
   margin: 0;
   padding: 0;
   border: 0;
@@ -297,14 +292,14 @@ footer ul li a:hover{
   max-width: 350px;
   color: #999;
 }
-footer button{
+footer button {
   background-color: #000;
   width: 200px;
   color: white;
   margin-top: 20px;
   height: 25px;
 }
-footer h4{
+footer h4 {
   color: #999;
   font-weight: 400;
   font-style: normal;
@@ -315,14 +310,11 @@ footer h4{
   text-transform: uppercase;
   padding-top: 20px;
 }
-footer p{
+footer p {
   padding-left: 290px;
   color: #999;
   padding-top: 30px;
 }
-footer i{
+footer i {
   margin-right: 5px;
 }
-
-
-
