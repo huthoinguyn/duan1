@@ -135,7 +135,7 @@
   text-transform: uppercase;
   color: #ffffff;
   letter-spacing: 2px;
-  background: #c7a17a;
+  background: black;
   padding: 9.5px 34px;
   text-decoration: none;
   display: inline-block;
@@ -273,4 +273,66 @@
 
 .product-dropdown .drop-icon {
   display: inline-block;
+}
+.prod-img{
+  width: 100%;
+  height: 20px;
+  background-color: red;
+}
+.items-page{
+  display: flex;
+  margin-left: 60px;
+}
+.items-page li{
+  list-style: none;
+  margin-left: 5px;
+}
+.items-page li a{
+  font-size: 13px;
+  color: #787878;
+}
+.prod-cung-loai .title{
+  padding-left: 610px;
+  padding-bottom: 40px;
+  font-size: 1.9em;
+  color: #000;
+  font-weight: 500;
+  text-transform: uppercase;
+   
+}
+h2{
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 30px;
+  padding-top: 10px;
+  font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-style: normal;
+}
+.listed-price{
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-style: normal;
+} 
+.listed-price i{
+  font-style: normal;
+  font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #000;
+ 
+}
+.listed-price del{
+  color:  #939393;
+}
+  hr{
+    margin-bottom: 30px;
+  }
+.comment h3{
+  padding-left: 10px;
+  padding-bottom: 20px;
+  font-size: 1.7em;
+  color: #000;
+  font-weight: 500;
+  text-transform: uppercase;
 }
