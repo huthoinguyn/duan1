@@ -28,45 +28,7 @@
                 require '../layout/top10.php';
                 ?>
             </div>
-        </section>
-        <section class="cate">
-            <div class="container">
-                <div class="row">
-                    <h3 class="title">SMALL CAFE IN THE HEART OF CITY!</h3>
-                    <p class="desc">We are proud of our coffee shop with the highest-quality products, most inviting stores, friendliest staff and the best coffee in the world.</p>
-                </div>
-                <div class="row">
-                    <div class="cate-item">
-                        <div class="cate-img">
-                            <img src="https://coffeeluck.themerex.net/wp-content/uploads/2016/08/image-15-370x250.jpg" alt="">
-                            <div class="blur"></div>
-                            <a href="#" class="visit"></a>
-                        </div>
-                        <div class="cate-content">
-                            <h4>Who we are</h4>
-                            <p>history</p>
-                        </div>
-                    </div>
-                    <div class="cate-item">
-                        <div class="cate-img">
-                            <img src="https://coffeeluck.themerex.net/wp-content/uploads/2016/08/image-16-370x250.jpg" alt="">
-                        </div>
-                        <div class="cate-content">
-                            <h4>Our Coffee</h4>
-                            <p>online store</p>
-                        </div>
-                    </div>
-                    <div class="cate-item">
-                        <div class="cate-img">
-                            <img src="https://coffeeluck.themerex.net/wp-content/uploads/2016/08/image-17-370x250.jpg" alt="">
-                        </div>
-                        <div class="cate-content">
-                            <h4>Visit us!</h4>
-                            <p>location</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </section>
         <section class="testim">
             <div class="title">

@@ -45,11 +45,9 @@
 
         .coffee-container .content-wrap {
             max-width: 80%;
-            flex: 0 0 70%;
+            flex: 0 0 80%;
         }
-<<<<<<< HEAD:site/trang-chinh/coffee.php
         
-=======
 
         .cate-list li a:hover {
             color: var(--primary-color);
@@ -57,7 +55,6 @@
         .cate-list li a.active {
             color: var(--primary-color);
         }
->>>>>>> b3b2b1a3d280d4919a92350b06dfd5ed3f62c6c8:site/trang-chinh/san-pham.php
     </style>
 </head>
 
@@ -87,9 +84,6 @@
                         <li><a data-cate-id="<?= $ma_loai ?>" href="index.php?coffee&ma_loai=<?= $ma_loai ?>"><?= $ten_loai ?></a></li>
                     <?php } ?>
                 </ul>
-                <form action="">
-                    <input type="hidden" name="">
-                </form>
             </div>
         </div>
         <div class="content-wrap">

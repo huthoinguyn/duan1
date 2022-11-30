@@ -32,8 +32,9 @@
             overflow: hidden;
         }
 
-        ul.prod_item li.prod-sale,
-        ul.prod_item li.prod-view,
+        ul.prod_item li.kich-hoat,
+        ul.prod_item li.vai-tro,
+        ul.prod_item li.ma_kh,
         ul.prod_item li.prod-action {
             width: 5%;
         }
