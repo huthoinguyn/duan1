@@ -21,9 +21,7 @@
             justify-content: space-between;
         }
 
-        ul.prod_item:nth-child(2n +1) {
-            background-color: #eee;
-        }
+       
 
         ul.prod_item li {
             display: flex;
@@ -31,6 +29,7 @@
             align-items: center;
             overflow: hidden;
             width: calc(70% / 4);
+            border-bottom: 1px solid black;
         }
 
         ul.prod_item li.prod-price {
@@ -44,8 +43,7 @@
         }
 
         ul.prod_item li.prod-image {
-            width: 100px;
-            height: 60px;
+           padding: 52px 0px;
             overflow: hidden;
         }
 
@@ -56,17 +54,32 @@
         }
 
         .prod-list {
-            height: 85vh;
+           
             overflow-y: auto;
         }
 
         .title {
-            height: 7vh;
+           height: 7vh;
+           padding-left: 600px;
         }
 
         .insert {
             height: 8vh;
             padding: 16px;
+        }
+
+        .row-heading li{
+            background-color: black;
+            color:white;
+            padding: 12px;
+        }
+        .prod_item li i{
+            color: black;
+            font-size: 25px;
+        }
+        .insert i{
+            font-size: 30px;
+            color: black;
         }
     </style>
 </head>
@@ -76,15 +89,15 @@
         <h1>List</h1>
     </div>
     <div class="row prod-list">
-        <ul class="prod_item">
-            <li>Ten</li>
-            <li class="prod-price">Don Gia</li>
+        <ul class="prod_item row-heading">
+            <li>Product name</li>
+            <li class="prod-price">Price</li>
             <li class="prod-sale">Sale</li>
-            <li class="prod-image">Hinh</li>
-            <li>Ngay Nhap</li>
-            <li>Mo ta</li>
+            <li class="prod-image">Images</li>
+            <li>Time</li>
+            <li>Describe</li>
             <li class="prod-view">View</li>
-            <li>Loai Hang</li>
+            <li>Category</li>
             <li class="prod-action"></li>
             <li class="prod-action"></li>
         </ul>
@@ -103,13 +116,13 @@
                 <li><?= $item['mo_ta'] ?></li>
                 <li class="prod-view"><?= $item['so_luot_xem'] ?></li>
                 <li><?= loai_select_by_id($item['ma_loai'])['ten_loai'] ?></li>
-                <li class="prod-action"><a href="index.php?btn_edit&ma_hh=<?= $item['ma_hh'] ?>">Sua</a></li>
-                <li class="prod-action"><a href="index.php?btn_delete&ma_hh=<?= $item['ma_hh'] ?>">Xoa</a></li>
+                <li class="prod-action"><a href="index.php?btn_edit&ma_hh=<?= $item['ma_hh'] ?>"><i class="fa-regular fa-pen-to-square"></i></a></li>
+                <li class="prod-action"><a href="index.php?btn_delete&ma_hh=<?= $item['ma_hh'] ?>"><i class="fa-regular fa-trash-can"></i></a></li>
             </ul>
         <?php } ?>
     </div>
     <div class="row insert">
-        <a href="index.php" class="btn">Insert</a>
+        <a href="index.php" class="btn"><i class="fa-solid fa-plus"></i></a>
     </div>
 </body>
 

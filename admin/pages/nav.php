@@ -12,37 +12,37 @@
         <ul class="nav-links">
             <li>
                 <a href="../trang-chinh">
-                    <i class="uil uil-estate"></i>
+                <i class="fa-solid fa-house"></i>
                     <span class="link-name">Dahsboard</span>
                 </a>
             </li>
             <li>
                 <a href="../hang-hoa">
-                    <i class="uil uil-coffee"></i>
+                <i class="fa-solid fa-shirt"></i>
                     <span class="link-name">Product</span>
                 </a>
             </li>
             <li>
                 <a href="../loai-hang/">
-                    <i class="uil uil-list-ul"></i>
+                <i class="fa-solid fa-list-ul"></i>
                     <span class="link-name">Category</span>
                 </a>
             </li>
             <li>
                 <a href="../khach-hang/">
-                    <i class="uil uil-user"></i>
+                <i class="fa-solid fa-user-large"></i>
                     <span class="link-name">Customer</span>
                 </a>
             </li>
             <li>
                 <a href="../binh-luan/">
-                    <i class="uil uil-comments"></i>
+                <i class="fa-solid fa-comment"></i>
                     <span class="link-name">Comments</span>
                 </a>
             </li>
             <li>
                 <a href="../don-hang/">
-                    <i class="uil uil-comments"></i>
+                <i class="fa-solid fa-receipt"></i>
                     <span class="link-name">Receipt</span>
                 </a>
             </li>

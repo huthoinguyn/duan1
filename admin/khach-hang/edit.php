@@ -21,6 +21,15 @@
             justify-content: center;
             gap: 28px;
         }
+        .btn{
+            border-radius: 4px;
+            border: 1px solid red;
+            padding: 12px 24px;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            
+        }
     </style>
 </head>
 
@@ -28,11 +37,11 @@
     <div class="row">
         <form action="index.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="">Ma KH</label>
+                <label for="">Custome code</label>
                 <input type="text" name="ma_kh" value='<?= $ma_kh ?>'>
             </div>
             <div class="form-group">
-                <label for="">MK</label>
+                <label for="">Password</label>
                 <input type="text" name="mat_khau" value='<?= $mat_khau ?>'>
             </div>
             <div class="form-group">
@@ -41,11 +50,11 @@
                 <input name="hinh" value="<?= $hinh ?>">
             </div>
             <div class="form-group">
-                <label for="">Ho Ten</label>
+                <label for="">Name</label>
                 <input type="text" name="ho_ten" value="<?= $ho_ten ?>" />
             </div>
             <div class="form-group">
-                <label for="">Kich Hoat</label>
+                <label for="">Status</label>
                 <select name="kich_hoat" id="">
                     <option value="1" <?php echo ($kich_hoat == 1) ? "selected" : "" ?>>Active</option>
                     <option value="0" <?php echo ($kich_hoat == 0) ? "selected" : "" ?>>Unactive</option>
@@ -56,7 +65,7 @@
                 <input type="email" name="email" value='<?= $email ?>'>
             </div>
             <div class="form-group">
-                <label for="">Vai Tro</label>
+                <label for="">Role</label>
                 <div class="vai-tro-form">
                     <div>
                         <input type="radio" name="vai_tro" value="1" <?php echo ($vai_tro == 1) ? "checked" : "" ?>>
@@ -75,7 +84,7 @@
         </form>
     </div>
     <div class="row">
-        <a href="index.php?btn_list" class="btn">list</a>
+        <a href="index.php?btn_list" class="btn">List</a>
     </div>
 </body>
 
