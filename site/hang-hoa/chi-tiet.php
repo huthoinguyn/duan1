@@ -54,7 +54,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
             <div class="product-infor">
                 <p class="product-name"><?= $ten_hh ?></p>
                 <span>Viewer : <?= $so_luot_xem ?></span> <br />
-                <p class="product-price"><?= number_format($don_gia, 0) ?> VND</p>
+                <p class="product-price"><?= number_format($don_gia, 0) ?> $</p>
                 <span >Size :</span>
                 <ul class="size-list">
                     <li class="size-item">XS</li>

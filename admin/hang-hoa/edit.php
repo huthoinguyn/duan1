@@ -15,6 +15,15 @@
             flex: 0 0 100%;
             max-width: 100%;
         }
+        .btn{
+            border-radius: 4px;
+            border: 1px solid red;
+            padding: 12px 24px;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            
+        }
     </style>
 </head>
 
@@ -51,7 +60,7 @@
                 <input type="text" name="ngay_nhap" value='<?= $ngay_nhap ?>'>
             </div>
             <div class="form-group">
-                <label for="">So luot xem</label>
+                <label for="">View</label>
                 <input type="text" name="so_luot_xem" value='<?= $so_luot_xem ?>'>
             </div>
             <div class="form-group">
@@ -74,7 +83,7 @@
         </form>
     </div>
     <div class="row">
-        <a href="index.php?btn_list" class="btn">list</a>
+        <a href="index.php?btn_list" class="btn">List</a>
         <!-- <a href="index.php?btn_list" class="btn">list</a> -->
     </div>
 </body>

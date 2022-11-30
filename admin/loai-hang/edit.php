@@ -23,12 +23,12 @@
     <div class="row">
         <form action="index.php" method="POST">
             <div class="form-group">
-                <label for="">Ten Loai Hang</label>
+                <label for="">Category</label>
                 <input type="text" name="ten_loai" value="<?= $ten_loai ?>">
                 <input type="hidden" name="ma_loai" value="<?= $ma_loai ?>">
             </div>
             <div class="form-group">
-                <button type="submit" name="btn_update" class="btn">Add</button>
+                <button type="submit" name="btn_update" class="btn">Update</button>
             </div>
         </form>
     </div>

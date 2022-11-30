@@ -6,6 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        .btn{
+            border-radius: 4px;
+            border: 1px solid red;
+            padding: 12px 24px;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            
+        }
     </style>
 </head>
 
@@ -41,11 +50,11 @@
                 <input type="text" name="ngay_nhap" placeholder="yyyy/mm/dd">
             </div>
             <div class="form-group">
-                <label for="">So luot xem</label>
+                <label for="">View</label>
                 <input type="text" name="so_luot_xem">
             </div>
             <div class="form-group">
-                <label for="">Product Category</label>
+                <label  for="">Category</label>
                 <select type="text" name="loai_hang">
                     <?php
                     require_once "../../global.php";
@@ -63,7 +72,7 @@
         </form>
     </div>
     <div class="row">
-        <a href="index.php?btn_list" class="btn">list</a>
+        <a href="index.php?btn_list" class="btn">List</a>
     </div>
 </body>
 

@@ -21,23 +21,45 @@
             justify-content: flex-start;
         }
 
-        ul.prod_item:nth-child(2n +1) {
-            background-color: #eee;
-        }
+       
 
         ul.prod_item li {
             text-align: center;
             width: calc(100% /3);
             overflow: hidden;
         }
+        .title {
+            height: 7vh;
+           padding-left: 600px;
+        }
+        .insert {
+            height: 8vh;
+            padding: 16px;
+        }
+        .prod_item li i{
+            color: black;
+            font-size: 25px;
+        }
+        .row-heading li{
+            background-color: black;
+            color:white;
+            padding: 12px;
+        }
+        .row i{
+            font-size: 30px;
+            color: black;
+        }
     </style>
 </head>
 
 <body>
-    <div class="row prod-list">
+<div class="row title">
         <h1>List</h1>
-        <ul class="prod_item">
-            <li>Ten loai hang</li>
+    </div>
+    <div class="row prod-list">
+      
+        <ul class="prod_item row-heading">
+            <li>Category</li>
             <li></li>
             <li></li>
         </ul>
@@ -46,13 +68,13 @@
         foreach ($items as $item) { ?>
             <ul class="prod_item">
                 <li><?= $item['ten_loai'] ?></li>
-                <li><a href="index.php?btn_edit&ma_loai=<?= $item['ma_loai'] ?>">Sua</a></li>
-                <li><a href="index.php?btn_delete&ma_loai=<?= $item['ma_loai'] ?>">Xoa</a></li>
+                <li><a href="index.php?btn_edit&ma_loai=<?= $item['ma_loai'] ?>"><i class="fa-regular fa-pen-to-square"></i></a></li>
+                <li><a href="index.php?btn_delete&ma_loai=<?= $item['ma_loai'] ?>"><i class="fa-regular fa-trash-can"></i></a></li>
             </ul>
         <?php } ?>
     </div>
     <div class="row">
-        <a href="index.php" class="btn">Insert</a>
+        <a href="index.php" class="btn"><i class="fa-solid fa-plus"></i></a>
     </div>
 </body>
 

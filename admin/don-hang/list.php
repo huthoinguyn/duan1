@@ -19,8 +19,15 @@
             margin: unset;
         }
 
-        .prod_item:nth-child(2n) {
-            background-color: #fff;
+       
+        .row-heading li{
+            background-color: black;
+            color:white;
+            padding: 5px;
+            
+        }
+        .title{
+            padding-left: 550px;
         }
     </style>
 </head>
@@ -30,7 +37,7 @@
         <h1>Receipt</h1>
     </div>
     <div class="row prod-list">
-        <ul class="prod_item">
+        <ul class="prod_item row-heading">
             <li class="heading">ID</li>
             <li class="heading">USER</li>
             <li class="heading">Products</li>
