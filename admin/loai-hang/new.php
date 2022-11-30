@@ -16,6 +16,15 @@
             flex: 0 0 100%;
             max-width: 100%;
         }
+        .btn{
+            border-radius: 4px;
+            border: 1px solid red;
+            padding: 12px 24px;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            
+        }
     </style>
 </head>
 
@@ -23,7 +32,7 @@
     <div class="row">
         <form action="index.php" method="POST">
             <div class="form-group">
-                <label for="">Ten Loai Hang</label>
+                <label for="">Category</label>
                 <input type="text" name="loai_hang">
             </div>
             <div class="form-group">
@@ -32,7 +41,7 @@
         </form>
     </div>
     <div class="row">
-        <a href="index.php?btn_list" class="btn">list</a>
+        <a href="index.php?btn_list" class="btn">List</a>
     </div>
 </body>
 

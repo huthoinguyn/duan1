@@ -22,6 +22,15 @@
             justify-content: center;
             gap: 28px;
         }
+        .btn{
+            border-radius: 4px;
+            border: 1px solid red;
+            padding: 12px 24px;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            
+        }
     </style>
 </head>
 
@@ -40,13 +49,7 @@
                 <label for="">Password</label>
                 <input type="text" name="mat_khau">
             </div>
-            <div class="form-group">
-                <label for="">Active</label>
-                <select name="kich_hoat" id="">
-                    <option value="1" selected>Active</option>
-                    <option value="0">Unactive</option>
-                </select>
-            </div>
+           
             <div class="form-group">
                 <label for="">Image</label>
                 <input type="file" name="hinh">
@@ -55,6 +58,7 @@
                 <label for="">Email</label>
                 <input type="email" name="email" />
             </div>
+            
             <div class="form-group">
                 <label for="">Position</label>
                 <div class="vai-tro-form">
@@ -67,6 +71,14 @@
                         <label for="">Customer</label>
                     </div>
                 </div>
+                
+            </div>
+            <div class="form-group">
+                <label for="">Active</label>
+                <select name="kich_hoat" id="">
+                    <option value="1" selected>Active</option>
+                    <option value="0">Unactive</option>
+                </select>
             </div>
             <div class="form-group">
                 <button type="submit" name="btn_insert">Add</button>
@@ -74,7 +86,7 @@
         </form>
     </div>
     <div class="row">
-        <a href="index.php?btn_list" class="btn">list</a>
+        <a href="index.php?btn_list" class="btn">List</a>
     </div>
 </body>
 
