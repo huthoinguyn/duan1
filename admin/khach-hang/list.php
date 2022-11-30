@@ -49,6 +49,7 @@
         ul.prod_item li.user-image {
             width: 100px;
             height: 60px;
+        }
         .user-list ul.user_item li {
             display: flex;
             justify-content: center;
