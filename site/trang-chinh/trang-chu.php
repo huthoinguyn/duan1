@@ -25,6 +25,7 @@
             background-attachment: fixed;
         }
     </style>
+    <title>TDK Store</title>
 </head>
 
 <body>

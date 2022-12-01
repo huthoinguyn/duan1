@@ -15,10 +15,7 @@
             border: 1px solid #ccc;
         }
 
-        ul.prod_item:nth-child(2n + 1) {
-            background-color: #eee;
-        }
-
+     
         ul.prod_item li {
             text-align: center;
             width: calc(100% /3);
@@ -26,7 +23,7 @@
         }
 
         .prod-list {
-            height: 90vh;
+            
             overflow-y: auto;
         }
 
@@ -40,12 +37,12 @@
         }
 
         li.user-info {
-            flex: 0 0 35%;
+            flex: 0 0 25%;
             max-width: 35%;
         }
 
         li.user-info ul {
-            width: 100%;
+          
             display: flex;
             align-items: center;
             justify-content: center;
@@ -59,7 +56,7 @@
         }
 
         li.products {
-            flex: 0 0 35%;
+            flex: 0 0 22%;
             max-width: 35%;
             padding-right: 24px;
         }

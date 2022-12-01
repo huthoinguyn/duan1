@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
     <style>
         .row {
             width: 100%;
@@ -67,6 +67,7 @@
             <li>User</li>
             <li>Product</li>
             <li>Time</li>
+          
             <li></li>
         </ul>
         <?php
@@ -79,6 +80,8 @@
                 <li><?= $ma_kh ?></li>
                 <li><?= hang_hoa_select_by_id($ma_hh)['ten_hh'] ?></li>
                 <li><?= $ngay_binh_luan ?></li>
+            
+              
                 <li><a href="index.php?btn_delete&ma_bl=<?= $ma_bl ?>"><i class="fa-regular fa-trash-can"></i></a></li>
             </ul>
         <?php } ?>

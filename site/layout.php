@@ -1,7 +1,8 @@
+
 <main>
     <header>
         <div class="logo">
-            TDK Store
+           <a href="./index.php">TDK Store</a> 
         </div>
         <?php require '../layout/nav.php' ?>
         <?php require '../layout/dang-nhap.php' ?>
