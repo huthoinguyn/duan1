@@ -5,7 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-Coffee</title>
+    <title>Home</title>
+    <style>
+        .bg-fixed-wrap {
+            padding: 48px 0 80px;
+            height: 40vh;
+            width: 100vw;
+            position: relative;
+            left: calc(-50vw + 50%);
+
+        }
+
+        .bg-fixed {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1647517368034-4389fcb678f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,6 +48,9 @@
                 ?>
             </div>
 
+        </section>
+        <section class="bg-fixed-wrap">
+            <div class="bg-fixed"></div>
         </section>
         <section class="testim">
             <div class="title">
