@@ -29,22 +29,27 @@ hang_hoa_tang_so_luot_xem($ma_hh);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <style>
-        
+
     </style>
 </head>
 
 <body>
-<hr>
+    <hr>
     <div class="container">
-    <ul class="items-page">
+        <ul class="items-page">
             <li>
-                <a href="../trang-chinh/index.php">Home page /</a>
+                <a href="index.php">Home page /</a>
+            </li>
+            <li>
+                <a href="?san-pham">
+                    Products /
+                </a>
             </li>
             <li>
                 <a href="#"><?= $ten_hh ?></a>
             </li>
-       </ul>
-      
+        </ul>
+
         <div class="product">
             <div class="product-image">
                 <div class="">
@@ -54,8 +59,8 @@ hang_hoa_tang_so_luot_xem($ma_hh);
             <div class="product-infor">
                 <p class="product-name"><?= $ten_hh ?></p>
                 <span>Viewer : <?= $so_luot_xem ?></span> <br />
-                <p class="product-price"><?= number_format($don_gia, 0) ?> $</p>
-                <span >Size :</span>
+                <p class="product-price">$<?= number_format($don_gia, 2) ?></p>
+                <span>Size :</span>
                 <ul class="size-list">
                     <li class="size-item">XS</li>
                     <li class="size-item">S</li>
@@ -66,7 +71,7 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                     <li class="size-item">3XL</li>
                 </ul>
                 <!-- <p class="product-describe"></p> -->
-               
+
                 <form action="" id="addcart">
                     <input type="hidden" name="ma_hh" value="<?= $ma_hh ?>">
                     <input type="hidden" name="ten_hh" value="<?= $ten_hh ?>">
@@ -109,9 +114,9 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                     </div>16 customer rated
                     <!-- </div> -->
                 </div>
-                
+
             </div>
-            
+
         </div>
     </div>
     <!-- <div class="prod-img">

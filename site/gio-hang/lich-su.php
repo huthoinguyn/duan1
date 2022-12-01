@@ -14,12 +14,12 @@ if ($listBill == null) {
 <!-- CONTENT -->
 <div class="container cart-content">
 
-    <h4 class="my-4">Lịch sử mua hàng</h4>
+    <h4 class="my-4">History</h4>
 
     <?php foreach ($listBill as $bill) : ?>
         <div class="safe-area my-4">
             <div class="row">
-                <h5>Chi tiết đơn hàng</h5>
+                <h5>Receipt Details</h5>
                 <br>
                 <!-- info -->
                 <div class="table-responsive-md col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -27,32 +27,32 @@ if ($listBill == null) {
 
                         <tbody>
                             <tr>
-                                <td>Mã đơn hàng:</td>
+                                <td>ID:</td>
                                 <td><?= $bill['ma_hd'] ?></td>
                             </tr>
                             <tr>
-                                <td>Tên khách hàng:</td>
+                                <td>Username:</td>
                                 <td><?= $bill['ho_ten'] ?></td>
                             </tr>
                             <tr>
-                                <td>Số điện thoại:</td>
+                                <td>Phone:</td>
                                 <td><?= $bill['so_dien_thoai'] ?></td>
                             </tr>
                             <tr>
-                                <td>Địa chỉ:</td>
+                                <td>Address:</td>
                                 <td><?= $bill['dia_chi'] ?></td>
                             </tr>
                             <tr>
-                                <td>Ghi chú:</td>
+                                <td>Note:</td>
                                 <td><?= $bill['ghi_chu'] ?></td>
                             </tr>
                             <tr>
-                                <td>ngày đặt hàng:</td>
+                                <td>Order date:</td>
                                 <td><?= $bill['ngay_tao'] ?></td>
                             </tr>
                             <tr>
-                                <td>Tổng tiền:</td>
-                                <td><?= $bill['total'] ?></td>
+                                <td>Total:</td>
+                                <td>$<?= number_format($bill['total'], 2) ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -65,10 +65,10 @@ if ($listBill == null) {
                         <table class="table table-centered" id="btn-editable">
                             <thead>
                                 <tr>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Giá</th>
-                                    <th>Thành tiền</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -80,8 +80,8 @@ if ($listBill == null) {
                                     <tr>
                                         <td><a style="text-decoration: none;" href="../product-detail.php?id=<?= $x["ma_hh"] ?>" target="_blank" rel="noopener noreferrer"><?= $x['ten_hh'] ?></a></td>
                                         <td><?= $x['so_luong'] ?></td>
-                                        <td><?= $x['don_gia'] ?></td>
-                                        <td><?= $x['don_gia'] * $x['so_luong'] ?></td>
+                                        <td>$<?= number_format($x['don_gia'], 2) ?></td>
+                                        <td>$<?= number_format($x['don_gia'] * $x['so_luong'], 2) ?></td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
@@ -91,23 +91,23 @@ if ($listBill == null) {
                 <!-- end list product -->
 
                 <div>
-                    <div style="background-color: #bbc1cc;" class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div style="background-color: #bbc1cc;" class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12 order-status">
                         <?php
                         switch ($bill['trang_thai']) {
                             case '0':
-                                echo '<span>Chưa xác nhận</span>';
+                                echo '<span style="display:block;">Unconfirmed</span>';
                                 break;
                             case '1':
-                                echo '<span>Đang chuẩn bị hàng</span>';
+                                echo '<span style="background-color: #6d6dff; color: #fff;display:block;">Preparing</span>';
                                 break;
                             case '2':
-                                echo '<span>Đang gửi hàng</span>';
+                                echo '<span style="background-color: #6d6dff; color: #fff;display:block;">Delivering</span>';
                                 break;
                             case '3':
-                                echo '<span>Giao hàng thành công</span>';
+                                echo '<span style="background-color: #00d6bd; color: #fff;display:block;">Finished</span>';
                                 break;
                             case '4':
-                                echo '<span>Đã huỷ</span>';
+                                echo '<span style="background-color: #ff7878; color: #fff;display:block;">Cancelled</span>';
                                 break;
                         }
                         ?>

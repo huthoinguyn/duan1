@@ -14,7 +14,7 @@ ORDER BY so_luot_xem DESC LIMIT 0, 6";
     foreach ($hh_array as $hh) {
         extract($hh)
     ?>
-        <div class="grid-column prod-item carousel-item">
+        <div class="prod-item carousel-items">
             <a href="index.php?chi-tiet&ma_hh=<?= $ma_hh ?>">
                 <div class="prod-image">
                     <img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" />
@@ -75,12 +75,12 @@ ORDER BY so_luot_xem DESC LIMIT 0, 6";
     document.querySelector('.carou-left-icon').onclick = carouPrev;
 
     function carouNext() {
-        let carouList = document.querySelectorAll('.carousel-item')
+        let carouList = document.querySelectorAll('.carousel-items')
         document.querySelector('.carousel-list').appendChild(carouList[0]);
     }
 
     function carouPrev() {
-        let carouList = document.querySelectorAll('.carousel-item')
+        let carouList = document.querySelectorAll('.carousel-items')
         document.querySelector('.carousel-list').prepend(carouList[carouList.length - 1]);
     }
 
