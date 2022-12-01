@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/gio-hang.css">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/thanh-toan.css">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/success.css">
-    <title>Payment</title>
+    <title>Payment - TDK Store</title>
     <style>
         .address-form {
             flex: 0 0 70%;

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/style.css">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/gio-hang.css">
-    <title>gio hàng</title>
+    <title>Cart - TDK Store</title>
     <style>
         .checkout-btn a {
             width: 100%;
