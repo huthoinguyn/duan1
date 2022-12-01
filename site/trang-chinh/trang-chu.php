@@ -31,11 +31,11 @@
 <body>
     <div class="slider">
         <div class="slider-img">
-            <img src="https://coffeeluck.themerex.net/wp-content/uploads/2016/08/slide1.jpg" alt="">
+            <img src="https://images.unsplash.com/photo-1561052967-61fc91e48d79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
         </div>
         <div class="slider-content">
-            <h3><span class="typing">Coffee with our story</span></h3>
-            <p>visit our the best coffee shop</p>
+            <h3><span class="typing">Clothes with our story</span></h3>
+            <p>visit our the best clothes shop</p>
         </div>
     </div>
     <div class="content">
