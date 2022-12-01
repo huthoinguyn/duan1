@@ -24,6 +24,41 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+        .tin{
+            
+           
+            display: flex;
+        }
+        .new-1{
+            margin-left: 50px;
+        }
+        .new-1 .img{
+            width: 400px;
+            background-color: red;
+            
+        }
+        .new-1 .img img{
+            width: 400px;
+            height: 320px;
+           object-fit: cover;
+        }
+        .tin{
+            max-height: 50vh;
+        }
+        .new-1 p{
+            font-weight: inherit;
+            font-size: 20px;
+        }
+        .title{
+            margin-bottom: 28px;
+            font-size: calc(1vw + 1vh);
+            white-space: nowrap;
+            color: var(--text-color);
+            text-align: left;
+            width: 100%;
+            overflow: hidden;
+        
+        }
     </style>
     <title>TDK Store</title>
 </head>
@@ -53,7 +88,7 @@
         <section class="bg-fixed-wrap">
             <div class="bg-fixed"></div>
         </section>
-        <section class="testim">
+        <!-- <section class="testim">
             <div class="title">
                 Testimonial
             </div>
@@ -75,6 +110,29 @@
                 <div class="testim-right">
                     <i class="fa-solid fa-angle-right"></i>
                 </div>
+            </div>
+        </section> -->
+        <div class="title">
+            News
+        </div>
+        <section class="tin">
+            <div class="new-1">
+                <div class="img">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/414/728/articles/clownz-1618.jpg?v=1610362067883" alt="">
+                </div>
+                <p>9 BEST-SELLER ITEMS OF AUGUST</p>
+            </div>
+            <div class="new-1">
+                <div class="img">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/414/728/articles/clownz-6-427.jpg?v=1610362183260" alt="">
+                </div>
+                <p style="padding-left: 20px;">9 BEST-SELLER ITEMS OF JULY</p>
+            </div>
+            <div class="new-1">
+                <div class="img">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/414/728/articles/untitled-session0936.jpg?v=1639477429930" alt="">
+                </div>
+                <p>SUMMER 2017 - Sự trở lại của Camo</p>
             </div>
         </section>
     </div>
