@@ -63,7 +63,7 @@
         <div class="cate-wrap">
             <div class="row search">
                 <form action="">
-                   <input type="text" name="keywords" placeholder="Search a coffee...">
+                   <input type="text" name="keywords" placeholder="Search a clothes...">
                    
                 </form>
             </div>
