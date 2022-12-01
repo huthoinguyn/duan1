@@ -11,7 +11,10 @@
         .heading {
             height: 36px;
         }
-
+        .prod-list {
+            
+            overflow-y: auto;
+        }
         form.update-status-form {
             flex: 0 0 100%;
             max-width: 100%;
@@ -24,10 +27,27 @@
             background-color: black;
             color:white;
             padding: 5px;
+           
             
         }
         .title{
             padding-left: 550px;
+        }
+        
+       .id{
+        margin-left: 59px;
+       }
+       .qty span{
+        padding-right: 80px;
+       }
+      .status{
+        margin-top: 20px;
+        margin-left: 40px;
+      }
+      .prod_item li i{
+            color: black;
+            font-size: 25px;
+            margin-left: 30px;
         }
     </style>
 </head>
@@ -42,7 +62,7 @@
             <li class="heading">USER</li>
             <li class="heading">Products</li>
             <li class="heading">Total</li>
-            <li class="heading"></li>
+            <li class="heading">Status</li>
             <li class="heading"></li>
         </ul>
         <?php
@@ -59,7 +79,7 @@
                 <input type="hidden" name="total" value="<?= $total ?>">
                 <input type="hidden" name="ghi_chu" value="<?= $ghi_chu ?>">
                 <input type="hidden" name="ngay_tao" value="<?= $ngay_tao ?>">
-                <ul class="prod_item">
+                <ul class=" prod_item ">
                     <li class="id"><?= $ma_hd ?></li>
                     <li class="user-info">
                         <ul>
@@ -81,22 +101,20 @@
                                                 <span style="font-weight: lighter; color: #555;">/</span> <span class="size"> <?php echo ($x['size']) ? $x['size'] : '' ?></span>
                                             </h4>
                                             <div class="qty">
-                                                <span>
-                                                    x<?= $x['so_luong'] ?>
-                                                </span>
+                                                
                                                 <p class="subtotal">
                                                     $<?= $x['don_gia'] ?>
                                                 </p>
+                                                <span>
+                                                    x<?= $x['so_luong'] ?>
+                                                </span>
                                             </div>
                                         </div>
-                                        <div class="total">
-                                            <p>
-                                                $<?= ($x['don_gia'] - (($x['don_gia'] * $x['giam_gia']) / 100)) * $x['so_luong'] ?>
-                                            </p>
-                                        </div>
+                                        
                                     </div>
 
                                 </li>
+                                
                             <?php endforeach ?>
                         </ul>
                     </li>
@@ -110,7 +128,7 @@
                             <option value="4" <?php echo ($trang_thai == 4) ? "selected" : "" ?>>Cancel</option>
                         </select>
                     </li>
-                    <li class="action"><a href="">Xoa</a></li>
+                    <li class="action"><a href=""><i class="fa-regular fa-trash-can"></i></a></li>
                 </ul>
             </form>
         <?php } ?>
