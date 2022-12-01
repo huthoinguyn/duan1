@@ -20,39 +20,40 @@
             display: flex;
             list-style: none;
             justify-content: flex-start;
-            
+
         }
 
-       
+
         ul.prod_item li {
             text-align: center;
             width: calc(70% /3);
             overflow: hidden;
             border-bottom: 1px solid black;
-           
+
             margin-bottom: 10px;
         }
 
         .prod-list {
-           
+
             overflow-y: auto;
         }
 
         .title {
             height: 7vh;
-           padding-left: 500px;
+            padding-left: 500px;
         }
-        .row-heading li{
+
+        .row-heading li {
             background-color: black;
-            color:white;
+            color: white;
             padding: 12px;
-            
+
         }
-        .prod_item li i{
+
+        .prod_item li i {
             color: black;
             font-size: 25px;
         }
-     
     </style>
 </head>
 
@@ -62,11 +63,10 @@
     </div>
     <div class="row ">
         <ul class="prod_item row-heading">
-            <li >Comments</li>
+            <li>Comments</li>
             <li>User</li>
             <li>Product</li>
             <li>Time</li>
-            <li></li>
             <li></li>
         </ul>
         <?php
@@ -79,8 +79,7 @@
                 <li><?= $ma_kh ?></li>
                 <li><?= hang_hoa_select_by_id($ma_hh)['ten_hh'] ?></li>
                 <li><?= $ngay_binh_luan ?></li>
-                <li><a href="index.php?btn_edit&ma_loai=<?= $ma_bl ?>"><i class="fa-regular fa-pen-to-square"></i></a></li>
-                <li><a href="index.php?btn_delete&ma_loai=<?= $ma_bl ?>"><i class="fa-regular fa-trash-can"></i></a></li>
+                <li><a href="index.php?btn_delete&ma_bl=<?= $ma_bl ?>"><i class="fa-regular fa-trash-can"></i></a></li>
             </ul>
         <?php } ?>
     </div>

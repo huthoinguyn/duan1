@@ -4,29 +4,29 @@
   transition: all 500ms ease;
 }
 
-.carousel-item {
+.carousel-items {
   position: absolute;
   left: 0;
   transition: all 500ms ease;
 }
-.carousel-item:nth-child(1) {
+.carousel-items:nth-child(1) {
   left: -25%;
   opacity: 0;
   transition: all 500ms ease;
 }
-.carousel-item:nth-child(2) {
+.carousel-items:nth-child(2) {
   left: 0;
 }
-.carousel-item:nth-child(3) {
+.carousel-items:nth-child(3) {
   left: 25%;
 }
-.carousel-item:nth-child(4) {
+.carousel-items:nth-child(4) {
   left: 50%;
 }
-.carousel-item:nth-child(5) {
+.carousel-items:nth-child(5) {
   left: 75%;
 }
-.carousel-item:nth-child(n + 6) {
+.carousel-items:nth-child(n + 6) {
   left: 100%;
   opacity: 0;
   transition: all 500ms ease;

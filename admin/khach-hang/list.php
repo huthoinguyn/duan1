@@ -121,12 +121,12 @@
         <h1>List</h1>
     </div>
     <ul class="user_item row-heading">
-            <li>Custome code</li>
+            <li>Username</li>
             <li class="ho-ten">Name</li>
             <li class="user-image">Image</li>
             <li class="email">Email</li>
             <li class="vai-tro">Role</li>
-            <li class="kich-hoat">Actived</li>
+            <li class="kich-hoat">Activate</li>
             <li class="action"></li>
             <li class="action"></li>
         </ul>
