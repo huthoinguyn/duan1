@@ -53,9 +53,9 @@
     <script>
         const typed = new Typed(".typing", {
             strings: [
-                "Coffee with our story",
-                "Fresh, Organic, Handcrafted",
-                "Experence the full taste",
+                "Clothes with our story",
+                "Genuine, suitable for the price",
+                "Top fashion style",
             ],
             typeSpeed: 100,
             backSpeed: 60,
