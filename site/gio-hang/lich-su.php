@@ -5,8 +5,8 @@ if ($listBill == null) {
     echo '
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-        <div class="mx-auto py-2 bg-danger text-white text-center">Bạn chưa có đơn hàng nào</div> 
-        <a href="./trang-chu.php"><div class="mx-auto my-3 text-center"><button class="btn btn-primary"><i class="fas fa-arrow-left"></i> Tiếp tục mua sắm</button></div></a> ';
+        <div class="mx-auto py-2 bg-danger text-white text-center">You dont have any orders yet</div> 
+        <a href="?trang-chu"><div class="mx-auto my-3 text-center"><button class="btn btn-primary"><i class="fas fa-arrow-left"></i>Shopping now</button></div></a> ';
     die;
 }
 ?>

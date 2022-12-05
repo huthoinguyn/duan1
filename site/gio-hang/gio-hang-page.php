@@ -29,6 +29,17 @@
         .checkout-btn a i {
             font-size: 1.8rem;
         }
+
+        .cart-prod-sale {
+            background-color: #cb0000a4;
+            display: inline;
+        }
+        
+        .cart-prod-sale span {
+            color: #fff;
+            font-size: 1.6rem;
+            padding: 16px 24px;
+        }
     </style>
 </head>
 
@@ -61,7 +72,7 @@
                                         <?php
                                         if ($giam_gia > 0) {
                                         ?>
-                                            <div class="prod-sale">
+                                            <div class="cart-prod-sale">
                                                 <span>
                                                     -<?= $giam_gia ?>%
                                                 </span>
