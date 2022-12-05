@@ -43,7 +43,7 @@
            object-fit: cover;
         }
         .tin{
-            max-height: 50vh;
+            min-height: 50vh;
         }
         .new-1 p{
             font-weight: inherit;
@@ -57,6 +57,7 @@
             text-align: left;
             width: 100%;
             overflow: hidden;
+            
         
         }
     </style>
@@ -88,31 +89,8 @@
         <section class="bg-fixed-wrap">
             <div class="bg-fixed"></div>
         </section>
-        <!-- <section class="testim">
-            <div class="title">
-                Testimonial
-            </div>
-            <div class="testim-wrap">
-                <div class="testim-left">
-                    <i class="fa-solid fa-angle-left"></i>
-                </div>
-                <div class="testim-content">
-
-                </div>
-                <ul class="testim-dots">
-                    <li class="dot active"></li>
-                    <li class="dot"></li>
-                    <li class="dot"></li>
-                    <li class="dot"></li>
-                    <!-- <li class="dot"></li>
-                <li class="dot"></li> -->
-                </ul>
-                <div class="testim-right">
-                    <i class="fa-solid fa-angle-right"></i>
-                </div>
-            </div>
-        </section> -->
-        <div class="title">
+       
+        <div class="title" style="padding-left: 40px;font-weight: 500;">
             News
         </div>
         <section class="tin">
