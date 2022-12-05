@@ -99,14 +99,6 @@
                 <input name="ma_kh">
             </div>
             <div class="form-group">
-                <label for="">Password</label>
-                <input name="mat_khau" type="password">
-            </div>
-            <div class="form-group">
-                <label for="">Confirm Password</label>
-                <input name="mat_khau2" type="password">
-            </div>
-            <div class="form-group">
                 <label for="">Name</label>
                 <input name="ho_ten">
             </div>
@@ -115,13 +107,21 @@
                 <input name="email">
             </div>
             <div class="form-group">
+                <label for="">Password</label>
+                <input name="mat_khau" type="password">
+            </div>
+            <div class="form-group">
+                <label for="">Confirm Password</label>
+                <input name="mat_khau2" type="password">
+            </div>
+            <div class="form-group">
                 <label for="">Image</label>
                 <input name="up_hinh" type="file">
             </div>
             <div class="form-group">
                 <button name="btn_register">Register</button>
             </div>
-            <input name="kich_hoat" value="0" type="hidden">
+            <input name="kich_hoat" value="1" type="hidden">
             <input name="vai_tro" value="0" type="hidden">
         </form>
     </div>

@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 24, 2022 at 02:36 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 03, 2022 lúc 12:40 PM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `duan1`
+-- Cơ sở dữ liệu: `duan1`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `banner`
+-- Cấu trúc bảng cho bảng `banner`
 --
 
 CREATE TABLE `banner` (
@@ -36,7 +36,7 @@ CREATE TABLE `banner` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `binh_luan`
+-- Cấu trúc bảng cho bảng `binh_luan`
 --
 
 CREATE TABLE `binh_luan` (
@@ -48,19 +48,16 @@ CREATE TABLE `binh_luan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `binh_luan`
+-- Đang đổ dữ liệu cho bảng `binh_luan`
 --
 
 INSERT INTO `binh_luan` (`ma_bl`, `noi_dung`, `ma_kh`, `ma_hh`, `ngay_binh_luan`) VALUES
-(12, 'do', 'pc04496', 12, '2022-11-14'),
-(13, 'mặt hàng này còn không shop', 'pc04496', 10, '2022-11-19'),
-(14, 'giá cả phải chăng, rất đáng mua', 'pc04496', 14, '2022-11-20'),
-(15, '', 'pc04496', 14, '2022-11-20');
+(19, 'ss', 'admin', 20, '2022-12-01');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hang_hoa`
+-- Cấu trúc bảng cho bảng `hang_hoa`
 --
 
 CREATE TABLE `hang_hoa` (
@@ -77,22 +74,27 @@ CREATE TABLE `hang_hoa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `hang_hoa`
+-- Đang đổ dữ liệu cho bảng `hang_hoa`
 --
 
 INSERT INTO `hang_hoa` (`ma_hh`, `ten_hh`, `don_gia`, `giam_gia`, `hinh`, `ngay_nhap`, `mo_ta`, `dac_biet`, `so_luot_xem`, `ma_loai`) VALUES
-(8, 'Phan Thanh Qui', 32, 55, 'IMG_7768.JPG', '2022-10-09', 'qkefhkjlqhvjbdmnabvcmavfdcjqe', b'1', 200, 2),
-(10, 'Trieu Hong Ky', 55, 0, 'IMG_7798.JPG', '2022-12-12', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil commodi nesciunt placeat quasi dolorum repudiandae quae aperiam cum nobis, qui hic deleniti veniam, reprehenderit alias vitae corrupti inventore omnis molestias.', b'1', 179, 4),
-(11, 'Le Thanh Duy', 137345, 12, 'IMG_7766.JPG', '2022-12-12', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil commodi nesciunt placeat quasi dolorum repudiandae quae aperiam cum nobis, qui hic deleniti veniam, reprehenderit alias vitae corrupti inventore omnis molestias.', b'1', 124, 5),
-(12, 'hehehe', 2000, 10, 'IMG_7376.JPG', '2022-12-12', 'It is a paradisematic country, in which roasted parts of sentences fly into your mouth.', b'1', 46, 1),
-(13, 'Le Tan Tai', 2000, 10, 'IMG_7801.JPG', '2022-12-12', 'It is a paradisematic country, in which roasted parts of sentences fly into your mouth.', b'1', 26, 1),
-(14, 'heheheheheheh', 59, 0, 'IMG_7807.JPG', '2022-10-22', 'ahgvcjkdahgvchjkagchkjvahjkcbvhajkvcgjhafchjfvajhcvjavcjvajc', b'1', 12, 1),
-(15, 'taitai', 25, 0, 'IMG_7784.JPG', '2022-10-22', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil commodi nesciunt placeat quasi dolorum repudiandae quae aperiam cum nobis, qui hic deleniti veniam, reprehenderit alias vitae corrupti inventore omnis molestias.', b'1', 19, 2);
+(17, 'CLOWNZ ACADEMY T-SHIRT', 349, 0, 'tshirt-academy12.JPG', '2022-11-28', 'Vải cotton định lượng 250GSM mềm mịn, bo cổ chắc chắn\r\nMàu sắc: Đen/ Be/ Nâu\r\nForm T-Shirt regular \r\nGraphic sử dụng kỹ thuật in lưới cao cấp, hình in bền và sắc nét\r\nMỗi màu áo đều được phối với các màu highlight khác nhau tạo sự nổi bật cho từng sản phẩm. Áo basic dễ mặc và dễ phối đồ với các style khác nhau', b'1', 6, 8),
+(18, 'BASIC FOR LIFE V2 T-SHIRT', 349, 5, '37-d9709120-0657-44ab-8c42-0d91f220c790.JPG', '2022-11-28', 'Chất liệu: Cotton 250 GSM, co giãn 2 chiều, bền, vải mềm, vải mịn, thoáng mát.\r\nMô tả: Logo thêu mặt trước, chữ \"CLOWNZ\" in lưới mặt sau\r\nForm Overize hiện đại, trẻ trung, năng động. Phù hợp khi mix đồ với nhiều loại.\r\nĐường may chuẩn chỉnh, tỉ mỉ, chắc chắn.\r\n4 phối màu áo cho bạn đa dạng lựa chọn mặc ở nhà, mặc đi chơi hoặc khi vận động thể thao.', b'1', 13, 8),
+(19, 'BASIC FOR LIFE T-SHIRT', 299, 20, '1-ae1418bd-1a5b-465c-b92d-494b14b26385.jpg', '2022-10-29', '• Chất liệu: cotton 2 chiều\r\n\r\n• Dáng suông, form rộng\r\n\r\n• Tag cao su chính hãng ở mép áo phải và tag phụ ở tay và mép áo trái\r\n\r\n• Logo chú hề thương hiệu thêu ở chính giữa mặt trước\r\n\r\n• Chữ CLOWNZ in lưới ở mặt sau\r\n\r\n• Chất vải thoáng mát, thấm hút mồ hôi\r\n\r\n• Dễ dàng phối với mọi kiểu quần, phong cách trẻ trung, khỏe khoắn', b'1', 60, 8),
+(20, 'CLOWNZ SKULL T-SHIRT', 349, 50, '4-2-f0e51b99-bced-4a36-a80c-3039b8ba4376.jpg', '2022-11-29', 'Chất liệu: 100% cotton\r\n Dáng xuông rộng\r\n Mặt trước: hình in \" skeleton in green fire\"\r\n Mặt sau: hình in \" flamy skull in green fire\"\r\n Sử dụng công nghệ in ép nhiệt chất lượng tốt nhất, lộn trái áo khi giặt.', b'1', 15, 8),
+(21, 'PAINTED KAKI SHORT PANTS', 359, 15, 'quan.jpg', '2022-11-30', 'Chất liệu: Kaki vải mỏng\r\nMàu sắc: Đen/ xám\r\nForm dáng: Quần short \r\nChiếc quần được lấy cảm hứng thiết kế từ phong cách grunge với 2 phối màu cơ bản dễ dàng phối đồ\r\nDọc hai bên quần có chi tiết cúc bấm thời trang', b'1', 2, 9),
+(22, 'LEOPARD CAMO MIX SHORT', 290, 25, '4-d82d820d-96e1-4228-ad24-8c8f685af879.jpg', '2022-11-25', 'Chất liệu: vải Kate mịn\r\nForm dáng: Relax Fit\r\nHoạ tiết da báo và camo được phối màu và mix theo từng mảng có chủ ý tạo điểm nhấn.\r\nSản phẩm thuộc BST LEOPARD COLLECTION', b'1', 25, 9),
+(23, 'STAR BLACK LEATHER SHORT', 525, 75, '4-9f568033-41b0-49f6-9a5f-73b39a354bcc.jpg', '2022-11-27', 'Chất liệu: Da tổng hợp\r\nMàu sắc: Đen bóng\r\nForm dáng: Oversize\r\nThiết kế hai túi trước cùng với một túi hộp. Hình thêu C-Star được thiết kế một cách tinh tế tạo điểm nhấn\r\nSản phẩm thuộc BST LEOPARD COLLECTION', b'1', 28, 9),
+(24, 'CLOWNZ BASKETBALL SHORT', 399, 24, '6-185112d1-08c2-41c7-81d9-7f5fb0b3295f.jpg', '2022-11-30', 'Chất liệu: 100% cotton, vải mềm, 4 chiều co giãn\r\nPhối màu: Đen - Đỏ\r\nForm quần short bóng rổ, unisex thể thao.\r\nLogo chú hề màu trắng in chìm góc ống quần phải đi kèm với hình thêu tỉ mỉ ở mặt trước\r\nCạp chun, sử dụng dây luồn bụng cùng với một lớp lót lưới bên trong', b'1', 2, 9),
+(25, 'CLOWNZ FLANNEL JACKET', 579, 0, '3-3-4f2f9c3e-a59b-4ed0-97ad-9f7f4d063310.jpg', '2022-10-28', 'Chất liệu : Vải dạ kẻ lót gió \r\n\r\nMàu sắc : xanh lá cây - xám\r\n\r\nForm dáng : form kéo khoá dáng boxy - crop\r\n\r\nCảm hứng thiết kế : Mẫu flannel jacket 2 lớp, với form boxy trendy đi cùng 2 phối màu và thiết kế basic. Đây sẽ là một items hay ho dành cho những tín đồ thích mặc flannel, với một form dáng mới lạ, trendy, thay cho dáng flannel thường.\r\n\r\nCông nghệ in ấn / thiết kế : thêu flash vi tính ở ngực chữ ClownZ, sau lưng chữ ClownZ - Stand for Northside\r\n\r\nChi tiết đặc biệt : Khóa kim loại màu xám hun. Túi cơi ở 2 bên và túi ngực bên trong .', b'1', 78, 11),
+(26, 'CLOWNZ TRACK JACKET', 649, 12, '7-4.jpg', '2022-11-29', 'Chất liệu : Vải gió 2 lớp \r\n\r\nMàu sắc : đen - be - xanh\r\n\r\nForm dáng : form áo gió kéo khoá dáng boxy - crop\r\n\r\nCảm hứng thiết kế : Track jacket basic form boxy trendy, đi kèm các đường lé tạo line phối theo từng màu một cách tinh tế. Một items không thể thiếu trong những ngày đầu đông với các tín đồ thời trang đường phố.\r\n\r\nCông nghệ in ấn / thiết kế : in lưới ở 2 ngực logo và text ClownZ. Logo ClownZ dạng line được in ở sau lưng.\r\n\r\nChi tiết đặc biệt : Có các đường lé line phối tinh tế trên áo theo từng phối màu, lé có phát sáng khi đánh flash. Khoá nhựa kéo cực mượt, phù hợp với chất liệu gió. Túi cơi ở 2 bên.', b'1', 29, 11),
+(27, 'Z LETTER VARSITY JACKET', 789, 20, '10-3.jpg', '2022-11-20', 'Chất liệu: Vải dạ lót trần bông\r\n\r\nMàu sắc: Đen / Be\r\n\r\nForm dáng: Varsity cổ bẻ, dáng crop\r\n\r\nCảm hứng thiết kế: Một chiếc Varsity với form dáng crop hot trend, dựa trên hoạ tiết Smiley face, chữ Z ,text ClownZ theo phong cách Gothic \r\n\r\nCông nghệ in ấn/ thiết kế: Thêu flash và thêu cắt laze\r\n\r\nChi tiết đặc biệt: Dáng crop cực tôn dáng', b'1', 60, 11),
+(28, 'THE LAUGHTER VARSITY JACKE', 1049, 35, '3-8ceaab4f-81bb-47ab-aaa9-6be1733e7289.jpg', '2022-11-30', 'Chi tiết kỹ thuật:\r\n\r\n- Thân áo: Vải dạ. Tay áo: da tổng hợp.\r\n\r\n- May 2 lớp, lớp trong lót quả trám\r\n\r\n- Áo cổ bẻ, bo dệt ở cổ tay và gấu áo\r\n\r\n- 2 túi hông tiện dụng\r\n\r\n- Hình thêu 2 mặt hoàn toàn bằng chất liệu bông xù\r\n\r\n- Cúc kim loại khắc chìm logo ClownZ\r\n\r\n- Tag logo 3 vị trí: Cổ áo, Thân dưới trái, Gấu áo\r\n\r\nTất cả sản phẩm đến tay khách hàng đầy đủ Tag giấy + Thẻ treo + Hướng dẫn bảo quản + Quà tặng kèm theo season + Túi niêm phong in logo ClownZ.', b'1', 5, 11);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hoa_don`
+-- Cấu trúc bảng cho bảng `hoa_don`
 --
 
 CREATE TABLE `hoa_don` (
@@ -109,23 +111,16 @@ CREATE TABLE `hoa_don` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `hoa_don`
+-- Đang đổ dữ liệu cho bảng `hoa_don`
 --
 
 INSERT INTO `hoa_don` (`ma_hd`, `ma_kh`, `ho_ten`, `dia_chi`, `so_dien_thoai`, `total`, `ghi_chu`, `trang_thai`, `ngay_tao`, `ngay_hoan_thanh`) VALUES
-(30, 'pc04496', 'Nguyen Huu Thoai', 'Thot Not Can Tho', '0585114376', 5662, 'Gia re qua a', 3, '2022-11-21', NULL),
-(31, 'pc04496', 'Nguyen Huu Thoai', 'An Binh, Ninh Kieu, Can Tho', '0585114376', 120878, 'giao nhanh nhanh giup em nha shop', 2, '2022-11-21', NULL),
-(32, 'pc04496', 'Nguyen Huu Thoai', 'Thot Not, Can Tho', '0585114376', 3710, 'Gia ca hop ly', 0, '2022-11-21', NULL),
-(33, 'pc04496', 'Nguyen Huu Thoai', 'Thot Not Can Tho', '0585114376', 241782, 'heeheh', 0, '2022-11-22', NULL),
-(34, 'pc04496', 'Nguyen Huu Thoai', 'Thot Not Can Tho', '0585114376', 241782, 'hehehe', 0, '2022-11-22', NULL),
-(35, 'pc04496', 'Nguyen Huu Thoai', 'Thot Not Can Tho', '0585114376', 241782, 'hehehe', 3, '2022-11-22', NULL),
-(36, 'pc04496', 'Nguyen Huu Thoai', 'Thot Not Can Tho', '0585114376', 241782, 'hehehe', 0, '2022-11-22', NULL),
-(37, 'pc04496', 'Nguyen Huu Thoai', 'Thot Not Can Tho', '0585114376', 241782, 'hehehe', 2, '2022-11-22', NULL);
+(44, 'admin', 'Quản trị viên 1', 'Cần Thơ', 'sd', 331.55, 'sds', 2, '2022-12-01', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hoa_don_chi_tiet`
+-- Cấu trúc bảng cho bảng `hoa_don_chi_tiet`
 --
 
 CREATE TABLE `hoa_don_chi_tiet` (
@@ -138,31 +133,16 @@ CREATE TABLE `hoa_don_chi_tiet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `hoa_don_chi_tiet`
+-- Đang đổ dữ liệu cho bảng `hoa_don_chi_tiet`
 --
 
 INSERT INTO `hoa_don_chi_tiet` (`ma_hdct`, `don_gia`, `size`, `so_luong`, `ma_hd`, `ma_hh`) VALUES
-(30, 2000, 'M', 3, 30, 12),
-(31, 32, 'XL', 5, 30, 8),
-(32, 55, 'M', 3, 30, 10),
-(33, 25, 'M', 1, 30, 15),
-(34, 137345, 'M', 1, 31, 11),
-(35, 32, 'M', 1, 31, 8),
-(36, 55, 'M', 2, 32, 10),
-(37, 2000, 'M', 2, 32, 12),
-(38, 137345, 'XL', 2, 34, 11),
-(39, 55, 'M', 1, 34, 10),
-(40, 137345, 'XL', 2, 35, 11),
-(41, 55, 'M', 1, 35, 10),
-(42, 137345, 'XL', 2, 36, 11),
-(43, 55, 'M', 1, 36, 10),
-(44, 137345, 'XL', 2, 37, 11),
-(45, 55, 'M', 1, 37, 10);
+(53, 349, 'M', 1, 44, 18);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `khach_hang`
+-- Cấu trúc bảng cho bảng `khach_hang`
 --
 
 CREATE TABLE `khach_hang` (
@@ -176,18 +156,17 @@ CREATE TABLE `khach_hang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `khach_hang`
+-- Đang đổ dữ liệu cho bảng `khach_hang`
 --
 
 INSERT INTO `khach_hang` (`ma_kh`, `mat_khau`, `ho_ten`, `kich_hoat`, `hinh`, `email`, `vai_tro`) VALUES
-('admin', '123456', 'admin', '1', 'IMG_7998.JPG', 'admin@gmail.com', '1'),
-('huthoineeeeee', 'thoai', 'Nguyen Huu Thoai', '1', 'IMG_7768.JPG', 'thoai@gmail.com', '0'),
-('pc04496', 'thoai123', 'Nguyen Huu Thoai', '1', 'IMG_7376.JPG', 'thoainhpc04496@fpt.edu.vn', '1');
+('admin', '123456', 'Quản trị viên 1', '1', 'black-and-white-ga94148792_1920.jpg', 'lethanhduyjr@gmail.com', '1'),
+('admin2', '123456', 'Thanh Duy', '1', 'pexels-julissa-helmuth-3726314.jpg', 'duyltpc04328@fpt.edu.vn', '0');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `loai`
+-- Cấu trúc bảng cho bảng `loai`
 --
 
 CREATE TABLE `loai` (
@@ -196,27 +175,26 @@ CREATE TABLE `loai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `loai`
+-- Đang đổ dữ liệu cho bảng `loai`
 --
 
 INSERT INTO `loai` (`ma_loai`, `ten_loai`) VALUES
-(1, 'Tee'),
-(2, 'Jogger'),
-(4, 'T-Shirt'),
-(5, 'Cagopants');
+(8, 'T-Shirt'),
+(9, 'Short'),
+(11, 'Jacket');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `banner`
+-- Chỉ mục cho bảng `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`banner_id`);
 
 --
--- Indexes for table `binh_luan`
+-- Chỉ mục cho bảng `binh_luan`
 --
 ALTER TABLE `binh_luan`
   ADD PRIMARY KEY (`ma_bl`),
@@ -224,7 +202,7 @@ ALTER TABLE `binh_luan`
   ADD KEY `ma_kh` (`ma_kh`);
 
 --
--- Indexes for table `hang_hoa`
+-- Chỉ mục cho bảng `hang_hoa`
 --
 ALTER TABLE `hang_hoa`
   ADD PRIMARY KEY (`ma_hh`),
@@ -232,14 +210,14 @@ ALTER TABLE `hang_hoa`
   ADD KEY `ma_loai_2` (`ma_loai`);
 
 --
--- Indexes for table `hoa_don`
+-- Chỉ mục cho bảng `hoa_don`
 --
 ALTER TABLE `hoa_don`
   ADD PRIMARY KEY (`ma_hd`),
   ADD KEY `ma_kh` (`ma_kh`);
 
 --
--- Indexes for table `hoa_don_chi_tiet`
+-- Chỉ mục cho bảng `hoa_don_chi_tiet`
 --
 ALTER TABLE `hoa_don_chi_tiet`
   ADD PRIMARY KEY (`ma_hdct`),
@@ -247,82 +225,82 @@ ALTER TABLE `hoa_don_chi_tiet`
   ADD KEY `ma_hh` (`ma_hh`);
 
 --
--- Indexes for table `khach_hang`
+-- Chỉ mục cho bảng `khach_hang`
 --
 ALTER TABLE `khach_hang`
   ADD PRIMARY KEY (`ma_kh`);
 
 --
--- Indexes for table `loai`
+-- Chỉ mục cho bảng `loai`
 --
 ALTER TABLE `loai`
   ADD PRIMARY KEY (`ma_loai`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `banner`
+-- AUTO_INCREMENT cho bảng `banner`
 --
 ALTER TABLE `banner`
   MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `binh_luan`
+-- AUTO_INCREMENT cho bảng `binh_luan`
 --
 ALTER TABLE `binh_luan`
-  MODIFY `ma_bl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ma_bl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `hang_hoa`
+-- AUTO_INCREMENT cho bảng `hang_hoa`
 --
 ALTER TABLE `hang_hoa`
-  MODIFY `ma_hh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ma_hh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `hoa_don`
+-- AUTO_INCREMENT cho bảng `hoa_don`
 --
 ALTER TABLE `hoa_don`
-  MODIFY `ma_hd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ma_hd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT for table `hoa_don_chi_tiet`
+-- AUTO_INCREMENT cho bảng `hoa_don_chi_tiet`
 --
 ALTER TABLE `hoa_don_chi_tiet`
-  MODIFY `ma_hdct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ma_hdct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
--- AUTO_INCREMENT for table `loai`
+-- AUTO_INCREMENT cho bảng `loai`
 --
 ALTER TABLE `loai`
-  MODIFY `ma_loai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ma_loai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `binh_luan`
+-- Các ràng buộc cho bảng `binh_luan`
 --
 ALTER TABLE `binh_luan`
   ADD CONSTRAINT `binh_luan_ibfk_1` FOREIGN KEY (`ma_hh`) REFERENCES `hang_hoa` (`ma_hh`) ON DELETE NO ACTION,
   ADD CONSTRAINT `binh_luan_ibfk_2` FOREIGN KEY (`ma_kh`) REFERENCES `khach_hang` (`ma_kh`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `hang_hoa`
+-- Các ràng buộc cho bảng `hang_hoa`
 --
 ALTER TABLE `hang_hoa`
   ADD CONSTRAINT `hang_hoa_ibfk_1` FOREIGN KEY (`ma_loai`) REFERENCES `loai` (`ma_loai`) ON DELETE CASCADE;
 
 --
--- Constraints for table `hoa_don`
+-- Các ràng buộc cho bảng `hoa_don`
 --
 ALTER TABLE `hoa_don`
   ADD CONSTRAINT `hoa_don_ibfk_1` FOREIGN KEY (`ma_kh`) REFERENCES `khach_hang` (`ma_kh`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
--- Constraints for table `hoa_don_chi_tiet`
+-- Các ràng buộc cho bảng `hoa_don_chi_tiet`
 --
 ALTER TABLE `hoa_don_chi_tiet`
   ADD CONSTRAINT `hoa_don_chi_tiet_ibfk_1` FOREIGN KEY (`ma_hd`) REFERENCES `hoa_don` (`ma_hd`) ON DELETE CASCADE ON UPDATE NO ACTION,
