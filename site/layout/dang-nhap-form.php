@@ -186,6 +186,7 @@
                         if (xhr.status == 200) {
                             let data = xhr.response;
                             alert(data)
+                            location.reload()
                         }
                     }
                 };

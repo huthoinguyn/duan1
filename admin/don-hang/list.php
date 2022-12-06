@@ -79,7 +79,7 @@
                 <input type="hidden" name="total" value="<?= $total ?>">
                 <input type="hidden" name="ghi_chu" value="<?= $ghi_chu ?>">
                 <input type="hidden" name="ngay_tao" value="<?= $ngay_tao ?>">
-                <ul class=" prod_item ">
+                <ul class="prod_item ">
                     <li class="id"><?= $ma_hd ?></li>
                     <li class="user-info">
                         <ul>

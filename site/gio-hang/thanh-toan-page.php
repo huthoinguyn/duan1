@@ -187,7 +187,12 @@
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.status == 200) {
                         let data = xhr.response;
-                        // alert(data)
+                        if (data == "success") {
+                            success();
+                            return
+                        } else if (data) {
+                            alert(data)
+                        }
                     }
                 }
             };
@@ -195,69 +200,71 @@
             xhr.send(formData); //send formData to PHP
         }
 
-        const successScreen = document.querySelector('.success-screen');
-        const toastHeader = document.querySelector('.success-screen__header');
-        const toast = document.querySelector('.toastz');
-        const button = document.querySelector('.button');
+        function success() {
+            const successScreen = document.querySelector('.success-screen');
+            const toastHeader = document.querySelector('.success-screen__header');
+            const toast = document.querySelector('.toastz');
+            const button = document.querySelector('.button');
 
-        button.addEventListener('click', simulateLoad);
-        button.addEventListener('touchend', simulateLoad);
+            button.addEventListener('click', simulateLoad);
+            button.addEventListener('touchend', simulateLoad);
 
-        function simulateLoad() {
-            button.classList.add('button--loading');
-            button.disabled = true;
-            button.querySelector('span').innerHTML = 'Loading...';
-            setTimeout(showSuccessScreen, 2000);
-        }
-
-        function showSuccessScreen() {
-            button.classList.add('button--hide');
-            successScreen.classList.add('success-screen--show');
-            Confetti.render();
-
-            setTimeout(() => {
-                toastHeader.classList.add('success-screen__header--show');
-            }, 500)
-
-            setTimeout(() => {
-                toast.classList.add('toast--show');
-            }, 2000)
-        }
-
-        const Confetti = (function() {
-            const confettiContainer = document.querySelector('.confetti-container');
-            const animationSpeeds = ['slow', 'medium', 'fast'];
-            const types = ['round', 'rectangle'];
-            let renderInterval = null;
-
-            function render() {
-                renderInterval = setInterval(() => {
-                    const particle = document.createElement('div');
-
-                    const particleType = types[Math.floor(Math.random() * types.length)];
-                    const particleLeft = (Math.floor(Math.random() * confettiContainer.offsetWidth)) + 'px';
-                    const particleAnimation = animationSpeeds[Math.floor(Math.random() * animationSpeeds.length)];
-
-                    particle.classList.add(
-                        'confetti__particle',
-                        `confetti__particle--animation-${particleAnimation}`,
-                        `confetti__particle--${particleType}`
-                    );
-                    particle.style.left = particleLeft;
-                    particle.style.webkitTransform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
-
-                    particle.removeTimeout = setTimeout(function() {
-                        particle.parentNode.removeChild(particle);
-                    }, 15000);
-
-                    confettiContainer.appendChild(particle);
-                }, 300);
+            function simulateLoad() {
+                button.classList.add('button--loading');
+                button.disabled = true;
+                button.querySelector('span').innerHTML = 'Loading...';
+                setTimeout(showSuccessScreen, 2000);
             }
 
-            return {
-                render
+            function showSuccessScreen() {
+                button.classList.add('button--hide');
+                successScreen.classList.add('success-screen--show');
+                Confetti.render();
+
+                setTimeout(() => {
+                    toastHeader.classList.add('success-screen__header--show');
+                }, 500)
+
+                setTimeout(() => {
+                    toast.classList.add('toast--show');
+                }, 2000)
             }
-        })();
+
+            const Confetti = (function() {
+                const confettiContainer = document.querySelector('.confetti-container');
+                const animationSpeeds = ['slow', 'medium', 'fast'];
+                const types = ['round', 'rectangle'];
+                let renderInterval = null;
+
+                function render() {
+                    renderInterval = setInterval(() => {
+                        const particle = document.createElement('div');
+
+                        const particleType = types[Math.floor(Math.random() * types.length)];
+                        const particleLeft = (Math.floor(Math.random() * confettiContainer.offsetWidth)) + 'px';
+                        const particleAnimation = animationSpeeds[Math.floor(Math.random() * animationSpeeds.length)];
+
+                        particle.classList.add(
+                            'confetti__particle',
+                            `confetti__particle--animation-${particleAnimation}`,
+                            `confetti__particle--${particleType}`
+                        );
+                        particle.style.left = particleLeft;
+                        particle.style.webkitTransform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+
+                        particle.removeTimeout = setTimeout(function() {
+                            particle.parentNode.removeChild(particle);
+                        }, 15000);
+
+                        confettiContainer.appendChild(particle);
+                    }, 300);
+                }
+
+                return {
+                    render
+                }
+            })();
+        }
     </script>
 </body>
 
