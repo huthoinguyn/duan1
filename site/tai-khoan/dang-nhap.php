@@ -18,7 +18,7 @@ if (exist_param("btn_login")) {
                 if (isset($_SESSION['request_uri'])) {
                     header("location: " . $_SESSION['request_uri']);
                 }
-                echo 'Login successfully';
+                echo 'success';
                 if (exist_param("ghi_nho")) {
                     add_cookie("ma_kh", $ma_kh, 30);
                     add_cookie("mat_khau", $mat_khau, 30);

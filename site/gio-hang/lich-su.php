@@ -78,7 +78,7 @@ if ($listBill == null) {
                                 $listSP = runSQL("SELECT hoa_don_chi_tiet.don_gia, hoa_don_chi_tiet.so_luong, hoa_don_chi_tiet.ma_hh, hang_hoa.ten_hh FROM hoa_don_chi_tiet JOIN hang_hoa on hoa_don_chi_tiet.ma_hh = hang_hoa.ma_hh WHERE ma_hd=" . $bill['ma_hd']);
                                 foreach ($listSP as $x) : ?>
                                     <tr>
-                                        <td><a style="text-decoration: none;" href="../product-detail.php?id=<?= $x["ma_hh"] ?>" target="_blank" rel="noopener noreferrer"><?= $x['ten_hh'] ?></a></td>
+                                        <td><a style="text-decoration: none;" href="?chi-tiet&ma_hh=<?= $x["ma_hh"] ?>" target="_blank" rel="noopener noreferrer"><?= $x['ten_hh'] ?></a></td>
                                         <td><?= $x['so_luong'] ?></td>
                                         <td>$<?= number_format($x['don_gia'], 2) ?></td>
                                         <td>$<?= number_format($x['don_gia'] * $x['so_luong'], 2) ?></td>

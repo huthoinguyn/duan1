@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 03, 2022 lúc 12:40 PM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Máy chủ: sql206.byetcluster.com
+-- Thời gian đã tạo: Th12 05, 2022 lúc 05:04 AM
+-- Phiên bản máy phục vụ: 10.3.27-MariaDB
+-- Phiên bản PHP: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `duan1`
+-- Cơ sở dữ liệu: `b9_32599478_tdkstore`
 --
 
 -- --------------------------------------------------------
@@ -83,7 +84,7 @@ INSERT INTO `hang_hoa` (`ma_hh`, `ten_hh`, `don_gia`, `giam_gia`, `hinh`, `ngay_
 (19, 'BASIC FOR LIFE T-SHIRT', 299, 20, '1-ae1418bd-1a5b-465c-b92d-494b14b26385.jpg', '2022-10-29', '• Chất liệu: cotton 2 chiều\r\n\r\n• Dáng suông, form rộng\r\n\r\n• Tag cao su chính hãng ở mép áo phải và tag phụ ở tay và mép áo trái\r\n\r\n• Logo chú hề thương hiệu thêu ở chính giữa mặt trước\r\n\r\n• Chữ CLOWNZ in lưới ở mặt sau\r\n\r\n• Chất vải thoáng mát, thấm hút mồ hôi\r\n\r\n• Dễ dàng phối với mọi kiểu quần, phong cách trẻ trung, khỏe khoắn', b'1', 60, 8),
 (20, 'CLOWNZ SKULL T-SHIRT', 349, 50, '4-2-f0e51b99-bced-4a36-a80c-3039b8ba4376.jpg', '2022-11-29', 'Chất liệu: 100% cotton\r\n Dáng xuông rộng\r\n Mặt trước: hình in \" skeleton in green fire\"\r\n Mặt sau: hình in \" flamy skull in green fire\"\r\n Sử dụng công nghệ in ép nhiệt chất lượng tốt nhất, lộn trái áo khi giặt.', b'1', 15, 8),
 (21, 'PAINTED KAKI SHORT PANTS', 359, 15, 'quan.jpg', '2022-11-30', 'Chất liệu: Kaki vải mỏng\r\nMàu sắc: Đen/ xám\r\nForm dáng: Quần short \r\nChiếc quần được lấy cảm hứng thiết kế từ phong cách grunge với 2 phối màu cơ bản dễ dàng phối đồ\r\nDọc hai bên quần có chi tiết cúc bấm thời trang', b'1', 2, 9),
-(22, 'LEOPARD CAMO MIX SHORT', 290, 25, '4-d82d820d-96e1-4228-ad24-8c8f685af879.jpg', '2022-11-25', 'Chất liệu: vải Kate mịn\r\nForm dáng: Relax Fit\r\nHoạ tiết da báo và camo được phối màu và mix theo từng mảng có chủ ý tạo điểm nhấn.\r\nSản phẩm thuộc BST LEOPARD COLLECTION', b'1', 25, 9),
+(22, 'LEOPARD CAMO MIX SHORT', 290, 25, '4-d82d820d-96e1-4228-ad24-8c8f685af879.jpg', '2022-11-25', 'Chất liệu: vải Kate mịn\r\nForm dáng: Relax Fit\r\nHoạ tiết da báo và camo được phối màu và mix theo từng mảng có chủ ý tạo điểm nhấn.\r\nSản phẩm thuộc BST LEOPARD COLLECTION', b'1', 26, 9),
 (23, 'STAR BLACK LEATHER SHORT', 525, 75, '4-9f568033-41b0-49f6-9a5f-73b39a354bcc.jpg', '2022-11-27', 'Chất liệu: Da tổng hợp\r\nMàu sắc: Đen bóng\r\nForm dáng: Oversize\r\nThiết kế hai túi trước cùng với một túi hộp. Hình thêu C-Star được thiết kế một cách tinh tế tạo điểm nhấn\r\nSản phẩm thuộc BST LEOPARD COLLECTION', b'1', 28, 9),
 (24, 'CLOWNZ BASKETBALL SHORT', 399, 24, '6-185112d1-08c2-41c7-81d9-7f5fb0b3295f.jpg', '2022-11-30', 'Chất liệu: 100% cotton, vải mềm, 4 chiều co giãn\r\nPhối màu: Đen - Đỏ\r\nForm quần short bóng rổ, unisex thể thao.\r\nLogo chú hề màu trắng in chìm góc ống quần phải đi kèm với hình thêu tỉ mỉ ở mặt trước\r\nCạp chun, sử dụng dây luồn bụng cùng với một lớp lót lưới bên trong', b'1', 2, 9),
 (25, 'CLOWNZ FLANNEL JACKET', 579, 0, '3-3-4f2f9c3e-a59b-4ed0-97ad-9f7f4d063310.jpg', '2022-10-28', 'Chất liệu : Vải dạ kẻ lót gió \r\n\r\nMàu sắc : xanh lá cây - xám\r\n\r\nForm dáng : form kéo khoá dáng boxy - crop\r\n\r\nCảm hứng thiết kế : Mẫu flannel jacket 2 lớp, với form boxy trendy đi cùng 2 phối màu và thiết kế basic. Đây sẽ là một items hay ho dành cho những tín đồ thích mặc flannel, với một form dáng mới lạ, trendy, thay cho dáng flannel thường.\r\n\r\nCông nghệ in ấn / thiết kế : thêu flash vi tính ở ngực chữ ClownZ, sau lưng chữ ClownZ - Stand for Northside\r\n\r\nChi tiết đặc biệt : Khóa kim loại màu xám hun. Túi cơi ở 2 bên và túi ngực bên trong .', b'1', 78, 11),
@@ -115,7 +116,8 @@ CREATE TABLE `hoa_don` (
 --
 
 INSERT INTO `hoa_don` (`ma_hd`, `ma_kh`, `ho_ten`, `dia_chi`, `so_dien_thoai`, `total`, `ghi_chu`, `trang_thai`, `ngay_tao`, `ngay_hoan_thanh`) VALUES
-(44, 'admin', 'Quản trị viên 1', 'Cần Thơ', 'sd', 331.55, 'sds', 2, '2022-12-01', NULL);
+(44, 'admin', 'Quản trị viên 1', 'Cần Thơ', 'sd', 331.55, 'sds', 2, '2022-12-01', NULL),
+(45, 'admin', 'phat', '', '244676556', 217.5, '', 2, '2022-12-05', NULL);
 
 -- --------------------------------------------------------
 
@@ -137,7 +139,8 @@ CREATE TABLE `hoa_don_chi_tiet` (
 --
 
 INSERT INTO `hoa_don_chi_tiet` (`ma_hdct`, `don_gia`, `size`, `so_luong`, `ma_hd`, `ma_hh`) VALUES
-(53, 349, 'M', 1, 44, 18);
+(53, 349, 'M', 1, 44, 18),
+(54, 290, 'M', 1, 45, 22);
 
 -- --------------------------------------------------------
 
@@ -161,7 +164,8 @@ CREATE TABLE `khach_hang` (
 
 INSERT INTO `khach_hang` (`ma_kh`, `mat_khau`, `ho_ten`, `kich_hoat`, `hinh`, `email`, `vai_tro`) VALUES
 ('admin', '123456', 'Quản trị viên 1', '1', 'black-and-white-ga94148792_1920.jpg', 'lethanhduyjr@gmail.com', '1'),
-('admin2', '123456', 'Thanh Duy', '1', 'pexels-julissa-helmuth-3726314.jpg', 'duyltpc04328@fpt.edu.vn', '0');
+('admin2', '123456', 'Thanh Duy', '1', 'pexels-julissa-helmuth-3726314.jpg', 'duyltpc04328@fpt.edu.vn', '0'),
+('phat', '123', 'phat', '1', 'user.webp', 'phat@gmail.com', '0');
 
 -- --------------------------------------------------------
 
@@ -262,13 +266,13 @@ ALTER TABLE `hang_hoa`
 -- AUTO_INCREMENT cho bảng `hoa_don`
 --
 ALTER TABLE `hoa_don`
-  MODIFY `ma_hd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `ma_hd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT cho bảng `hoa_don_chi_tiet`
 --
 ALTER TABLE `hoa_don_chi_tiet`
-  MODIFY `ma_hdct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `ma_hdct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT cho bảng `loai`
@@ -296,6 +300,8 @@ ALTER TABLE `hang_hoa`
 --
 -- Các ràng buộc cho bảng `hoa_don`
 --
+ALTER TABLE `hoa_don`
+  ADD CONSTRAINT `hoa_don_ibfk_1` FOREIGN KEY (`ma_kh`) REFERENCES `khach_hang` (`ma_kh`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `hoa_don_chi_tiet`

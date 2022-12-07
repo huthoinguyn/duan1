@@ -185,14 +185,21 @@
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status == 200) {
                             let data = xhr.response;
-                            alert(data)
+                            if (data == "success") {
+                                showSuccessToast(data, "Sign up successfully")
+                                setTimeout(() => {
+                                    location.reload()
+                                }, 500)
+                            } else {
+                                showErrorToast("Sign up fail", data)
+                            }
                         }
                     }
                 };
                 let formData = new FormData(registerForm); //create new formData
                 xhr.send(formData); //send formData to PHP
             } else {
-                alert('All field are require')
+                showErrorToast("Sign up fail", "All field are require")
             }
         }
     </script>

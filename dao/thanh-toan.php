@@ -12,10 +12,10 @@ function hoa_don_chi_tiet_insert($don_gia, $size, $so_luong, $ma_hd, $ma_hh)
     return true;
 }
 
-function hoa_don_update($ma_kh, $ho_ten, $dia_chi, $so_dien_thoai, $total, $ghi_chu, $trang_thai, $ngay_tao, $ngay_hoan_thanh, $ma_hd)
+function hoa_don_update($trang_thai, $ma_hd)
 {
-    $sql = "UPDATE hoa_don SET ma_kh=?, ho_ten=?,dia_chi=?,so_dien_thoai=?,total=?,ghi_chu=?,trang_thai=?,ngay_tao=?,ngay_hoan_thanh=? WHERE ma_hd=?";
-    pdo_execute($sql, $ma_kh, $ho_ten, $dia_chi, $so_dien_thoai, $total, $ghi_chu, $trang_thai, $ngay_tao, $ngay_hoan_thanh, $ma_hd);
+    $sql = "UPDATE hoa_don SET trang_thai=? WHERE ma_hd=? LIMIT 1";
+    pdo_execute($sql, $trang_thai, $ma_hd);
 }
 
 function hoa_don_select_by_id($ma_kh)
