@@ -30,7 +30,7 @@
         <input name="vai_tro" value="<?= $vai_tro ?>" type="hidden">
         <input name="kich_hoat" value="<?= $kich_hoat ?>" type="hidden">
         <input name="mat_khau" value="<?= $mat_khau ?>" type="hidden">
-        <input name="hinh" value="<?= $hinh ?>" type="hidden">
+        
     </form>
 </div>
 

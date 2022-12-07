@@ -15,21 +15,30 @@ extract($_REQUEST);
 
 
 if (exist_param("btn_insert")) {
-    try {
-        $ma_kh = $_POST['ma_kh'];
-        $mat_khau = $_POST['mat_khau'];
-        $ho_ten = $_POST['ho_ten'];
-        $up_hinh = save_file("hinh", "$IMAGE_DIR/users/");
-        $hinh = strlen(".$up_hinh.") > 0 ? $up_hinh : 'user.png';
-        $kich_hoat = $_POST['kich_hoat'];
-        $email = $_POST['email'];
-        $vai_tro = $_POST['vai_tro'];
-        khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $kich_hoat, $hinh, $email, $vai_tro);
-        unset($ma_kh, $mat_khau, $ho_ten, $kich_hoat, $hinh, $email, $vai_tro);
-        $MESSAGE = "Thêm mới thành công!";
-    } catch (Exception $exc) {
-        $MESSAGE = "Thêm mới thất bại!";
+    if(!empty($ma_kh) &&  !empty($ho_ten) && !empty($mat_khau) && !empty($email)){
+        if (strlen($mat_khau) >6){
+        try {
+            $ma_kh = $_POST['ma_kh'];
+            $mat_khau = $_POST['mat_khau'];
+            $ho_ten = $_POST['ho_ten'];
+            $up_hinh = save_file("hinh", "$IMAGE_DIR/users/");
+            $hinh = strlen(".$up_hinh.") > 0 ? $up_hinh : 'user.png';
+            $kich_hoat = $_POST['kich_hoat'];
+            $email = $_POST['email'];
+            $vai_tro = $_POST['vai_tro'];
+            khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $kich_hoat, $hinh, $email, $vai_tro);
+            unset($ma_kh, $mat_khau, $ho_ten, $kich_hoat, $hinh, $email, $vai_tro);
+            $MESSAGE = "Thêm mới thành công!";
+        } catch (Exception $exc) {
+            $MESSAGE = "Thêm mới thất bại!";
+        }
+    }else {
+        echo "Password must be more than 6 characters";
     }
+    }else{
+        echo "All field are require!";
+    }
+    
     $VIEW_NAME = "khach-hang/new.php";
 } else if (exist_param("btn_update")) {
     try {
