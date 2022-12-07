@@ -34,11 +34,16 @@
             background-color: #cb0000a4;
             display: inline;
         }
-        
+
         .cart-prod-sale span {
             color: #fff;
             font-size: 1.6rem;
             padding: 16px 24px;
+        }
+
+        .prod-price span i {
+            color: #151515;
+            font-weight: 400;
         }
     </style>
 </head>
@@ -82,8 +87,25 @@
                                     </h3>
                                     <div class="size">SIZE: <span><?php echo (($sp['size']) ? $sp['size'] : ''); ?></span></div>
                                     <p>
-                                        <input class="quantityInp" type="number" name="quantity" class="qty product-qty" value='<?php echo $sp['quantity'] ?>' /> x $<span class="prod-price">
-                                            <?php echo $sp['don_gia']; ?>
+                                        <input class="quantityInp" type="number" name="quantity" class="qty product-qty" value='<?php echo $sp['quantity'] ?>' /> x <span class="prod-price">
+                                            <?php
+                                            if ($giam_gia > 0) {
+                                            ?>
+                                                <span class="">
+                                                    <del>
+                                                        $<?= number_format($sp['don_gia'], 2) ?>
+                                                    </del>
+                                                    <i>$<?= ($sp['don_gia'] - (($sp['don_gia'] * $sp['giam_gia']) / 100)) ?></i>
+                                                </span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="">
+                                                    <i>$<?= number_format($sp['don_gia'], 2) ?></i>
+                                                </span>
+                                            <?php
+                                            }
+                                            ?>
                                         </span>
                                     </p>
                                 </div>
@@ -152,7 +174,7 @@
                                 result.map(rs => {
                                     cartTotal += (rs[1].don_gia - ((rs[1].don_gia * rs[1].giam_gia) / 100)) * rs[1].quantity;
                                 })
-                                let prodPrice = Number(prod.querySelector('.prod-price').textContent)
+                                let prodPrice = Number(prod.querySelector('.prod-price i').textContent.slice(1))
 
                                 let prodSale = prod.querySelector('.prod-sale span')?.innerText?.slice(1).slice(0, -1) ?? 0;
                                 prod.querySelector('.prod-subtotal').textContent = "$" + ((prodPrice - (prodPrice * prodSale) / 100) * e.target.value)

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../content/css/style.css">
     <link rel="stylesheet" href="../../content/css/carousel.css">
     <link rel="stylesheet" href="../../content/css/lich-su.css">
+    <link rel="stylesheet" href="../../content/css/notification.css">
 
 </head>
 

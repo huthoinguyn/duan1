@@ -88,9 +88,26 @@
                                                 <span>Quantity:
                                                     <?php echo $sp['quantity'] ?>
                                                 </span>
-                                                x $<?php echo $sp['don_gia']; ?>
+                                                x <?php
+                                                    if ($giam_gia > 0) {
+                                                    ?>
+                                                    <span class="listed-price">
+                                                        <del>
+                                                            $<?= number_format($sp['don_gia'], 2) ?>
+                                                        </del>
+                                                        <i>$<?= number_format($sp['don_gia'] - (($sp['don_gia'] * $sp['giam_gia']) / 100), 2) ?></i>
+                                                    </span>
+                                                <?php
+                                                    } else {
+                                                ?>
+                                                    <span class="listed-price">
+                                                        $<?= number_format($sp['don_gia'], 2) ?>
+                                                    </span>
+                                                <?php
+                                                    }
+                                                ?>
                                             </p>
-                                            <p>$<?php echo $subtotal; ?></p>
+                                            <p style="font-size: 2rem;">$<?php echo $subtotal; ?></p>
                                         </div>
                                     </div>
                                 </form>

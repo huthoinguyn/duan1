@@ -29,7 +29,23 @@ hang_hoa_tang_so_luot_xem($ma_hh);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <style>
+        .product-sale {
+            position: unset;
+            font-size: 1.8rem;
+            color: #fff;
+            padding: 4px 24px;
+            font-weight: 400;
+            background-color: #cb0000a4;
 
+        }
+
+        .product-price del {
+            font-size: 2rem;
+        }
+
+        .product-price .listed-price {
+            font-size: 2.8rem;
+        }
     </style>
 </head>
 
@@ -57,9 +73,37 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                 </div>
             </div>
             <div class="product-infor">
-                <p class="product-name"><?= $ten_hh ?></p>
+                <p class="product-name"><?= $ten_hh ?>
+                    <?php
+                    if ($giam_gia > 0) {
+                    ?>
+                        <span class="product-sale">
+                            - <?= $giam_gia ?>%
+                        </span>
+                    <?php
+                    } ?>
+                </p>
                 <span>Viewer : <?= $so_luot_xem ?></span> <br />
-                <p class="product-price">$<?= number_format($don_gia, 2) ?></p>
+                <p class="product-price">
+                    <?php
+                    if ($giam_gia > 0) {
+                    ?>
+                        <span class="listed-price">
+                            <del>
+                                $<?= number_format($don_gia, 2) ?>
+                            </del>
+                            <i>$<?= number_format($don_gia - (($don_gia * $giam_gia) / 100), 2) ?></i>
+                        </span>
+                    <?php
+                    } else {
+                    ?>
+                        <span class="listed-price">
+                            $<?= number_format($don_gia, 2) ?>
+                        </span>
+                    <?php
+                    }
+                    ?>
+                </p>
                 <span>Size :</span>
                 <ul class="size-list">
                     <li class="size-item">XS</li>
@@ -168,7 +212,8 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.status == 200) {
                         let data = xhr.response;
-                        alert(data)
+                        showSuccessToast(data, data)
+
                     }
                 }
             };
