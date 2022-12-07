@@ -16,6 +16,15 @@
             flex: 0 0 100%;
             max-width: 100%;
         }
+        .btn{
+            border-radius: 4px;
+            border: 1px solid red;
+            padding: 12px 24px;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            
+        }
     </style>
 </head>
 
@@ -31,6 +40,9 @@
                 <button type="submit" name="btn_update" class="btn">Update</button>
             </div>
         </form>
+    </div>
+    <div class="row">
+        <a href="index.php?btn_list" class="btn">List</a>
     </div>
 </body>
 
