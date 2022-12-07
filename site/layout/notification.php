@@ -6,7 +6,7 @@
             title,
             message,
             type: "success",
-            duration: 5000
+            duration: 4000
         });
     }
 
@@ -15,7 +15,7 @@
             title,
             message,
             type: "error",
-            duration: 5000
+            duration: 4000
         });
     }
 </script>

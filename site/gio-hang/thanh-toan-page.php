@@ -179,7 +179,7 @@
         </div>
         <!-- Toast -->
 
-        <div class="toastz">
+        <div class="toastzz">
             <div class="toast__content">
                 <div class="toast__header">Order Success!</div>
                 <div class="toast__sub-header">Please check the delivery time to receive the goods</div>
@@ -220,7 +220,7 @@
         function success() {
             const successScreen = document.querySelector('.success-screen');
             const toastHeader = document.querySelector('.success-screen__header');
-            const toast = document.querySelector('.toastz');
+            const toast = document.querySelector('.toastzz');
             const button = document.querySelector('.button');
 
             button.addEventListener('click', simulateLoad);
