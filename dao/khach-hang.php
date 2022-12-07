@@ -34,7 +34,7 @@ function khach_hang_select_all()
 
 function khach_hang_select_by_id($ma_kh)
 {
-    $sql = "SELECT * FROM khach_hang WHERE ma_kh=?";
+    $sql = "SELECT * FROM khach_hang WHERE ma_kh=? LIMIT 1";
     return pdo_query_one($sql, $ma_kh);
 }
 

@@ -6,6 +6,6 @@ if (exist_param('update_status')) {
     extract($_REQUEST);
     $ngay_hoan_thanh = null;
     hoa_don_update($trang_thai,$ma_hd);
-    echo 'success';
+    echo 'Successfully';
 }
 ?>

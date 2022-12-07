@@ -11,10 +11,12 @@
         .heading {
             height: 36px;
         }
+
         .prod-list {
-            
+
             overflow-y: auto;
         }
+
         form.update-status-form {
             flex: 0 0 100%;
             max-width: 100%;
@@ -22,29 +24,33 @@
             margin: unset;
         }
 
-       
-        .row-heading li{
+
+        .row-heading li {
             background-color: black;
-            color:white;
+            color: white;
             padding: 5px;
-           
-            
+
+
         }
-        .title{
+
+        .title {
             padding-left: 550px;
         }
-        
-       .id{
-        margin-left: 59px;
-       }
-       .qty span{
-        padding-right: 80px;
-       }
-      .status{
-        margin-top: 20px;
-        margin-left: 40px;
-      }
-      .prod_item li i{
+
+        .id {
+            margin-left: 59px;
+        }
+
+        .qty span {
+            padding-right: 80px;
+        }
+
+        .status {
+            margin-top: 20px;
+            margin-left: 40px;
+        }
+
+        .prod_item li i {
             color: black;
             font-size: 25px;
             margin-left: 30px;
@@ -101,7 +107,7 @@
                                                 <span style="font-weight: lighter; color: #555;">/</span> <span class="size"> <?php echo ($x['size']) ? $x['size'] : '' ?></span>
                                             </h4>
                                             <div class="qty">
-                                                
+
                                                 <p class="subtotal">
                                                     $<?= $x['don_gia'] ?>
                                                 </p>
@@ -110,11 +116,11 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
 
                                 </li>
-                                
+
                             <?php endforeach ?>
                         </ul>
                     </li>
@@ -147,7 +153,11 @@
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status == 200) {
                             let data = xhr.response;
-                            alert(data)
+                            if (data == "Successfully") {
+                                showSuccessToast(data, "Update Successfully")
+                            } else {
+                                showErrorToast("Update Fail", data)
+                            }
                         }
                     }
                 };
@@ -162,8 +172,13 @@
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status == 200) {
                             let data = xhr.response;
-                            // alert(data)
-                            up.remove();
+                            if (data == "Successfully") {
+                                showSuccessToast(data, "Delete Successfully")
+                                up.remove();
+                            } else {
+                                showErrorToast("Delete Fail", data)
+                            }
+
                         }
                     }
                 };

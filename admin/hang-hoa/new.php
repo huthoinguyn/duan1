@@ -6,14 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .btn{
+        .btn {
             border-radius: 4px;
             border: 1px solid red;
             padding: 12px 24px;
             background-color: #000;
             color: white;
             text-decoration: none;
-            
+
+        }
+
+        .img-preview {
+            width: 240px;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .img-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -33,9 +45,12 @@
                 <label for="">Product Sale</label>
                 <input type="text" name="giam_gia">
             </div>
-            <div class="form-group">
+            <div class="form-group image-upload">
                 <label for="">Product Image</label>
                 <input type="file" name="hinh">
+            </div>
+            <div class="img-preview">
+                <img src="" class="" alt="">
             </div>
             <div class="form-group">
                 <label for="">Product Description</label>
@@ -54,7 +69,7 @@
                 <input type="text" name="so_luot_xem">
             </div>
             <div class="form-group">
-                <label  for="">Category</label>
+                <label for="">Category</label>
                 <select type="text" name="loai_hang">
                     <?php
                     require_once "../../global.php";
@@ -74,6 +89,13 @@
     <div class="row">
         <a href="index.php?btn_list" class="btn">List</a>
     </div>
+    <script>
+        const imageUpload = document.querySelector('.image-upload'),
+            imagePreview = document.querySelector('.img-preview img')
+        imageUpload.querySelector('input').onchange = (e) => {
+            imagePreview.src = URL.createObjectURL(e.target.files[0])
+        }
+    </script>
 </body>
 
 </html>

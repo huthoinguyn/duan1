@@ -27,10 +27,11 @@
             <button name="btn_update">Cập nhật</button>
         </div>
 
+        <input name="current-image" value="<?= $hinh ?>" type="hidden">
         <input name="vai_tro" value="<?= $vai_tro ?>" type="hidden">
         <input name="kich_hoat" value="<?= $kich_hoat ?>" type="hidden">
         <input name="mat_khau" value="<?= $mat_khau ?>" type="hidden">
-        
+
     </form>
 </div>
 
@@ -59,8 +60,14 @@
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status == 200) {
                     let data = xhr.response;
-                    alert(data)
-                    location.reload()
+                    if (data == "Successfully") {
+                        showSuccessToast(data, "Update Successfully")
+                        setTimeout(() => {
+                            location.reload()
+                        }, 800)
+                    } else {
+                        showErrorToast("Update Fail", data)
+                    }
                 }
             }
         };

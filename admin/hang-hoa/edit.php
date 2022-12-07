@@ -15,14 +15,30 @@
             flex: 0 0 100%;
             max-width: 100%;
         }
-        .btn{
+
+        .btn {
             border-radius: 4px;
             border: 1px solid red;
             padding: 12px 24px;
             background-color: #000;
             color: white;
             text-decoration: none;
-            
+
+        }
+
+        .img-preview,
+        .current-image {
+            flex: 0 0 50%;
+            max-width: 50%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .img-preview img,
+        .current-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -42,10 +58,15 @@
                 <label for="">Product Sale</label>
                 <input type="text" name="giam_gia" value='<?= $giam_gia ?>'>
             </div>
-            <div class="form-group">
+            <div class="form-group image-upload">
                 <label for="">Product Image</label>
                 <input name="up_hinh" type="file">
-                <input name="hinh" value="<?= $hinh ?>">
+                <input type="hidden" name="hinh" value="<?= $hinh ?>">
+            </div>
+            <div class="form-group">
+                <div class="img-preview">
+                    <img src="<?= "$IMAGE_DIR/products/" . $hinh ?>" alt="">
+                </div>
             </div>
             <div class="form-group">
                 <label for="">Product Description</label>
@@ -86,6 +107,13 @@
         <a href="index.php?btn_list" class="btn">List</a>
         <!-- <a href="index.php?btn_list" class="btn">list</a> -->
     </div>
+    <script>
+        const imageUpload = document.querySelector('.image-upload'),
+            imagePreview = document.querySelector('.img-preview img')
+        imageUpload.querySelector('input').onchange = (e) => {
+            imagePreview.src = URL.createObjectURL(e.target.files[0])
+        }
+    </script>
 </body>
 
 </html>

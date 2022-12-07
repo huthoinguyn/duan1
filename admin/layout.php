@@ -16,7 +16,8 @@
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../../content/css/admin.css" />
     <link rel="stylesheet" href="../../content/css/form-admin.css" />
-
+    <link rel="stylesheet" href="../../content/css/notification.css" />
+    
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
@@ -44,11 +45,13 @@
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
         </div>
+        <?php require "../../site/layout/notification.php" ?>
         <div class="content-container">
             <?php require $VIEW_NAME ?>
         </div>
     </main>
     <script src="../../content/js/admin.js"></script>
+    <script src="../../content/js/notification.js"></script>
 
 </body>
 
