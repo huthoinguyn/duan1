@@ -39,6 +39,7 @@ if (exist_param("btn_insert")) {
 }
     $VIEW_NAME = "hang-hoa/new.php";
 } else if (exist_param("btn_update")) {
+    if (!empty($ten_hh) && !empty($don_gia) && !empty($giam_gia) && !empty($mo_ta) && !empty($dac_biet) && !empty($ngay_nhap)){
     try {
         $ma_hh = $_POST['ma_hh'];
         $ten_hh = $_POST['ten_hh'];
@@ -56,6 +57,9 @@ if (exist_param("btn_insert")) {
     } catch (Exception $exc) {
         $MESSAGE = "Cập nhật thất bại!";
     }
+}else{
+    echo "All field are require!";
+}
     $VIEW_NAME = "hang-hoa/list.php";
 } else if (exist_param("btn_delete")) {
     try {
