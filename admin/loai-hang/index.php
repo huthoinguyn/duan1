@@ -6,16 +6,23 @@ extract($_REQUEST);
 
 
 if (exist_param("btn_insert")) {
-    try {
-        $ten_loai = $_POST['loai_hang'];
-        loai_insert($ten_loai);
-        unset($ten_loai, $ma_loai);
-        $MESSAGE = "Thêm mới thành công!";
-    } catch (Exception $exc) {
-        $MESSAGE = "Thêm mới thất bại!";
+    $ten_loai = $_POST['loai_hang'];
+    if(!empty($ten_loai) ){
+        try {
+            loai_insert($ten_loai);
+            unset($ten_loai, $ma_loai);
+            $MESSAGE = "Thêm mới thành công!";
+        } catch (Exception $exc) {
+            $MESSAGE = "Thêm mới thất bại!";
+        }
+       
+    }else{
+        echo "Invalid type name";
+        
     }
     $VIEW_NAME = "loai-hang/new.php";
 } else if (exist_param("btn_update")) {
+    if(!empty($ten_loai) ){
     try {
         $ma_loai = $_POST['ma_loai'];
         $ten_loai = $_POST['ten_loai'];
@@ -24,6 +31,9 @@ if (exist_param("btn_insert")) {
     } catch (Exception $exc) {
         $MESSAGE = "Cập nhật thất bại!";
     }
+}else{
+    echo "Invalid type name";
+}
     $VIEW_NAME = "loai-hang/edit.php";
 } else if (exist_param("btn_delete")) {
     try {
