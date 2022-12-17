@@ -16,7 +16,6 @@ extract($_REQUEST);
 
 
 if (exist_param("btn_insert")) {
-    if (!empty($ten_hh) && !empty($don_gia) && !empty($giam_gia) && !empty($mo_ta) && !empty($dac_biet) && !empty($ngay_nhap)){
     try {
         $ten_hh = $_POST['ten_hh'];
         $don_gia = $_POST['don_gia'];
@@ -24,8 +23,8 @@ if (exist_param("btn_insert")) {
         $up_hinh = save_file("hinh", "$IMAGE_DIR/products/");
         $hinh = strlen(".$up_hinh.") > 0 ? $up_hinh : 'product.png';
         $mo_ta = $_POST['mo_ta'];
-        $dac_biet = $_POST['dac_biet'];
-        $so_luot_xem = $_POST['so_luot_xem'];
+        $dac_biet = $_POST['dac_biet'] ?? 0;
+        $so_luot_xem = 1;
         $ma_loai = $_POST['loai_hang'];
         $ngay_nhap = $_POST['ngay_nhap'];
         hang_hoa_insert($ten_hh, $don_gia, $giam_gia, $hinh, $ngay_nhap, $mo_ta, $dac_biet, $so_luot_xem, $ma_loai);
@@ -34,32 +33,29 @@ if (exist_param("btn_insert")) {
     } catch (Exception $exc) {
         $MESSAGE = "Thêm mới thất bại!";
     }
-}else{
-    echo "All field are require!";
-}
     $VIEW_NAME = "hang-hoa/new.php";
 } else if (exist_param("btn_update")) {
-    if (!empty($ten_hh) && !empty($don_gia) && !empty($giam_gia) && !empty($mo_ta) && !empty($dac_biet) && !empty($ngay_nhap)){
-    try {
-        $ma_hh = $_POST['ma_hh'];
-        $ten_hh = $_POST['ten_hh'];
-        $don_gia = $_POST['don_gia'];
-        $giam_gia = isset($_POST['giam_gia']) ? $_POST['giam_gia'] : null;
-        $up_hinh = save_file("up_hinh", "$IMAGE_DIR/products/");
-        $hinh = strlen(".$up_hinh.") > 0 ? $up_hinh : $hinh;
-        $mo_ta = $_POST['mo_ta'];
-        $dac_biet = $_POST['dac_biet'];
-        $so_luot_xem = $_POST['so_luot_xem'];
-        $ma_loai = $_POST['loai_hang'];
-        $ngay_nhap = $_POST['ngay_nhap'];
-        hang_hoa_update($ma_hh, $ten_hh, $don_gia, $giam_gia, $hinh, $ngay_nhap, $mo_ta, $dac_biet, $so_luot_xem, $ma_loai);
-        $MESSAGE = "Cập nhật thành công!";
-    } catch (Exception $exc) {
-        $MESSAGE = "Cập nhật thất bại!";
+    if (!empty($ten_hh) && !empty($don_gia) && !empty($mo_ta) && !empty($ngay_nhap)) {
+        try {
+            $ma_hh = $_POST['ma_hh'];
+            $ten_hh = $_POST['ten_hh'];
+            $don_gia = $_POST['don_gia'];
+            $giam_gia = isset($_POST['giam_gia']) ? $_POST['giam_gia'] : null;
+            $up_hinh = save_file("up_hinh", "$IMAGE_DIR/products/");
+            $hinh = strlen(".$up_hinh.") > 0 ? $up_hinh : $_POST['currentImage'];
+            $mo_ta = $_POST['mo_ta'];
+            $dac_biet = $_POST['dac_biet'] ?? 0;
+            $so_luot_xem = $_POST['so_luot_xem'];
+            $ma_loai = $_POST['loai_hang'];
+            $ngay_nhap = $_POST['ngay_nhap'];
+            hang_hoa_update($ma_hh, $ten_hh, $don_gia, $giam_gia, $hinh, $ngay_nhap, $mo_ta, $dac_biet, $so_luot_xem, $ma_loai);
+            $MESSAGE = "Cập nhật thành công!";
+        } catch (Exception $exc) {
+            $MESSAGE = "Cập nhật thất bại!";
+        }
+    } else {
+        echo "All field are require!";
     }
-}else{
-    echo "All field are require!";
-}
     $VIEW_NAME = "hang-hoa/list.php";
 } else if (exist_param("btn_delete")) {
     try {

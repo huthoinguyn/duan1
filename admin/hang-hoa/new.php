@@ -32,18 +32,18 @@
 
 <body>
     <div class="row">
-        <form action="index.php" method="post" enctype="multipart/form-data">
+        <form class="add-prod-form" action="index.php?btn_insert" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Product Name</label>
                 <input type="text" name="ten_hh">
             </div>
             <div class="form-group">
                 <label for="">Product Price</label>
-                <input type="text" name="don_gia">
+                <input type="number" name="don_gia">
             </div>
             <div class="form-group">
                 <label for="">Product Sale</label>
-                <input type="text" name="giam_gia">
+                <input readonly disabled type="number" name="giam_gia">
             </div>
             <div class="form-group image-upload">
                 <label for="">Product Image</label>
@@ -56,17 +56,13 @@
                 <label for="">Product Description</label>
                 <textarea type="text" name="mo_ta"></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group flex-start">
                 <label for="">Product Speacial</label>
-                <input type="text" name="dac_biet">
+                <input type="checkbox" name="dac_biet" value="1">
             </div>
             <div class="form-group">
                 <label for="">Time</label>
-                <input type="text" name="ngay_nhap" placeholder="yyyy/mm/dd">
-            </div>
-            <div class="form-group">
-                <label for="">View</label>
-                <input type="text" name="so_luot_xem">
+                <input type="date" name="ngay_nhap">
             </div>
             <div class="form-group">
                 <label for="">Category</label>
@@ -91,9 +87,59 @@
     </div>
     <script>
         const imageUpload = document.querySelector('.image-upload'),
-            imagePreview = document.querySelector('.img-preview img')
+            imagePreview = document.querySelector('.img-preview img'),
+            inputPrice = document.querySelector('input[name="don_gia"]'),
+            addProdForm = document.querySelector(".add-prod-form"),
+            addProdFormBtn = document.querySelector(".add-prod-form button")
+
         imageUpload.querySelector('input').onchange = (e) => {
             imagePreview.src = URL.createObjectURL(e.target.files[0])
+        }
+        addProdFormBtn.onclick = (e) => {
+            e.preventDefault()
+        }
+        addProdForm.onchange = () => {
+            const prodName = addProdForm.querySelector('input[name="ten_hh"]').value,
+                prodPrice = addProdForm.querySelector('input[name="don_gia"]').value,
+                prodSale = addProdForm.querySelector('input[name="giam_gia"]').value,
+                prodDesc = addProdForm.querySelector('textarea[name="mo_ta"]').value,
+                prodDate = addProdForm.querySelector('input[name="ngay_nhap"]').value
+            addProdFormBtn.onclick = (e) => {
+                e.preventDefault()
+                if (prodName !== "" && prodDesc !== "") {
+                    if (prodPrice > 0) {
+                        ['readonly', 'disabled'].forEach(attribute => document.querySelector('input[name="giam_gia"]').removeAttribute(attribute));
+                        if (prodSale < 100) {
+                            showSuccessToast("Success", "Add Products Successfully")
+                            setTimeout(() => {
+                                addProdForm.submit()
+                            }, 500)
+                        } else {
+                            showErrorToast("Error", "The discount value cannot exceed 100% of the value of the goods")
+                            prodSale.focus()
+                        }
+                    } else {
+                        ['readonly', 'disabled'].forEach(attribute => document.querySelector('input[name="giam_gia"]').setAttribute(attribute, 'true'));
+                        showErrorToast("Fail", "Unit price must be positive")
+                    }
+                } else {
+                    showErrorToast("Error", "All field are required")
+                }
+            }
+        }
+
+        inputPrice.onchange = (e) => {
+            if (e.target.value > 0) {
+                ['readonly', 'disabled'].forEach(attribute => document.querySelector('input[name="giam_gia"]').removeAttribute(attribute));
+            } else {
+                ['readonly', 'disabled'].forEach(attribute => document.querySelector('input[name="giam_gia"]').setAttribute(attribute, 'true'));
+            }
+        }
+        document.querySelector('input[name="giam_gia"]').onchange = (e) => {
+            if (e.target.value >= 100) {
+                showErrorToast("Error", "The discount value cannot exceed 100% of the value of the goods")
+                e.target.focus()
+            }
         }
     </script>
 </body>

@@ -41,19 +41,38 @@
             width: 100%;
             font-size: 18px;
             pointer-events: all;
+            text-align: left;
         }
 
         .coffee-container .content-wrap {
             max-width: 80%;
             flex: 0 0 80%;
         }
-        
+
 
         .cate-list li a:hover {
             color: var(--primary-color);
         }
+
+        .sort-list li a:hover {
+            color: var(--primary-color);
+        }
+
         .cate-list li a.active {
             color: var(--primary-color);
+        }
+
+        .sort-list li a.active {
+            color: var(--primary-color);
+        }
+
+        .sort-list {
+            list-style: none;
+        }
+
+        .sort-list li a {
+            font-size: 1.6rem;
+            padding: 9px 6px;
         }
     </style>
 </head>
@@ -63,8 +82,8 @@
         <div class="cate-wrap">
             <div class="row search">
                 <form action="">
-                   <input type="text" name="keywords" placeholder="Search a clothes...">
-                   
+                    <input type="text" name="keywords" placeholder="Search a clothes...">
+
                 </form>
             </div>
             <div class="row">
@@ -85,6 +104,16 @@
                     <?php } ?>
                 </ul>
             </div>
+            <div class="row">
+                <h3 class="title">Sort</h3>
+            </div>
+            <div class="row">
+                <div class="sort-list">
+
+                    <li><a class="" data-sort-id="HTL" href="index.php?coffee&sort=AZ">High to Low Price</a></li>
+                    <li><a data-sort-id="LTH" href="index.php?coffee&">Low to High Price</a></li>
+                </div>
+            </div>
         </div>
         <div class="content-wrap">
             <div class="row prod-list">
@@ -97,7 +126,9 @@
             searchInp = document.querySelector('.search form input'),
             contentWrap = document.querySelector('.content-wrap .row'),
             cateList = document.querySelector('.cate-list'),
-            cateItems = cateList.querySelectorAll('li a')
+            sortList = document.querySelector('.sort-list'),
+            cateItems = cateList.querySelectorAll('li a'),
+            sortItems = sortList.querySelectorAll('li a')
 
         searchForm.onsubmit = (e) => {
             e.preventDefault()
@@ -149,6 +180,26 @@
                     };
                     xhr.send(); //send formData to PHP
                 }
+            }
+        })
+        sortItems.forEach(sort => {
+            sort.onclick = (e) => {
+                e.preventDefault();
+                [...sortItems].map(ct => ct.classList.remove('active'))
+                sort.classList.add('active')
+
+                //
+                const xhr = new XMLHttpRequest(); // create new XML Object
+                xhr.open("GET", `../hang-hoa/tim-kiem.php?sort=${sort.dataset.sortId}`, true);
+                xhr.onload = () => {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status == 200) {
+                            let data = xhr.response;
+                            contentWrap.innerHTML = data;
+                        }
+                    }
+                };
+                xhr.send(); //send formData to PHP
             }
         })
     </script>

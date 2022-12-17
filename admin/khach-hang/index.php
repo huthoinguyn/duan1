@@ -15,14 +15,14 @@ extract($_REQUEST);
 
 
 if (exist_param("btn_insert")) {
-    if(!empty($ma_kh) &&  !empty($ho_ten) && !empty($mat_khau) && !empty($email)){
-        if (strlen($mat_khau) >6){
+    if (!empty($ma_kh) &&  !empty($ho_ten) && !empty($mat_khau) && !empty($email)) {
+        // if (strlen($mat_khau) > 6) {
         try {
             $ma_kh = $_POST['ma_kh'];
             $mat_khau = $_POST['mat_khau'];
             $ho_ten = $_POST['ho_ten'];
             $up_hinh = save_file("hinh", "$IMAGE_DIR/users/");
-            $hinh = strlen(".$up_hinh.") > 0 ? $up_hinh : 'user.png';
+            $hinh = strlen(".$up_hinh.") > 0 ? $up_hinh : 'user.webp';
             $kich_hoat = $_POST['kich_hoat'];
             $email = $_POST['email'];
             $vai_tro = $_POST['vai_tro'];
@@ -32,13 +32,13 @@ if (exist_param("btn_insert")) {
         } catch (Exception $exc) {
             $MESSAGE = "Thêm mới thất bại!";
         }
-    }else {
-        echo "Password must be more than 6 characters";
-    }
-    }else{
+        // } else {
+        //     echo "Password must be more than 6 characters";
+        // }
+    } else {
         echo "All field are require!";
     }
-    
+
     $VIEW_NAME = "khach-hang/new.php";
 } else if (exist_param("btn_update")) {
     try {
@@ -59,7 +59,7 @@ if (exist_param("btn_insert")) {
     $VIEW_NAME = "khach-hang/list.php";
 } else if (exist_param("btn_delete")) {
     try {
-        $ma_kh = $_REQUEST['ma_kh'];
+        $ma_kh = $_GET['ma_kh'];
         khach_hang_delete($ma_kh);
         $items = khach_hang_select_all();
         $MESSAGE = "Xóa thành công!";
@@ -68,7 +68,7 @@ if (exist_param("btn_insert")) {
     }
     $VIEW_NAME = "khach-hang/list.php";
 } else if (exist_param("btn_edit")) {
-    $ma_kh = $_REQUEST['ma_kh'];
+    $ma_kh = $_GET['ma_kh'];
     $item = khach_hang_select_by_id($ma_kh);
     extract($item);
     $VIEW_NAME = "khach-hang/edit.php";

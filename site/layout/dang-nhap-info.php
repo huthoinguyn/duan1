@@ -156,8 +156,14 @@
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.status == 200) {
                         let data = xhr.response;
-                        alert(data)
-                        location.reload()
+                        if (data == "Successfully") {
+                            showSuccessToast(data, "Sign out successfully")
+                            setTimeout(() => {
+                                location.reload()
+                            }, 500)
+                        } else {
+                            showErrorToast("Sign out fail", data)
+                        }
                     }
                 }
             };

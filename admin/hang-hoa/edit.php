@@ -72,18 +72,16 @@
                 <label for="">Product Description</label>
                 <textarea type="text" name="mo_ta"><?= $mo_ta ?></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group flex-start">
                 <label for="">Product Speacial</label>
-                <input type="text" name="dac_biet" value='<?= $dac_biet ?>'>
+                <input type="checkbox" name="dac_biet" value="1">
             </div>
             <div class="form-group">
                 <label for="">Time</label>
-                <input type="text" name="ngay_nhap" value='<?= $ngay_nhap ?>'>
+                <input type="date" name="ngay_nhap" value="<?= $ngay_nhap ?>">
             </div>
-            <div class="form-group">
-                <label for="">View</label>
-                <input type="text" name="so_luot_xem" value='<?= $so_luot_xem ?>'>
-            </div>
+            <input type="hidden" name="so_luot_xem" value='<?= $so_luot_xem ?>'>
+            <input type="hidden" name="currentImage" value="<?= $hinh ?>">
             <div class="form-group">
                 <label for="">Product Category</label>
                 <select type="text" name="loai_hang">
