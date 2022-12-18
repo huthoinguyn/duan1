@@ -8,6 +8,8 @@ if (exist_param("ma_loai")) {
     $items = hang_hoa_select_by_loai($ma_loai);
 } else if (exist_param("keywords")) {
     $items = hang_hoa_select_keyword($keywords);
+} else if (exist_param("special")) {
+    $items = hang_hoa_select_dac_biet();
 } else if (exist_param("sort")) {
     if ($_GET["sort"] == "HTL") {
         $items = hang_hoa_select_sort_HtL();

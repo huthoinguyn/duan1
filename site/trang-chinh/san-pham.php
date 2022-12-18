@@ -74,6 +74,16 @@
             font-size: 1.6rem;
             padding: 9px 6px;
         }
+
+        .special-list {
+            list-style: none;
+            margin-top: 12px;
+            font-size: 1.6rem;
+        }
+
+        .special-list li a {
+            padding: 4px;
+        }
     </style>
 </head>
 
@@ -109,9 +119,13 @@
             </div>
             <div class="row">
                 <div class="sort-list">
-
-                    <li><a class="" data-sort-id="HTL" href="index.php?coffee&sort=AZ">High to Low Price</a></li>
-                    <li><a data-sort-id="LTH" href="index.php?coffee&">Low to High Price</a></li>
+                    <li><a class="" data-sort-id="HTL" href="index.php?san-pham&sort=AZ">High to Low Price</a></li>
+                    <li><a data-sort-id="LTH" href="index.php?san-pham&">Low to High Price</a></li>
+                </div>
+            </div>
+            <div class="row">
+                <div class="special-list">
+                    <li><a class="" data-sort-id="HTL" href="index.php?san-pham&sort=AZ">Special Products</a></li>
                 </div>
             </div>
         </div>
@@ -128,7 +142,23 @@
             cateList = document.querySelector('.cate-list'),
             sortList = document.querySelector('.sort-list'),
             cateItems = cateList.querySelectorAll('li a'),
-            sortItems = sortList.querySelectorAll('li a')
+            sortItems = sortList.querySelectorAll('li a'),
+            specialItem = document.querySelector('.special-list li a')
+
+        specialItem.onclick = (e) => {
+            e.preventDefault()
+            const xhr = new XMLHttpRequest(); // create new XML Object
+            xhr.open("POST", "../hang-hoa/tim-kiem.php?special", true);
+            xhr.onload = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status == 200) {
+                        let data = xhr.response;
+                        contentWrap.innerHTML = data;
+                    }
+                }
+            };
+            xhr.send(); //send formData to PHP
+        }
 
         searchForm.onsubmit = (e) => {
             e.preventDefault()

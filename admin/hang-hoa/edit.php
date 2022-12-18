@@ -74,7 +74,7 @@
             </div>
             <div class="form-group flex-start">
                 <label for="">Product Speacial</label>
-                <input type="checkbox" name="dac_biet" value="1">
+                <input type="checkbox" name="dac_biet">
             </div>
             <div class="form-group">
                 <label for="">Time</label>
