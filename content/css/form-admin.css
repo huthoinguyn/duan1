@@ -78,3 +78,7 @@ form {
   height: 100%;
   object-fit: cover;
 }
+
+.flex-start{
+  justify-content: flex-start;
+}

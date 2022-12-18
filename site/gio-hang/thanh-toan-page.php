@@ -162,7 +162,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <textarea name="dia_chi" id="" rows="4" class="form-control address-form" required></textarea>
+                        <textarea name="dia_chi" id="" rows="4" class="form-control address-form" required placeholder="Ex: An Binh, Ninh Kieu, Can Tho..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="address">Note</label>
@@ -174,6 +174,9 @@
                         <div class="loader button__loader"></div>
                         <span>BUY</span>
                     </button>
+                    <div class="vnpay">
+                        <a target="blank" href="../../vnpay_php/">Online Payment</a>
+                    </div>
                 </form>
             </div>
         </div>
@@ -205,10 +208,10 @@
                     if (xhr.status == 200) {
                         let data = xhr.response;
                         if (data == "success") {
-                            success();
-                            return
-                        } else if (data) {
-                            alert(data)
+                            showSuccessToast(data, "Order Successfully")
+                            success()
+                        } else {
+                            showErrorToast("Order Fail", data)
                         }
                     }
                 }
@@ -222,8 +225,8 @@
             const toastHeader = document.querySelector('.success-screen__header');
             const toast = document.querySelector('.toastzz');
             const button = document.querySelector('.button');
-
-            button.addEventListener('click', simulateLoad);
+            simulateLoad();
+            // button.addEventListener('click', );
             button.addEventListener('touchend', simulateLoad);
 
             function simulateLoad() {

@@ -93,14 +93,15 @@
         <div class="register-close-icon">
             <i class="fa-solid fa-close"></i>
         </div>
-        <form class="register-form" action="dang-ky.php" method="post" enctype="multipart/form-data">
-            <div class="form-group">
+        <form autocomplete="off" class="register-form" action="dang-ky.php" method="post" enctype="multipart/form-data">
+            <div class="form-group flex-end">
                 <label for="">Username</label>
-                <input name="ma_kh">
+                <input class="form-input" name="ma_kh" autocomplete="off">
+                <div class='form-tooltip'>Username must be 8 - 20 characters and does not include special characters </div>
             </div>
             <div class="form-group">
                 <label for="">Name</label>
-                <input name="ho_ten">
+                <input name="ho_ten" autocapitalize="on">
             </div>
             <div class="form-group">
                 <label for="">Email</label>

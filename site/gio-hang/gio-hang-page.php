@@ -13,38 +13,6 @@
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/gio-hang.css">
     <title>Cart - TDK Store</title>
     <style>
-        .checkout-btn a {
-            width: 100%;
-            padding: 12px 24px;
-            text-transform: uppercase;
-            background-color: #000;
-            color: #fff;
-            font-size: 1.6rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 16px;
-        }
-
-        .checkout-btn a i {
-            font-size: 1.8rem;
-        }
-
-        .cart-prod-sale {
-            background-color: #cb0000a4;
-            display: inline;
-        }
-
-        .cart-prod-sale span {
-            color: #fff;
-            font-size: 1.6rem;
-            padding: 16px 24px;
-        }
-
-        .prod-price span i {
-            color: #151515;
-            font-weight: 400;
-        }
     </style>
 </head>
 
@@ -58,67 +26,77 @@
                     $cart_data = json_decode($cookie_data, true);
                     // var_dump($cart_data);
                     $total = 0;
-                    foreach ($cart_data as $sp) :
-                        $giam_gia = $sp['giam_gia'] ? $sp['giam_gia'] : 0;
-                        $subtotal = ($sp['don_gia'] - (($sp['don_gia'] * $giam_gia) / 100)) * $sp['quantity'];
-                        $total += $subtotal;
+                    if ($cart_data) {
+                        foreach ($cart_data as $sp) :
+                            $giam_gia = $sp['giam_gia'] ? $sp['giam_gia'] : 0;
+                            $subtotal = ($sp['don_gia'] - (($sp['don_gia'] * $giam_gia) / 100)) * $sp['quantity'];
+                            $total += $subtotal;
                     ?>
-                        <form class="cart-prod-item" action="" method="POST">
-                            <input type="hidden" name="ma_hh" value="<?php echo $sp['ma_hh']; ?>">
-                            <input type="hidden" name="size" value="<?php echo $sp['size'] ?>">
-                            <div class="row cart-item">
-                                <div class="prod-img">
-                                    <img src="<?= $CONTENT_URL ?>/images/products/<?php echo $sp['hinh']; ?>" alt="">
-                                </div>
-                                <div class="prod-info">
-                                    <p class="itemNumber">#QUE-007544-002</p>
-                                    <h3>
-                                        <?php echo $sp['ten_hh']; ?>
-                                        <?php
-                                        if ($giam_gia > 0) {
-                                        ?>
-                                            <div class="cart-prod-sale">
-                                                <span>
-                                                    -<?= $giam_gia ?>%
-                                                </span>
-                                            </div>
-                                        <?php
-                                        } ?>
-                                    </h3>
-                                    <div class="size">SIZE: <span><?php echo (($sp['size']) ? $sp['size'] : ''); ?></span></div>
-                                    <p>
-                                        <input class="quantityInp" type="number" name="quantity" class="qty product-qty" value='<?php echo $sp['quantity'] ?>' /> x <span class="prod-price">
+                            <form class="cart-prod-item" action="" method="POST">
+                                <input type="hidden" name="ma_hh" value="<?php echo $sp['ma_hh']; ?>">
+                                <input type="hidden" name="size" value="<?php echo $sp['size'] ?>">
+                                <div class="row cart-item">
+                                    <div class="prod-img">
+                                        <img src="<?= $CONTENT_URL ?>/images/products/<?php echo $sp['hinh']; ?>" alt="">
+                                    </div>
+                                    <div class="prod-info">
+                                        <p class="itemNumber">#QUE-007544-002</p>
+                                        <h3>
+                                            <?php echo $sp['ten_hh']; ?>
                                             <?php
                                             if ($giam_gia > 0) {
                                             ?>
-                                                <span class="">
-                                                    <del>
-                                                        $<?= number_format($sp['don_gia'], 2) ?>
-                                                    </del>
-                                                    <i>$<?= ($sp['don_gia'] - (($sp['don_gia'] * $sp['giam_gia']) / 100)) ?></i>
-                                                </span>
+                                                <div class="cart-prod-sale">
+                                                    <span>
+                                                        -<?= $giam_gia ?>%
+                                                    </span>
+                                                </div>
                                             <?php
-                                            } else {
-                                            ?>
-                                                <span class="">
-                                                    <i>$<?= number_format($sp['don_gia'], 2) ?></i>
-                                                </span>
-                                            <?php
-                                            }
-                                            ?>
-                                        </span>
-                                    </p>
+                                            } ?>
+                                        </h3>
+                                        <div class="size">SIZE: <span><?php echo (($sp['size']) ? $sp['size'] : ''); ?></span></div>
+                                        <p style="display: flex; align-items: center;">
+                                            <input class="quantityInp" type="number" name="quantity" class="qty product-qty" value='<?php echo $sp['quantity'] ?>' /> <span style="margin: 4px;">x</span> <span class="prod-price">
+                                                <?php
+                                                if ($giam_gia > 0) {
+                                                ?>
+                                                    <span class="">
+                                                        <del>
+                                                            $<?= number_format($sp['don_gia'], 2) ?>
+                                                        </del>
+                                                        <i>$<?= ($sp['don_gia'] - (($sp['don_gia'] * $sp['giam_gia']) / 100)) ?></i>
+                                                    </span>
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <span class="">
+                                                        <i>$<?= number_format($sp['don_gia'], 2) ?></i>
+                                                    </span>
+                                                <?php
+                                                }
+                                                ?>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="prod-total">
+                                        <p class="prod-subtotal">$<?php echo $subtotal; ?></p>
+                                    </div>
+                                    <div class="prod-action">
+                                        <button class="delete-prod" name="delcart">x</button>
+                                    </div>
                                 </div>
-                                <div class="prod-total">
-                                    <p class="prod-subtotal">$<?php echo $subtotal; ?></p>
-                                </div>
-                                <div class="prod-action">
-                                    <button class="delete-prod" name="delcart">x</button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        <?php
+                        endforeach;
+                    } else {
+                        ?>
+                        <div class="cart-empty">
+                            <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                            <div class="cart-heading">Cart is Empty</div>
+                            <a href="?san-pham">Continue Shopping</a>
+                        </div>
                     <?php
-                    endforeach;
+                    }
                     ?>
                 </div>
             </div>
@@ -177,9 +155,9 @@
                                 let prodPrice = Number(prod.querySelector('.prod-price i').textContent.slice(1))
 
                                 let prodSale = prod.querySelector('.prod-sale span')?.innerText?.slice(1).slice(0, -1) ?? 0;
-                                prod.querySelector('.prod-subtotal').textContent = "$" + ((prodPrice - (prodPrice * prodSale) / 100) * e.target.value)
-                                document.querySelector('.total .cart-total').textContent = "$" + cartTotal
-                                document.querySelector('.subtotal .cart-subtotal').textContent = "$" + cartTotal
+                                prod.querySelector('.prod-subtotal').textContent = "$" + (new Intl.NumberFormat().format(((prodPrice - (prodPrice * prodSale) / 100) * e.target.value)))
+                                document.querySelector('.total .cart-total').textContent = "$" + new Intl.NumberFormat().format(cartTotal)
+                                document.querySelector('.subtotal .cart-subtotal').textContent = "$" + new Intl.NumberFormat().format(cartTotal)
                             }
                         }
                     };
@@ -211,6 +189,12 @@
                 xhr.send(formData); //send formData to PHP
             }
         })
+
+        if (prodForms.length <= 0) {
+            document.querySelector('.checkout-btn a').onclick = (e) => {
+                e.preventDefault()
+            }
+        }
     </script>
 </body>
 

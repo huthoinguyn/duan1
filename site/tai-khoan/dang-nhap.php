@@ -40,7 +40,7 @@ if (exist_param("btn_login")) {
 } else {
     if (exist_param("btn_logoff")) {
         session_unset();
-        echo "Logout Successfully";
+        echo "Successfully";
     }
     $ma_kh = get_cookie("ma_kh");
     $mat_khau = get_cookie("mat_khau");
