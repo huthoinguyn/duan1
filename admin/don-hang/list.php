@@ -127,8 +127,8 @@
                     <li class="total">$<?= $total ?></li>
                     <li class="status">
                         <select name="trang_thai" id="">
-                            <option value="0" <?php echo ($trang_thai == 0) ? "selected" : "" ?>>Chưa Xác Nhận</option>
-                            <option value="1" <?php echo ($trang_thai == 1) ? "selected" : "" ?>>Đang xử lý</option>
+                            <option value="0" <?php echo ($trang_thai == 0) ? "selected" : "" ?>>Unconfirm</option>
+                            <option value="1" <?php echo ($trang_thai == 1) ? "selected" : "" ?>>Preparing</option>
                             <option value="2" <?php echo ($trang_thai == 2) ? "selected" : "" ?>>Delivery</option>
                             <option value="3" <?php echo ($trang_thai == 3) ? "selected" : "" ?>>Finished</option>
                             <option value="4" <?php echo ($trang_thai == 4) ? "selected" : "" ?>>Cancel</option>

@@ -132,9 +132,6 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                         <button type="submit" name="addcart" class="button-addcart">ADD TO CART</button>
                     </div>
                 </form>
-                <div class="product-social">
-                    <a class="product-fav" href="#"><i class="fa-solid fa-heart"></i> Add to favorite list</a>
-                </div>
                 <div class="product-dropdown">
                     <div class="heading">
                         <h3>Description</h3>
