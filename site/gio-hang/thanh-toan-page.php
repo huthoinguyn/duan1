@@ -47,6 +47,11 @@
             background-color: #000;
             color: #fff;
         }
+        .vnpay{
+            border: 1px solid black;
+            margin-top: 15px;
+            
+        }
     </style>
 </head>
 
@@ -174,7 +179,7 @@
                         <div class="loader button__loader"></div>
                         <span>BUY</span>
                     </button>
-                    <div class="vnpay">
+                    <div class="vnpay button">
                         <a target="blank" href="../../vnpay_php/">Online Payment</a>
                     </div>
                 </form>
