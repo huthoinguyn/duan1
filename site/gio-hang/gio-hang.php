@@ -5,6 +5,7 @@ require '../../pdo.php';
 if (exist_param('addcart')) {
     $ma_hh = isset($_POST['ma_hh']) ? $_POST['ma_hh'] : '';
     $size = isset($_POST['size']) ? $_POST['size'] : '';
+    $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : 1;
     $sanpham = hang_hoa_select_by_id($ma_hh);
     extract($sanpham);
     $kh = isset($_SESSION['user']) ? $_SESSION['user'] : [];
@@ -37,7 +38,7 @@ if (exist_param('addcart')) {
             'don_gia' => $don_gia,
             'giam_gia' => $giam_gia,
             'size' => $size,
-            'quantity' => 1,
+            'quantity' => $quantity,
             'hinh' => $hinh,
             'kh' => $kh
 

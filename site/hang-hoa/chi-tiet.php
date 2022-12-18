@@ -126,9 +126,8 @@ hang_hoa_tang_so_luot_xem($ma_hh);
                     <div class="button-quantity">
                         <div class="quantity">
                             <span>QUANTITY</span>
-                            <input type="number" placeholder="1" style="outline: none;">
+                            <input name="quantity" value="1" min="1" type="number" placeholder="1" style="outline: none;">
                         </div>
-
                         <button type="submit" name="addcart" class="button-addcart">ADD TO CART</button>
                     </div>
                 </form>
